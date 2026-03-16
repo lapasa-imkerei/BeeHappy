@@ -6,8 +6,10 @@
 **Philip Staudacher**
 Teamleiter
 Hauptverantwortlicher: Bereich Programmierung
+
 **Natalie Neumayer**
 Hauptverantwortliche: Design und Usability
+
 **Patrizia Lacher**
 Hauptverantwortliche: Datenhandling
 
