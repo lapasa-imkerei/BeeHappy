@@ -3,12 +3,12 @@
 
 ## Team & Aufgabenverteilung
 
-**1)	Philip Staudacher**
-1. 	Teamleiter
+**Philip Staudacher**
+1. Teamleiter
 2. Hauptverantwortlicher: Bereich Programmierung
-**2)	Natalie Neumayer**
+**Natalie Neumayer**
 1. 	Hauptverantwortliche: Design und Usability
-**3)	Patrizia Lacher**
+**Patrizia Lacher**
 1. Hauptverantwortliche: Datenhandling
 
 ## Ziele
