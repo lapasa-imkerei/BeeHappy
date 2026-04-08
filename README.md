@@ -1,6 +1,9 @@
 # BeeHappy
 
 # Konzept befindet sich im WIKI
+https://git.sbg.ac.at/s1109621/beehappy/-/wikis/Konzept
+
+
 ## Projektbeschreibung: 
 
 ## Team & Aufgabenverteilung
