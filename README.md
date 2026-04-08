@@ -1,4 +1,6 @@
 # BeeHappy
+
+# Konzept befindet sich im WIKI
 ## Projektbeschreibung: 
 
 ## Team & Aufgabenverteilung
