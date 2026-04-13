@@ -1,0 +1,39 @@
+{
+  "typ": "Monatsversammlung",
+  "datum": "2026-03-05",
+  "uhrzeit": "18:30",
+  "thema": "Monatsbetrachtung: Frühjahrsrevision",
+  "verein": "Schalchen/Mattighofen",
+  "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen",
+  "koordinaten": { "lat": 48.119387, "lng": 13.158168 } 
+}
+
+{
+  "typ": "Monatsversammlung",
+  "datum": "2026-04-09",
+  "uhrzeit": "18:30",
+  "thema": "Monatsbetrachtung: Honigraum aufsetzen",
+  "verein": "Schalchen/Mattighofen",
+  "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen",
+  "koordinaten": { "lat": 48.119387, "lng": 13.158168 } 
+}
+
+{
+  "typ": "Monatsversammlung",
+  "datum": "2026-05-07",
+  "uhrzeit": "18:30",
+  "thema": "Monatsbetrachtung: Schwarmanagement",
+  "verein": "Schalchen/Mattighofen",
+  "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen",
+  "koordinaten": { "lat": 48.119387, "lng": 13.158168 } 
+}
+
+{
+  "typ": "Monatsversammlung",
+  "datum": "2026-06-04",
+  "uhrzeit": "18:30",
+  "thema": "Monatsbetrachtung: Honigernte (Blütenhonig)",
+  "verein": "Schalchen/Mattighofen",
+  "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen",
+  "koordinaten": { "lat": 48.119387, "lng": 13.158168 } 
+}
