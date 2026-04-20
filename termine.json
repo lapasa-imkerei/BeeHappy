@@ -37,3 +37,133 @@
   "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen",
   "koordinaten": { "lat": 48.119387, "lng": 13.158168 } 
 }
+
+{
+  "typ": "Monatsversammlung",
+  "datum": "02-07-2026",
+  "uhrzeit": "18:30",
+  "thema": "Monatsbetrachtung: Abschleudern, Auffüttern, Varroabehandlung",
+  "verein": "Schalchen/Mattighofen",
+  "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen",
+  "koordinaten": { "lat": 48.119387, "lng": 13.158168 } 
+}
+
+{
+  "typ": "Monatsversammlung",
+  "datum": "2026-08-06",
+  "uhrzeit": "18:30",
+  "thema": "Monatsbetrachtung: Beurteilung Volksstärke, Königin tauschen",
+  "verein": "Schalchen/Mattighofen",
+  "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen",
+  "koordinaten": { "lat": 48.119387, "lng": 13.158168 } 
+}
+
+{
+  "typ": "Monatsversammlung",
+  "datum": "2026-09-03",
+  "uhrzeit": "18:30",
+  "thema": "Monatsbetrachtung: Varroa Herbstbehandlung",
+  "verein": "Schalchen/Mattighofen",
+  "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen",
+  "koordinaten": { "lat": 48.119387, "lng": 13.158168 } 
+}
+
+{
+  "typ": "Monatsversammlung",
+  "datum": "2026-10-01",
+  "uhrzeit": "18:30",
+  "thema": "Monatsbetrachtung: Einwinterung abschliessen",
+  "verein": "Schalchen/Mattighofen",
+  "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen",
+  "koordinaten": { "lat": 48.119387, "lng": 13.158168 } 
+}
+
+{
+  "typ": "Monatsversammlung",
+  "datum": "2026-11-05",
+  "uhrzeit": "18:30",
+  "thema": "Monatsbetrachtung: Jahresabschluss",
+  "verein": "Schalchen/Mattighofen",
+  "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen",
+  "koordinaten": { "lat": 48.119387, "lng": 13.158168 } 
+}
+
+{
+  "typ": "Monatsversammlung",
+  "datum": "2026-03-13",
+  "uhrzeit": "19:30",
+  "thema": "Monatsbetrachtung",
+  "verein": "Pischelsdorf",
+  "adresse_vollständig": "Schmidham 4, 5233 Schmidham",
+  "koordinaten": { "lat": 48.12584081002692, "lng": 13.094271116269521 } 
+}
+
+{
+  "typ": "Monatsversammlung",
+  "datum": "2026-04-11",
+  "uhrzeit": "19:30",
+  "thema": "Monatsbetrachtung",
+  "verein": "Pischelsdorf",
+  "adresse_vollständig": "Pischelsdorf am Engelbach 32, 5233 Pischelsdorf am Engelbach",
+  "koordinaten": { "lat": 48.12957976356471, "lng": 13.082149769355187 } 
+}
+
+{
+  "typ": "Monatsversammlung",
+  "datum": "2026-08-14",
+  "uhrzeit": "19:30",
+  "thema": "Monatsbetrachtung",
+  "verein": "Pischelsdorf",
+  "adresse_vollständig": "Kaltenhausen 1, 5233 Pischelsdorf am Engelbach",
+  "koordinaten": { "lat": 48.127320312448575, "lng": 13.115252725396196 } 
+}
+
+{
+  "typ": "Monatsversammlung",
+  "datum": "2026-09-11",
+  "uhrzeit": "19:30",
+  "thema": "Monatsbetrachtung",
+  "verein": "Pischelsdorf",
+  "adresse_vollständig": "Wagenham 14, 5233 Pischelsdorf am Engelbach",
+  "koordinaten": { "lat": 48.09412202873644, "lng": 13.109744984470916 } 
+}
+
+{
+  "typ": "Bezirksversammlung - Braunau",
+  "datum": "2026-06-12",
+  "uhrzeit": "19:30",
+  "thema": "Schwarmmanagement und Königinnenzucht",
+  "verein": "Bezirk Braunau",
+  "adresse_vollständig": "Schmidham 4, 5233 Schmidham",
+  "koordinaten": { "lat": 48.125771864161905, "lng": 13.09417947049406 } 
+}
+
+{
+  "typ": "Bezirksversammlung - Braunau",
+  "datum": "2026-05-08",
+  "uhrzeit": "19:30",
+  "thema": "Oxymel - Vortragender: DR. Puttinger",
+  "verein": "Bezirk Braunau",
+  "adresse_vollständig": "Schmidham 4, 5233 Schmidham",
+  "koordinaten": { "lat": 48.125771864161905, "lng": 13.09417947049406 } 
+}
+
+{
+  "typ": "Bezirksversammlung - Braunau",
+  "datum": "2026-07-10",
+  "uhrzeit": "19:30",
+  "thema": "Abschleudern und erste Varroa",
+  "verein": "Bezirk Braunau",
+  "adresse_vollständig": "Schmidham 4, 5233 Schmidham",
+  "koordinaten": { "lat": 48.125771864161905, "lng": 13.09417947049406 } 
+}
+
+{
+  "typ": "Monatsversammlung",
+  "datum": "2026-02-13",
+  "uhrzeit": "19:30",
+  "thema": "Thema offen",
+  "verein": "Pischelsdorf",
+  "adresse_vollständig": "Schmidham 4, 5233 Schmidham",
+  "koordinaten": { "lat": 48.125771864161905, "lng": 13.09417947049406 } 
+}
