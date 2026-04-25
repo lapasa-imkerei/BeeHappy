@@ -23,7 +23,7 @@
   --shadow:     0 4px 24px rgba(0,0,0,0.4);
   --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
-  --font-body:    'DM Sans', sans-serif;
+  --font-body:    'Nunito';
   --font-display:  'Just another Hand';
 }
 
@@ -254,4 +254,42 @@ p {
   .card-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ── Listen ── */
+ul, ol {
+  margin: 0 0 1rem 0;
+  padding-left: 1.5rem;
+  max-width: 68ch;
+  color: var(--farbe-muted);
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  padding: 0.35rem 0 0.35rem 2rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+/* Bienen-Wabe als Bullet */
+ul li::before {
+  content: '🐝';        /* ← Wabenform, kannst du ändern */
+  position: absolute;
+  left: 0;
+  color: var(--farbe-accent);
+  font-size: 1.1rem;
+}
+
+ol li {
+  padding: 0.35rem 0;
+  line-height: 1.6;
+}
+
+ol li::marker {
+  color: var(--farbe-accent);
+  font-weight: 700;
 }
