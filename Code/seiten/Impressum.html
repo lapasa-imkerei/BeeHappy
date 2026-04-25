@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt — Mein Projekt</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <style>
+    /* Seiten-spezifische Formular-Styles */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--farbe-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 0.4rem;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      max-width: 520px;
+      background: var(--farbe-surface);
+      border: 1px solid var(--farbe-border);
+      border-radius: 8px;
+      padding: 0.7rem 1rem;
+      color: var(--farbe-text);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      transition: var(--transition);
+      outline: none;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--farbe-primary);
+      box-shadow: 0 0 0 3px var(--farbe-primary-glow);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-row input { max-width: 100%; }
+
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="menu-toggle" id="menu-toggle" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="layout">
+
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-mark">
+          <div class="logo-icon">⚡</div>
+          <div>
+            <div class="logo-text">Mein Projekt</div>
+            <div class="logo-version">v1.0.0</div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-label">Hauptmenü</div>
+        <a href="../index.html">
+          <span class="nav-icon">🏠</span> Startseite
+        </a>
+        <div class="nav-label">Seiten</div>
+        <a href="seite1.html">
+          <span class="nav-icon">📄</span> Über uns
+        </a>
+        <a href="seite2.html">
+          <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="seite3.html">
+          <span class="nav-icon">🖼️</span> Galerie
+        </a>
+        <a href="seite4.html">
+          <span class="nav-icon">📬</span> Kontakt
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">© 2025 Mein Projekt</div>
+    </aside>
+
+    <main class="inhalt">
+
+      <div class="page-header">
+        <div class="badge">Kontakt</div>
+        <h1>Schreib uns 📬</h1>
+        <p>Fragen, Feedback oder Anregungen? Wir freuen uns über eure Nachricht.</p>
+      </div>
+
+      <h2>Kontaktformular</h2>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="vorname">Vorname</label>
+          <input type="text" id="vorname" placeholder="Max" />
+        </div>
+        <div class="form-group">
+          <label for="nachname">Nachname</label>
+          <input type="text" id="nachname" placeholder="Mustermann" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-Mail-Adresse</label>
+        <input type="email" id="email" placeholder="max@beispiel.de" />
+      </div>
+
+      <div class="form-group">
+        <label for="betreff">Betreff</label>
+        <input type="text" id="betreff" placeholder="Worum geht es?" />
+      </div>
+
+      <div class="form-group">
+        <label for="nachricht">Nachricht</label>
+        <textarea id="nachricht" placeholder="Deine Nachricht hier..."></textarea>
+      </div>
+
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <button class="btn btn-primary" onclick="formularSenden()">
+          ✉️ Nachricht senden
+        </button>
+        <button class="btn btn-outline" onclick="formularReset()">
+          Zurücksetzen
+        </button>
+      </div>
+
+      <hr class="divider" />
+
+      <div class="alert">
+        <div class="alert-title">⚙️ Formular verbinden</div>
+        Um echte E-Mails zu versenden, könnt ihr Dienste wie <strong>Formspree</strong>, <strong>Netlify Forms</strong> oder ein eigenes Backend verwenden. Einfach das <code>action</code>-Attribut am Formular setzen.
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script>
+    function formularSenden() {
+      const felder = ['vorname', 'email', 'nachricht'];
+      const leer = felder.filter(id => !document.getElementById(id).value.trim());
+      if (leer.length > 0) {
+        alert('Bitte fülle alle Pflichtfelder aus (Vorname, E-Mail, Nachricht).');
+        return;
+      }
+      alert('✅ Danke! Deine Nachricht wurde gesendet.\n(Das ist eine Demo — hier kommt eure echte Logik rein.)');
+    }
+
+    function formularReset() {
+      ['vorname', 'nachname', 'email', 'betreff', 'nachricht'].forEach(id => {
+        document.getElementById(id).value = '';
+      });
+    }
+  </script>
+</body>
+</html>
