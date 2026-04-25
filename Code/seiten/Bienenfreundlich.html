@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap" rel="stylesheet">
+  <title>Galerie — Mein Projekt</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <style>
+    /* Seiten-spezifische Styles direkt hier — kein extra CSS nötig */
+    .galerie-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .galerie-item {
+      aspect-ratio: 1;
+      border-radius: var(--radius);
+      border: 1px solid var(--farbe-border);
+      background: var(--farbe-surface);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      cursor: pointer;
+      transition: var(--transition);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .galerie-item:hover {
+      border-color: var(--farbe-primary);
+      transform: scale(1.03);
+    }
+
+    .galerie-item .label {
+      font-size: 0.75rem;
+      color: var(--farbe-muted);
+      margin-top: 0.5rem;
+      font-family: var(--font-body);
+    }
+
+    @media (max-width: 480px) {
+      .galerie-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="menu-toggle" id="menu-toggle" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="layout">
+
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-mark">
+          <div class="logo-icon">⚡</div>
+          <div>
+            <div class="logo-text">Mein Projekt</div>
+            <div class="logo-version">v1.0.0</div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-label">Hauptmenü</div>
+        <a href="../index.html">
+          <span class="nav-icon">🏠</span> Startseite
+        </a>
+        <div class="nav-label">Seiten</div>
+        <a href="seite1.html">
+          <span class="nav-icon">📄</span> Über uns
+        </a>
+        <a href="seite2.html">
+          <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="seite3.html">
+          <span class="nav-icon">🖼️</span> Galerie
+        </a>
+        <a href="seite4.html">
+          <span class="nav-icon">📬</span> Kontakt
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">© 2025 Mein Projekt</div>
+    </aside>
+
+    <main class="inhalt">
+
+      <div class="page-header">
+        <div class="badge">Galerie</div>
+        <h1>Medien & Bilder 🖼️</h1>
+        <p>Hier könnt ihr Bilder, Screenshots oder andere visuelle Inhalte einbinden.</p>
+      </div>
+
+      <h2>Beispiel-Galerie</h2>
+      <p>Ersetzt die Platzhalter durch echte <code>&lt;img&gt;</code>-Tags mit euren Bildern.</p>
+
+      <div class="galerie-grid">
+        <div class="galerie-item">🏔️<div class="label">Bild 1</div></div>
+        <div class="galerie-item">🌊<div class="label">Bild 2</div></div>
+        <div class="galerie-item">🌲<div class="label">Bild 3</div></div>
+        <div class="galerie-item">🌆<div class="label">Bild 4</div></div>
+        <div class="galerie-item">🌸<div class="label">Bild 5</div></div>
+        <div class="galerie-item">⭐<div class="label">Bild 6</div></div>
+        <div class="galerie-item">🎨<div class="label">Bild 7</div></div>
+        <div class="galerie-item">🚀<div class="label">Bild 8</div></div>
+      </div>
+
+      <hr class="divider" />
+
+      <div class="alert">
+        <div class="alert-title">📁 Bilder einbinden</div>
+        Legt eure Bilder in einen <code>/bilder/</code> Ordner und verwendet: <code>&lt;img src="../bilder/foto.jpg" alt="Beschreibung"&gt;</code>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
