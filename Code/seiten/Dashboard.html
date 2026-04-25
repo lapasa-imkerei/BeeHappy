@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Mein Projekt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+
+  <button class="menu-toggle" id="menu-toggle" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="layout">
+
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-mark">
+          <div class="logo-icon">⚡</div>
+          <div>
+            <div class="logo-text">Mein Projekt</div>
+            <div class="logo-version">v1.0.0</div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-label">Hauptmenü</div>
+        <a href="../index.html">
+          <span class="nav-icon">🏠</span> Startseite
+        </a>
+        <div class="nav-label">Seiten</div>
+        <a href="seite1.html">
+          <span class="nav-icon">📄</span> Über uns
+        </a>
+        <a href="seite2.html">
+          <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="seite3.html">
+          <span class="nav-icon">🖼️</span> Galerie
+        </a>
+        <a href="seite4.html">
+          <span class="nav-icon">📬</span> Kontakt
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">© 2025 Mein Projekt</div>
+    </aside>
+
+    <main class="inhalt">
+
+      <div class="page-header">
+        <div class="badge">Dashboard</div>
+        <h1>Übersicht 📊</h1>
+        <p>Hier siehst du alle wichtigen Kennzahlen und Daten auf einen Blick.</p>
+      </div>
+
+      <h2>Kennzahlen</h2>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-value">128</div>
+          <div class="stat-label">Einträge gesamt</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">94%</div>
+          <div class="stat-label">Erfolgsquote</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">42</div>
+          <div class="stat-label">Aktive Nutzer</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">7</div>
+          <div class="stat-label">Offene Aufgaben</div>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <h2>Letzte Aktivitäten</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Datum</th>
+              <th>Aktion</th>
+              <th>Nutzer</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>21.04.2025</td>
+              <td>Eintrag erstellt</td>
+              <td>Max M.</td>
+              <td>✅ Fertig</td>
+            </tr>
+            <tr>
+              <td>20.04.2025</td>
+              <td>Datei hochgeladen</td>
+              <td>Anna K.</td>
+              <td>✅ Fertig</td>
+            </tr>
+            <tr>
+              <td>19.04.2025</td>
+              <td>Bericht generiert</td>
+              <td>Tom S.</td>
+              <td>⏳ Läuft</td>
+            </tr>
+            <tr>
+              <td>18.04.2025</td>
+              <td>Einstellungen geändert</td>
+              <td>Max M.</td>
+              <td>✅ Fertig</td>
+            </tr>
+            <tr>
+              <td>17.04.2025</td>
+              <td>Nutzer hinzugefügt</td>
+              <td>Admin</td>
+              <td>✅ Fertig</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert warnung">
+        <div class="alert-title">⚠ Hinweis</div>
+        Diese Daten sind Beispieldaten. Hier könnt ihr echte Daten einbinden — z.B. aus einer API oder Datenbank.
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
