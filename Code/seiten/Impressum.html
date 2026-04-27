@@ -4,60 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kontakt — Mein Projekt</title>
+  <link rel="stylesheet" href="../CSS/impressum.css">
   <link rel="stylesheet" href="../css/main.css" />
   <link rel="stylesheet" href="../css/components.css" />
-  <style>
-    /* Seiten-spezifische Formular-Styles */
-    .form-group {
-      margin-bottom: 1.25rem;
-    }
-
-    label {
-      display: block;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--farbe-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      margin-bottom: 0.4rem;
-    }
-
-    input, textarea, select {
-      width: 100%;
-      max-width: 520px;
-      background: var(--farbe-surface);
-      border: 1px solid var(--farbe-border);
-      border-radius: 8px;
-      padding: 0.7rem 1rem;
-      color: var(--farbe-text);
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      transition: var(--transition);
-      outline: none;
-    }
-
-    input:focus, textarea:focus, select:focus {
-      border-color: var(--farbe-primary);
-      box-shadow: 0 0 0 3px var(--farbe-primary-glow);
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 130px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .form-row input { max-width: 100%; }
-
-    @media (max-width: 600px) {
-      .form-row { grid-template-columns: 1fr; }
-    }
-  </style>
 </head>
 <body>
 
@@ -103,17 +52,23 @@
     </aside>
 
     <main class="inhalt">
+      <article>
+        <header class="page-header">
+          <div class="badge">Impressum</div>
+          <h1>Schreib uns!</h1>
+          <p>Hast du Fragen, Feeback oder Anregungen? Schreib uns!</p>
+          <address>
+            <ul>
+              <li>Philip Staudacher (<a href="mailto:philip.stadacher@stud.plus.ac.at">philip.stadacher@stud.plus.ac.at</a>)</li>
+              <li>Natalie Neumayr (<a href="mailto:natalie.neumayr@stud.plus.ac.at">natalie.neumayr@stud.plus.ac.at</a>)</li>
+              <li>Patrizia Lacher (<a href="mailto:patrizia.lacher@stud.plus.ac.at">patrizia.lacher@stud.plus.ac.at</a>)</li>
+            </ul>
+          </address>
+        </header>
 
-      <div class="page-header">
-        <div class="badge">Impressum</div>
-        <h1>Schreib uns!</h1>
-        <p>Hast du Fragen, Feeback oder Anregungen? Schreib uns!</p>
-        <ul>
-          <li>Philip Staudacher (philip.stadacher@stud.plus.ac.at)</li>
-          <li>Natalie Neumayr (natalie.neumayr@stud.plus.ac.at)</li>
-          <li>Patrizia Lacher (patrizia.lacher@stud.plus.ac.at)</li>
-        </ul>
-      </div>
+
+
+
 
       <h2>Impressum</h2>
       <p>gemäß §25 Mediengesetz sowie Anbieteridentifizierung gemäß §5 Abs 1 ECG. </p>
