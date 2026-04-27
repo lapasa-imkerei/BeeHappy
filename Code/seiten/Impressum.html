@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kontakt — Mein Projekt</title>
-  <link rel="stylesheet" href="../CSS/impressum.css">
+  <meta name="description" content="Impressum und Datenschutzerklärung des Studienprojekts — Paris Lodron Universität Salzburg.">
+  <title>Impressum & Datenschutz — BeeHappy</title>
+  
   <link rel="stylesheet" href="../css/main.css" />
   <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/impressum.css">
 </head>
 <body>
 
@@ -20,7 +22,7 @@
     <aside class="sidebar">
       <div class="sidebar-logo">
         <div class="logo-mark">
-          <div class="logo-icon">⚡</div>
+          <div class="logo-icon" aria-hidden="true">⚡</div>
           <div>
             <div class="logo-text">Mein Projekt</div>
             <div class="logo-version">v1.0.0</div>
@@ -31,20 +33,20 @@
       <nav class="sidebar-nav">
         <div class="nav-label">Hauptmenü</div>
         <a href="../index.html">
-          <span class="nav-icon">🏠</span> Startseite
+          <span class="nav-icon" aria-hidden="true">🏠</span> Startseite
         </a>
         <div class="nav-label">Seiten</div>
         <a href="Dashboard.html">
-          <span class="nav-icon">🔍</span> Bienendashboard
+          <span class="nav-icon" aria-hidden="true">🔍</span> Bienendashboard
         </a>
         <a href="Vereinskalender.html">
-          <span class="nav-icon">📅</span> Vereinskalender
+          <span class="nav-icon" aria-hidden="true">📅</span> Vereinskalender
         </a>
         <a href="Bienenfreundlich.html">
-          <span class="nav-icon">🍃</span> Bienenfreundliche Natur
+          <span class="nav-icon" aria-hidden="true">🍃</span> Bienenfreundliche Natur
         </a>
-        <a href="Impressum.html">
-          <span class="nav-icon">📬</span> Impressum
+        <a href="Impressum.html" class="active">
+          <span class="nav-icon" aria-hidden="true">📬</span> Impressum
         </a>
       </nav>
 
@@ -53,10 +55,11 @@
 
     <main class="inhalt">
       <article>
+        
         <header class="page-header">
-          <div class="badge">Impressum</div>
+          <div class="badge">Rechtliches</div>
           <h1>Schreib uns!</h1>
-          <p>Hast du Fragen, Feeback oder Anregungen? Schreib uns!</p>
+          <p>Hast du Fragen, Feedback oder Anregungen? Wir freuen uns über deine Nachricht.</p>
           <address>
             <ul>
               <li>Philip Staudacher (<a href="mailto:philip.stadacher@stud.plus.ac.at">philip.stadacher@stud.plus.ac.at</a>)</li>
@@ -66,71 +69,84 @@
           </address>
         </header>
 
+        <section>
+          <h2>Impressum</h2>
+          <p>Gemäß §25 Mediengesetz sowie Anbieteridentifizierung gemäß §5 Abs 1 ECG.</p>
+        </section>
 
+        <section>
+          <h2>Medieninhaber, Herausgeber & Redaktion</h2>
+          <p>Dieses Webprojekt wurde im Rahmen eines an der Paris Lodron Universität Salzburg von den folgenden Studierenden erstellt:</p>
+          <ul>
+            <li>Philip Staudacher</li>
+            <li>Natalie Neumayr</li>
+            <li>Patrizia Lacher</li>
+          </ul>
+        </section>
 
+        <section>
+          <h2>Inhaltliche Verantwortung</h2>
+          <p>Die inhaltliche und technische Umsetzung erfolgte gemeinschaftlich durch das oben genannte Projektteam.</p>
+        </section>
 
+        <section>
+          <h2>Projektbezug</h2>
+          <p>Das Projekt wurde im Studiengang <strong>"Digitalisierung-Innovation-Gesellschaft"</strong> an der Paris Lodron Universität 
+            durchgeführt und dient ausschließlich wissenschaftlichen und nicht-kommerziellen Zwecken.
+          </p>
+        </section>
 
-      <h2>Impressum</h2>
-      <p>gemäß §25 Mediengesetz sowie Anbieteridentifizierung gemäß §5 Abs 1 ECG. </p>
+        <section id="kontakt">
+          <h2>Kontaktdaten</h2>
+          <address>
+            <ul>
+              <li>Philip Staudacher (<a href="mailto:philip.stadacher@stud.plus.ac.at">philip.stadacher@stud.plus.ac.at</a>)</li>
+              <li>Natalie Neumayr (<a href="mailto:natalie.neumayr@stud.plus.ac.at">natalie.neumayr@stud.plus.ac.at</a>)</li>
+              <li>Patrizia Lacher (<a href="mailto:patrizia.lacher@stud.plus.ac.at">patrizia.lacher@stud.plus.ac.at</a>)</li>
+            </ul>
+          </address>
+        </section>
 
-      <h2>Medieninhaber, Herausgeber, Hersteller und Redaktion</h2>
-      <p>Dieses Webprojekt wurde im Rahmen eines Studienprojekts an der Paris Lodron Universität Salzburg von den folgenden Studierenden erstellt:</p>
+        <hr>
 
-      <ul>
-        <li>Philip Staudacher</li>
-        <li>Natalie Neumayr</li>
-        <li>Patrizia Lacher</li>
-      </ul>
+        <section id="datenschutz">
+          <h2>Datenschutzerklärung</h2>
+          <p>Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. 
+            Wir verarbeiten personenbezogene Daten ausschließlich im Einklang mit 
+            den geltenden gesetzlichen Bestimmungen (DSGVO, TKG 2003).
+          </p>
+        </section>
 
-      <h2>Inhaltiche Verantwortung</h2>
-      <p>Die inhaltliche und technische Umsetzung erfolgte gemeinschaftlich durch das oben genannte Projektteam.</p>
+        <section>
+          <h2>Allgemeine Nutzung der Website</h2>
+          <p>Unsere Website dient ausschließlich der Information. Sie können sie nutzen, ohne personenbezogene Daten anzugeben. 
+            Wir setzen keine Webanalyse-Tools wie Google Analytics ein und verzichten auf Tracking.
+          </p>
+        </section>
 
-      <h2>Projektbezug</h2>
-      <p>Das Projekt wurde im Rahmen des Studiengangs "Digitalisierung-Innovation-Gesellschaft" an 
-        der Paris Lodron Universität durchgeführt und dient ausschließlich wissenschaftlichen und nicht-kommerziellen Zwecken.
-      </p>
+        <section>
+          <h2>Ihre Rechte</h2>
+          <p>Sie haben folgende Rechte bezüglich Ihrer bei uns gespeicherten Daten:</p>
+          <ul>
+            <li>Auskunft, Berichtigung und Löschung</li>
+            <li>Einschränkung der Verarbeitung</li>
+            <li>Datenübertragbarkeit</li>
+            <li>Widerruf und Widerspruch</li>
+          </ul>
+          <p>Beschwerden können an die österreichische Datenschutzbehörde 
+            (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a>) 
+            gerichtet werden.</p>
+        </section>
 
-      <h2>Kontaktdaten</h2>
+        <section>
+          <h2>Cookies & Datenübermittlung</h2>
+          <p>Unsere Website verwendet keine Cookies, die personenbezogene Daten speichern. 
+            Es findet keine Übermittlung Ihrer Daten an Dritte statt.
+          </p>
+        </section>
 
-      <ul>
-        <li>Philip Staudacher (philip.stadacher@stud.plus.ac.at)</li>
-        <li>Natalie Neumayr (natalie.neumayr@stud.plus.ac.at)</li>
-        <li>Patrizia Lacher (patrizia.lacher@stud.plus.ac.at)</li>
-      </ul>
+      </article>
+    </main>
 
-      <h2>Datenschutzerklärung</h2>
-      <p>Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir, Studierende des Studiengangs Digitalisierung – Innovation – Gesellschaft an der Paris Lodron Universität Salzburg, 
-        betreiben diese Website zur Darstellung unserer Forschungsergebnisse im Rahmen eines Studienprojekts. 
-        Wir verarbeiten personenbezogene Daten ausschließlich im Einklang mit den geltenden gesetzlichen Bestimmungen (DSGVO, TKG 2003).
-      </p>
-
-      <h2>Allgemeine Nutzung der Website</h2>
-      <p>Unsere Website dient ausschließlich der Information. Sie können sie nutzen, ohne personenbezogene Daten anzugeben.
-         Wir setzen keine Webanalyse-Tools wie Google Analytics ein und verzichten auf Tracking.
-      </p>
-
-      <h2>Ihre Rechte</h2>
-        <p>Sie haben das Recht auf:</p>
-      <ul>
-        <li>Auskunft,</li>
-        <li>Berichtigung,</li>
-        <li>Löschung ("Recht auf Vergessenwerden"),</li>
-        <li>Einschräkung der Verarbeitung,</li>
-        <li>Datenübertragbarkeit,</li>
-        <li>Widerruf einer EInwilligung und</li>
-        <li>Widerspruch zu.</li>
-      </ul>
-
-      <p>
-        Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt, haben Sie das Recht, sich bei der zuständigen Aufsichtsbehörde zu beschweren. 
-        In Österreich ist dies die Datenschutzbehörde (www.dsb.gv.at).
-      </p>
-
-      <h2>Cookies</h2>
-      <p>Unsere Website verwendet keine Cookies, die personenbezogenen Daten speichern.</p>
-
-      <h2>Datenübermittlung</h2>
-      <p>Es findet keine Übermittlung Ihrer Daten an Dritte oder in Drittländern statt.</p>
-
-</body>
+  </div> </body>
 </html>
