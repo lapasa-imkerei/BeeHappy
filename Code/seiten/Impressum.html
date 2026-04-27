@@ -52,13 +52,10 @@
           <span class="nav-icon" aria-hidden="true">📬</span> Impressum
         </a>
       </nav>
-
       <div class="sidebar-footer">© 2025 Mein Projekt</div>
     </aside>
-
     <main class="inhalt">
-      <article>
-        
+      <article>  
         <header class="page-header">
           <div class="badge">Rechtliches</div>
           <h1>Schreib uns!</h1>
@@ -71,12 +68,10 @@
             </ul>
           </address>
         </header>
-
         <section>
           <h2>Impressum</h2>
           <p>Gemäß §25 Mediengesetz sowie Anbieteridentifizierung gemäß §5 Abs 1 ECG.</p>
         </section>
-
         <section>
           <h2>Medieninhaber, Herausgeber & Redaktion</h2>
           <p>Dieses Webprojekt wurde im Rahmen eines an der Paris Lodron Universität Salzburg von den folgenden Studierenden erstellt:</p>
@@ -86,19 +81,16 @@
             <li>Patrizia Lacher</li>
           </ul>
         </section>
-
         <section>
           <h2>Inhaltliche Verantwortung</h2>
           <p>Die inhaltliche und technische Umsetzung erfolgte gemeinschaftlich durch das oben genannte Projektteam.</p>
         </section>
-
         <section>
           <h2>Projektbezug</h2>
           <p>Das Projekt wurde im Studiengang <strong>"Digitalisierung-Innovation-Gesellschaft"</strong> an der Paris Lodron Universität 
             durchgeführt und dient ausschließlich wissenschaftlichen und nicht-kommerziellen Zwecken.
           </p>
         </section>
-
         <section id="kontakt">
           <h2>Kontaktdaten</h2>
           <address>
@@ -109,9 +101,7 @@
             </ul>
           </address>
         </section>
-
         <hr>
-
         <section id="datenschutz">
           <h2>Datenschutzerklärung</h2>
           <p>Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. 
@@ -119,14 +109,12 @@
             den geltenden gesetzlichen Bestimmungen (DSGVO, TKG 2003).
           </p>
         </section>
-
         <section>
           <h2>Allgemeine Nutzung der Website</h2>
           <p>Unsere Website dient ausschließlich der Information. Sie können sie nutzen, ohne personenbezogene Daten anzugeben. 
             Wir setzen keine Webanalyse-Tools wie Google Analytics ein und verzichten auf Tracking.
           </p>
         </section>
-
         <section>
           <h2>Ihre Rechte</h2>
           <p>Sie haben folgende Rechte bezüglich Ihrer bei uns gespeicherten Daten:</p>
@@ -140,16 +128,43 @@
             (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a>) 
             gerichtet werden.</p>
         </section>
-
         <section>
           <h2>Cookies & Datenübermittlung</h2>
           <p>Unsere Website verwendet keine Cookies, die personenbezogene Daten speichern. 
             Es findet keine Übermittlung Ihrer Daten an Dritte statt.
           </p>
         </section>
-
+        <hr>
+        <section class="contact-form-section">
+          <h2>Sende uns eine Nachricht</h2>
+          <form action="#" method="post" class="bee-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Dein Name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" placeholder="beispiel@mail.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Betreff</label>
+              <select id="subject" name="subject">
+                <option value="feedback">Feedback zum Projekt</option>
+                <option value="frage">Fragen zum Projekt</option>
+                <option value="frage">Fragen zum Thema Bienen</option>
+                <option value="sonstiges">Sonstiges</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Deine Nachricht</label>
+              <textarea id="message" name="message" placeholder="Was möchtest du uns sagen?" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Nachricht absenden</button>
+          </form>
+        </section>
       </article>
     </main>
-
   </div> </body>
 </html>

@@ -47,6 +47,24 @@ textarea {
   gap: 1rem;
 }
 
+.btn-submit {
+  background-color: var(--farbe-accent);
+  color: white;
+  font-family: var(--f-body);
+  font-weight: 700;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 1rem;
+}
+
+.btn-submit:hover {
+  background-color: var(--farbe-primary);
+  transform: scale(1.02);
+}
+
 @media (max-width: 600px) {
   .form-row { 
     grid-template-columns: 1fr; 
