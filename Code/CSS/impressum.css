@@ -1,15 +1,15 @@
 .form-group {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 label {
   display: block;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--farbe-muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--farbe-text);
   text-transform: uppercase;
-  letter-spacing: 0.07em;
-  margin-bottom: 0.4rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
 }
 
 input, 
@@ -18,26 +18,27 @@ select {
   width: 100%;
   max-width: 520px;
   background: var(--farbe-surface);
-  border: 1px solid var(--farbe-border);
-  border-radius: 8px;
-  padding: 0.7rem 1rem;
+  border: 1.5px solid var(--farbe-border);
+  border-radius: var(--radius); 
+  padding: 0.8rem 1rem;
   color: var(--farbe-text);
-  font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-family: var(--f-body);  
+  font-size: 1rem;
   transition: var(--transition);
   outline: none;
 }
 
 input:focus, 
-textarea:focus, 
-select:focus {
-  border-color: var(--farbe-primary);
-  box-shadow: 0 0 0 3px var(--farbe-primary-glow);
+textarea:focus {
+  border-color: var(--farbe-accent);
+  background: #fffdf5; 
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
 }
 
+
 textarea {
-  resize: vertical;
-  min-height: 130px;
+  min-height: 150px;
+  resize: vertical; 
 }
 
 .form-row {
@@ -46,11 +47,6 @@ textarea {
   gap: 1rem;
 }
 
-.form-row input { 
-  max-width: 100%; 
-}
-
-/* Responsive*/
 @media (max-width: 600px) {
   .form-row { 
     grid-template-columns: 1fr; 
