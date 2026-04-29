@@ -185,8 +185,17 @@ ul li::before {
 }
 
 @media (max-width: 768px) {
-  .layout { grid-template-columns: 1fr; }
-  .sidebar { display: none; } 
-  .menu-toggle { display: block; }
-  .inhalt { padding: 5rem 1.5rem 2rem; }
+  .layout {grid-template-columns: 1fr;}
+  .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--sidebar-breite);
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+  z-index: 1000;
+}
+  .menu-toggle{display:block;}
+  .inhalt {padding: 5rem 1.5rem 2rem;}
 }
