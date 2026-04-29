@@ -1,0 +1,136 @@
+.waben-section {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .waben-section.rechts {
+      flex-direction: row-reverse;
+    }
+
+    /* ── Waben-Container ── */
+    .hex-container {
+      flex: 0 0 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hex-wrap {
+      position: relative;
+      width: 210px;
+      height: 220px;
+    }
+
+    .hex {
+      position: absolute;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .hex:hover { transform: scale(1.05); }
+
+    .hex img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hex-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+
+    /* Haupt-Wabe */
+    .hex-main {
+      width: 130px;
+      height: 142px;
+      top: 38px;
+      left: 40px;
+    }
+
+    /* Kleine Satelliten-Waben */
+    .hex-sm { width: 70px; height: 77px; }
+    .hex-sm-1 { top: 0px;   left: 120px; }
+    .hex-sm-2 { top: 75px;  left: 140px; }
+    .hex-sm-3 { top: 143px; left: 120px; }
+    .hex-sm-4 { top: 143px; left: 0px;   }
+    .hex-sm-5 { top: 75px;  left: -20px; }
+    .hex-sm-6 { top: 0px;   left: 0px;   }
+
+    /* Farben der Satelliten */
+    .hex-sm .hex-placeholder { background: #1e2a1a; color: #f59e0b; font-size: 1.1rem; }
+    .hex-sm-1 .hex-placeholder { background: #2a2210; color: #fbbf24; }
+    .hex-sm-2 .hex-placeholder { background: #1a2a14; color: #86efac; }
+    .hex-sm-3 .hex-placeholder { background: #2a1a08; color: #f97316; }
+    .hex-sm-4 .hex-placeholder { background: #222a14; color: #fde68a; }
+    .hex-sm-5 .hex-placeholder { background: #1a260e; color: #4ade80; }
+    .hex-sm-6 .hex-placeholder { background: #2a1e0a; color: #fb923c; }
+
+    /* ── Text-Block ── */
+    .waben-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .waben-text h2 {
+      font-family: 'Just Another Hand', cursive;
+      font-size: 2.2rem;
+      font-weight: 400;
+      margin: 0 0 0.5rem;
+      color: var(--farbe-text);
+      -webkit-text-fill-color: unset;
+      background: none;
+    }
+
+    .waben-text p {
+      font-size: 0.95rem;
+      color: var(--farbe-muted);
+      line-height: 1.7;
+      margin: 0 0 1rem;
+    }
+
+    /* ── Abschnitt-Trenner ── */
+    .waben-divider {
+      border: none;
+      border-top: 1px dashed var(--farbe-border);
+      margin: 0 0 3.5rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 680px) {
+      .waben-section,
+      .waben-section.rechts {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+      .hex-container {
+        flex: none;
+        width: 100%;
+        justify-content: flex-start;
+        padding-left: 1rem;
+      }
+
+/* Bild korrekt in Wabe einpassen */
+.hex img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Placeholder nur wenn KEIN Bild da ist */
+.hex-main .hex-placeholder {
+  position: absolute;
+  inset: 0;
+}

@@ -1,3 +1,5 @@
+/* Do san unsere Schriftarten definiert (Nur ändern, wenn sich die Schriftart ändert), style bitte in der style.css ändern */
+
 @font-face {
   font-family: 'Nunito';
   src: url('../fonts/nunito.woff2') format('woff2');
@@ -22,10 +24,3 @@
   font-display: swap;
 }
 
-:root {
-  --f-body: 'Nunito', sans-serif;
-  --f-headline: 'Just Another Hand', cursive;
-  --f-logo: 'Indie Flower', cursive;
-  
-  --marker-color: rgba(255, 223, 0, 0.4); 
-}
