@@ -4,66 +4,77 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BeeHappy - Startseite</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="../css/fonts.css"/>
   <link rel="stylesheet" href="../css/style.css" />
+
+  <link rel="stylesheet" href="../CSS/sidebar.css">
+
+  <!-- Button muas ersetzt werden durch wos ondasd und ned durch a google icon -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
   
 </head>
 <body>
 
-  <!-- Hamburger Button (nur Mobile) -->
-  <button class="menu-toggle" id="menu-toggle" aria-label="Menü öffnen">
-    <span></span><span></span><span></span>
-  </button>
-
-  <!-- Overlay für Mobile -->
-  <div class="overlay" id="overlay"></div>
-
-  <div class="layout">
-
-    <!-- ═══ SIDEBAR ════════════════════════════════ -->
     <aside class="sidebar">
-
-      <div class="sidebar-logo">
-        <div class="logo-mark">
-          <div class="logo-icon">🐝</div>
-          <div>
-            <div class="logo-text">BeeHappy</div>
-            <div class="logo-version">v1.0.0</div>
-          </div>
-        </div>
-      </div>
-
-      <nav class="sidebar-nav">
-        <div class="nav-label">Hauptmenü</div>
-        <a href="index.html">
-          <span class="nav-icon">🏠</span> Home
+      <header class="sidebar-header">
+        <a href="#" class="header-logo">
+          <img src="../Bilder/Biene1.jpg" alt="Logo BeeHappy">
         </a>
-        <div class="nav-label">Seiten</div>
-        <a href="seiten/Dashboard.html">
-          <span class="nav-icon">📊</span> Dashboard
-        </a>
-        <a href="seiten/Bienenvolk.html">
-          <span class="nav-icon">🍯</span> Bienenvolk
-        </a>
-        <a href="seiten/Bienenfreundlich.html">
-          <span class="nav-icon">🪴</span> Bienenfreundliche Natur
-        </a>
-        <a href="seiten/Vereinskalender.html">
-          <span class="nav-icon">📆</span> Kalender
-        </a>
-        <a href="seiten/Impressum.html">
-          <span class="nav-icon">📄</span> Impressum & Team
-        </a>
-      </nav>
-
-      <div class="sidebar-footer">
-        © 2025 BeeHappy
-      </div>
-
-    </aside>
+          <button class="toggler sidebar-toggler">
+                <span class="material-symbols-rounded">chevron_left</span>
+            </button>
+            <button class="toggler menu-toggler">
+                <span class="material-symbols-rounded">menu</span>
+            </button>
+        </header>
+        <nav class="sidebar-nav">
+            <ul class="nav-list primary-nav">
+                <li class="nav-item">
+                    <a href="../seiten/index.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">home</span>
+                        <span class="nav-label">Home</span> 
+                    </a>
+                    <span class="nav-tooltip">Home</span>
+                </li>
+                <li class="nav-item">
+                    <a href="../seiten/Dashboard.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">dashboard</span>
+                        <span class="nav-label">Dashboard</span> 
+                    </a>
+                    <span class="nav-tooltip">Dashboard</span>
+                </li>
+                <li class="nav-item">
+                    <a href="../seiten/Bienenvolk.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">groups</span>
+                        <span class="nav-label">Bienenvolk</span> 
+                    </a>
+                    <span class="nav-tooltip">Bienenvolk</span>
+                </li>
+                <li class="nav-item">
+                    <a href="../seiten/Bienenfreundlich.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">eco</span>
+                        <span class="nav-label">Bienenfreundliche Natur</span> 
+                    </a>
+                    <span class="nav-tooltip">Bienenfreundliche Natur</span>
+                </li>
+                <li class="nav-item">
+                    <a href="../seiten/Vereinskalender.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">calendar_month</span>
+                        <span class="nav-label">Kalender</span> 
+                    </a>
+                    <span class="nav-tooltip">Kalender</span>
+                </li>
+                <li class="nav-item">
+                    <a href="../seiten/Impressum.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">info</span>
+                        <span class="nav-label">Impressum</span> 
+                    </a>
+                    <span class="nav-tooltip">Impressum</span>
+                </li>
+            </ul>
+        </nav>
+    </aside> 
 
     <!-- ═══ HAUPTINHALT ══════════════════════════════ -->
     <main class="inhalt">
@@ -189,12 +200,11 @@
 
       <hr class="divider" />
 
-
-
     </main>
 
   </div>
 
+  <script src="../js/menue.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

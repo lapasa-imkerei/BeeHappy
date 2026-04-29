@@ -1,423 +1,140 @@
-/* In dem Style-Sheet san olle GLOBALEN Dinge festgelegt */
-
-/* genaue Definierung vo dem zeig; root = Baumstamm */
 :root {
-    /* Unsere Farbeinteilung */
-    --c-bg:           #fff3c2; /* Miasn ma ändern */
-    --c-sidebar:      #BFAA7c;
-    --c-surface:      #e3ca94; /* Nutzt ma meist für Karten-Hintergründe, de se vom BG abheben */
-    --c-text:         #545454; 
-    --c-accent:       #f97316; /* Miasn ma ändern */
-    --c-border:       #545454; /* dama wahrscheinlich weg oder ändern */
-    --c-white:        #ffffff;
-    --c-marker:       rgba(255, 235, 59, 0.5); 
-    --c-glow:         rgba(84, 84, 84, 0.1); /* Dezent heller Effekt für Badges etc. */
+    /* Farben */
+    --c-bg: #fff3c2;
+    --c-sidebar: #BFAA7c;
+    --c-surface: #e3ca94;
+    --c-text: #545454;
+    --c-accent: #f97316;
+    --c-border: #545454;
+    --c-white: #ffffff;
+    --c-marker: rgba(255, 235, 20, 0.4); 
+    --c-glow: rgba(84, 84, 84, 0.1);
 
-    /* unsere Fonteinteilung */
-    --f-body:         'Nunito', sans-serif; 
-    --f-headline:     'Just Another Hand', cursive; /* Vereinheitlicht für de Nutzung unten */
-    --f-logo:         'Indie Flower', cursive;
+    /* Fonts */
+    --f-body: 'Nunito', sans-serif; 
+    --f-headline: 'Just Another Hand', cursive; 
+    --f-logo: 'Indie Flower', cursive;
 
-    /* Layout & Spacing */
-    --sidebar-breite:  260px;
-    --radius-s:       8px; 
-    --radius-m:       10px; 
-    --radius-l:       16px; 
-    --radius-full:    9999px; /* Macht Elemente perfekt rund */
-    
-    /* ondas zeig --> Bleibt unter Vorbehalt */
-    --shadow:         0 4px 24px rgba(0, 0, 0, 0.15); /* Erzeugt an sanften Schatten (Tiefe) */
-    --transition:     0.25s cubic-bezier(0.4, 0, 0.2, 1); /* Macht Animationen gschmeidig */
+    /* Bitte ned ändern */
+    --sidebar-breite-offen: 270px;
+    --sidebar-breite-zu: 85px;
+
+    /* Bitte ned ändern */
+    --radius-s: 8px; 
+    --radius-m: 10px; 
+    --radius-l: 16px; 
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
 }
 
-/* Reset: Damit olle Browser bei Null anfangen und ned eigne Abstände einbauen */
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Damit Padding de Breite ned kaputt mocht */
+    box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth; /* Gschmeidiges Scrollen bei Ankern */
-    font-size: 16px; /* Basis für rem-Einheiten */
+    scroll-behavior: smooth;
+    font-size: 16px;
+    max-width: 100%;
+    overflow-x: hidden; 
 }
 
-/* Grundlegendes Styling für de ganze Seite */
 body {
     background-color: var(--c-bg);
     color: var(--c-text);
     font-family: var(--f-body);
-    font-size: 1rem; /* Entspricht 16px */
     line-height: 1.6;
     min-height: 100vh;
-    /* Glättet de Schrift im Browser */
-    -webkit-font-smoothing: antialiased; 
-    -moz-osx-font-smoothing: grayscale; 
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Links: Unterstreichung weg und Übergangseffekt */
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: var(--transition);
-}
-
-/* Unsere Schriftarten; verweisen auf de Schriftarten de IN der fonts.css stengan. */
+/* Do is der Textmarkereffekt herinnen */
 h1, h2, h3 {
     font-family: var(--f-headline);
     font-weight: 400;
     display: inline-block;
     width: fit-content;
     line-height: 1.1;
-    margin-bottom: 1rem;
-    
-    /* Des is der aktuelle Textmarkereffekt (40% füllung vo unten) */
+    margin-bottom: 1.5rem;
     background: linear-gradient(to top, var(--c-marker) 40%, transparent 40%);
-    padding: 0 8px;
-    border-radius: var(--radius-l);
+    padding: 0 10px;
+    border-radius: var(--radius-m);
 }
 
-/* clamp mocht de Schrift dynamisch: min 2.5rem, ideal 8% vom Bildschirm, max 4rem */
 h1 { font-size: clamp(2.5rem, 8vw, 4rem); } 
-h2 { font-size: 2.2rem; }
-h3 { font-size: 1.8rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
 
 p {
     margin-bottom: 1.2rem;
-    max-width: 70ch; /* Begrenzt Zeilenlänge, damit ma beim Lesen ned de Zeile verliert */
+    max-width: 75ch;
 }
 
-/* Grundgerüst der Seite */
 .layout {
-    display: grid;
-    grid-template-columns: var(--sidebar-breite) 1fr;
-    min-height: 100vh;
-}
-
-/* Platzhalter für de Sidebar (damit se de Farbe scho moi zeigt) */
-.sidebar {
-    background-color: var(--c-sidebar);
-    border-right: 1px solid var(--c-border);
-}
-
-.inhalt {
-    padding: 2.5rem 3rem;
-    max-width: 1200px;
-    /* animation: fadeIn 0.4s ease forwards; -- vorerst deaktiviert */
+    display: block; 
+    width: 100%;
 }
 
 
-/* Des Wabensystem */
+/* --- Waben-System --- */
 
 .waben-section {
     display: flex;
     align-items: center;
-    gap: 2.5rem;
-    margin-bottom: 3.5rem;
+    gap: 3rem;
+    margin-bottom: 4rem;
 }
 
-/* Dreht die Anordnung um (Text links/rechts Wechsel) */
-.waben-section.rechts {
-    flex-direction: row-reverse;
-}
+.waben-section.rechts { flex-direction: row-reverse; }
 
-/* Waben-Container */
-.hex-container {
-    flex: 0 0 220px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+.hex-container { flex: 0 0 220px; display: flex; justify-content: center; }
 
-.hex-wrap {
-    position: relative;
-    width: 210px;
-    height: 220px;
-}
+.hex-wrap { position: relative; width: 210px; height: 220px; }
 
-/* Des Sechseck */
 .hex {
     position: absolute;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     overflow: hidden;
     transition: transform var(--transition);
-    background-color: var(--c-surface); /* Fallback Farbe */
-}
-
-.hex:hover { 
-    transform: scale(1.05); 
-    z-index: 10;
-}
-
-.hex img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.hex-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-}
-
-/* Haupt-Wabe (Zentrum) */
-.hex-main {
-    width: 130px;
-    height: 142px;
-    top: 38px;
-    left: 40px;
-    z-index: 2;
-}
-
-/* Kleine Satelliten-Waben */
-.hex-sm { 
-    width: 70px; 
-    height: 77px; 
-    z-index: 1;
-}
-
-.hex-sm-1 { top: 0px;   left: 120px; }
-.hex-sm-2 { top: 75px;  left: 140px; }
-.hex-sm-3 { top: 143px; left: 120px; }
-.hex-sm-4 { top: 143px; left: 0px;   }
-.hex-sm-5 { top: 75px;  left: -20px; }
-.hex-sm-6 { top: 0px;   left: 0px;   }
-
-/* */
-.hex-sm-1 .hex-placeholder { background: #2a2210; color: #fbbf24; }
-.hex-sm-2 .hex-placeholder { background: #1a2a14; color: #86efac; }
-.hex-sm-3 .hex-placeholder { background: #2a1a08; color: #f97316; }
-.hex-sm-4 .hex-placeholder { background: #222a14; color: #fde68a; }
-.hex-sm-5 .hex-placeholder { background: #1a260e; color: #4ade80; }
-.hex-sm-6 .hex-placeholder { background: #2a1e0a; color: #fb923c; }
-
-/*  */
-.waben-text {
-    flex: 1;
-    min-width: 0;
-}
-
-
-
-.waben-text p {
-    font-size: 0.95rem;
-    color: var(--c-text);
-    opacity: 0.9;
-    line-height: 1.7;
-}
-
-/* Trennlinie zwischen den Sektionen */
-.waben-divider {
-    border: none;
-    border-top: 1px dashed var(--c-border);
-    margin-bottom: 3.5rem;
-    opacity: 0.3;
-}
-
-/* ==========================================================================*/
-.sidebar {
-    height: 100vh;
-    position: sticky;
-    top: 0;
-    overflow-y: auto;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Sidebar Logo Bereich */
-.sidebar-logo {
-    padding: 1.75rem 1.5rem 1.25rem;
-    border-bottom: 1px solid var(--c-border);
-}
-
-.sidebar-logo .logo-mark {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-}
-
-.sidebar-logo .logo-icon {
-    width: 34px;
-    height: 34px;
-    background-color: var(--c-text); /* War früher primary */
-    border-radius: var(--radius-s);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--c-white);
-}
-
-.sidebar-logo .logo-text {
-    font-family: var(--f-logo);
-    font-size: 1.2rem;
-    color: var(--c-text);
-}
-
-/* Navigations-Links */
-.sidebar-nav {
-    flex: 1;
-    padding: 1.25rem 0.75rem;
-}
-
-.sidebar-nav a {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.65rem 0.75rem;
-    border-radius: var(--radius-s);
-    font-size: 0.9rem;
-    color: var(--c-text);
-    opacity: 0.8;
-}
-
-.sidebar-nav a:hover {
     background-color: var(--c-surface);
-    opacity: 1;
 }
 
-.sidebar-nav a.aktiv {
-    background-color: var(--c-glow);
-    color: var(--c-text);
-    font-weight: 700;
-    box-shadow: inset 3px 0 0 var(--c-accent); /* Akzent-Linie statt ::before */
-}
+.hex:hover { transform: scale(1.05); z-index: 10; }
 
-/* Buttons usw */
+.hex img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* Buttons */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.6rem 1.25rem;
-    border-radius: var(--radius-s);
-    font-family: var(--f-body);
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
-    transition: var(--transition);
-}
-
-.btn-primary {
-    background-color: var(--c-accent);
-    color: var(--c-white);
-    box-shadow: var(--shadow);
-}
-
-.btn-primary:hover {
-    filter: brightness(1.1);
-    transform: translateY(-1px);
-}
-
-/* Alert / Info-Boxen */
-.alert {
-    background-color: var(--c-surface);
-    border: 1px solid var(--c-border);
-    border-left: 4px solid var(--c-accent);
-    border-radius: var(--radius-m);
-    padding: 1rem 1.25rem;
-    margin: 1.5rem 0;
-}
-
-.alert-title {
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.25rem;
-    display: block;
-}
-
-/* Stat-Boxen (für Dashboard-Elemente) */
+/* Dashboard Stat-Boxen */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 1rem;
-    margin: 1.5rem 0;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
 }
 
 .stat-box {
     background-color: var(--c-surface);
-    border: 1px solid var(--c-border);
-    border-radius: var(--radius-m);
-    padding: 1.25rem;
-    transition: var(--transition);
+    border-radius: var(--radius-l);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    text-align: center;
 }
 
 .stat-box .stat-value {
     font-family: var(--f-headline);
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: var(--c-accent);
-    line-height: 1;
 }
 
-/* Do wird der Style von unsere Tabellen definiert*/
-.table-wrapper {
-    overflow-x: auto;
-    border-radius: var(--radius-m);
-    border: 1px solid var(--c-border);
-    background-color: var(--c-white);
-    margin: 1.5rem 0;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 0.8rem 1.1rem;
-    text-align: left;
-    border-bottom: 1px solid var(--c-glow);
-}
-
-th {
-    background-color: var(--c-surface);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    color: var(--c-text);
-}
-
-
-
-
-/* Do werden de Inhalte je nach Bildschirmgröße opasst (Mobile) */
-@media (max-width: 768px) {
-    .layout {
-        grid-template-columns: 1fr; /* Sidebar verschwindet im Grid-Layout */
+/* --- RESPONSIVE BEREICH  --- */
+@media (max-width: 1024px) {
+    .inhalt {
+        padding: 2rem 1.5rem;
     }
     
-    .sidebar {
-        display: none; /* Sidebar wird auf Handy erstmoi komplett ausblendet */
-    }
-
-    .inhalt {
-        padding: 5rem 1.5rem 2rem;
-    }
-}
-
-/* ── Responsive Waben ── */
-@media (max-width: 680px) {
-    .waben-section,
-    .waben-section.rechts {
+    .waben-section, .waben-section.rechts {
         flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .hex-container {
-        flex: none;
-        width: 100%;
-        justify-content: center; /* Zentriert auf Mobile besser */
-        padding-left: 0;
-        margin-bottom: 2rem;
+        text-align: center;
     }
 }

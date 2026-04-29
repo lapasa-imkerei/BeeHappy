@@ -1,164 +1,144 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Impressum und Datenschutzerklärung des Studienprojekts — Paris Lodron Universität Salzburg.">
-  <title>Impressum & Datenschutz — BeeHappy</title>
-  
-  <link rel="stylesheet" href="../css/fonts.css"/>
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/components.css" />
-  <link rel="stylesheet" href="../css/impressum.css"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Impressum und Datenschutzerklärung des Studienprojekts — Paris Lodron Universität Salzburg.">
+    <title>Impressum & Datenschutz — BeeHappy</title>
+    
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/impressum.css" />
+    <link rel="stylesheet" href="../css/sidebar.css">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
-  <button class="menu-toggle" id="menu-toggle" aria-label="Menü öffnen">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="overlay" id="overlay"></div>
-  <div class="layout">
+
     <aside class="sidebar">
-      <div class="sidebar-logo">
-        <div class="logo-mark">
-          <div class="logo-icon" aria-hidden="true">⚡</div>
-          <div>
-            <div class="logo-text">Mein Projekt</div>
-            <div class="logo-version">v1.0.0</div>
-          </div>
-        </div>
-      </div>
-      <nav class="sidebar-nav">
-        <div class="nav-label">Hauptmenü</div>
-        <a href="../index.html">
-          <span class="nav-icon">🏠</span> Home
-        </a>
-        <div class="nav-label">Seiten</div>
-        <a href="Dashboard.html">
-          <span class="nav-icon">📊</span> Dashboard
-        </a>
-        <a href="Bienenvolk.html">
-          <span class="nav-icon">🍯</span> Bienenvolk
-        </a>
-        <a href="Bienenfreundlich.html">
-          <span class="nav-icon">🪴</span> Bienenfreundliche Natur
-        </a>
-        <a href="Vereinskalender.html">
-          <span class="nav-icon">📆</span> Kalender
-        </a>
-        <a href="Impressum.html">
-          <span class="nav-icon">📄</span> Impressum & Team
-        </a>
-      </nav>
-      <div class="sidebar-footer">© 2025 Mein Projekt</div>
+        <header class="sidebar-header">
+            <a href="#" class="header-logo">
+                <img src="../Bilder/Biene1.jpg" alt="Logo BeeHappy">
+            </a>
+            <button class="toggler sidebar-toggler">
+                <span class="material-symbols-rounded">chevron_left</span>
+            </button>
+            <button class="toggler menu-toggler">
+                <span class="material-symbols-rounded">menu</span>
+            </button>
+        </header>
+
+        <nav class="sidebar-nav">
+            <ul class="nav-list primary-nav">
+                <li class="nav-item">
+                    <a href="../seiten/index.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">home</span>
+                        <span class="nav-label">Home</span> 
+                    </a>
+                    <span class="nav-tooltip">Home</span>
+                </li>
+                <li class="nav-item">
+                    <a href="../seiten/Dashboard.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">dashboard</span>
+                        <span class="nav-label">Dashboard</span> 
+                    </a>
+                    <span class="nav-tooltip">Dashboard</span>
+                </li>
+                <li class="nav-item">
+                    <a href="../seiten/Bienenvolk.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">groups</span>
+                        <span class="nav-label">Bienenvolk</span> 
+                    </a>
+                    <span class="nav-tooltip">Bienenvolk</span>
+                </li>
+                <li class="nav-item">
+                    <a href="../seiten/Bienenfreundlich.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">eco</span>
+                        <span class="nav-label">Natur</span> 
+                    </a>
+                    <span class="nav-tooltip">Natur</span>
+                </li>
+                <li class="nav-item">
+                    <a href="../seiten/Vereinskalender.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">calendar_month</span>
+                        <span class="nav-label">Kalender</span> 
+                    </a>
+                    <span class="nav-tooltip">Kalender</span>
+                </li>
+                <li class="nav-item">
+                    <a href="../seiten/Impressum.html" class="nav-link active">
+                        <span class="nav-icon material-symbols-rounded">info</span>
+                        <span class="nav-label">Impressum</span> 
+                    </a>
+                    <span class="nav-tooltip">Impressum</span>
+                </li>
+            </ul>
+        </nav>
     </aside>
     <main class="inhalt">
-      <article>  
-        <header class="page-header">
-          <div class="badge">Rechtliches</div>
-          <h1>Schreib uns!</h1>
-          <p>Hast du Fragen, Feedback oder Anregungen? Wir freuen uns über deine Nachricht.</p>
-          <address>
-            <ul>
-              <li>Philip Staudacher (<a href="mailto:philip.staudacher@stud.plus.ac.at">philip.staudacher@stud.plus.ac.at</a>)</li>
-              <li>Natalie Neumayer (<a href="mailto:natalie.neumayer@stud.plus.ac.at">natalie.neumayer@stud.plus.ac.at</a>)</li>
-              <li>Patrizia Lacher (<a href="mailto:patrizia.lacher@stud.plus.ac.at">patrizia.lacher@stud.plus.ac.at</a>)</li>
-            </ul>
-          </address>
-        </header>
-        <section>
-          <h2>Impressum</h2>
-          <p>Gemäß §25 Mediengesetz sowie Anbieteridentifizierung gemäß §5 Abs 1 ECG.</p>
-        </section>
-        <section>
-          <h2>Medieninhaber, Herausgeber & Redaktion</h2>
-          <p>Dieses Webprojekt wurde im Rahmen eines an der Paris Lodron Universität Salzburg von den folgenden Studierenden erstellt:</p>
-          <ul>
-            <li>Philip Staudacher</li>
-            <li>Natalie Neumayer</li>
-            <li>Patrizia Lacher</li>
-          </ul>
-        </section>
-        <section>
-          <h2>Inhaltliche Verantwortung</h2>
-          <p>Die inhaltliche und technische Umsetzung erfolgte gemeinschaftlich durch das oben genannte Projektteam.</p>
-        </section>
-        <section>
-          <h2>Projektbezug</h2>
-          <p>Das Projekt wurde im Studiengang <strong>"Digitalisierung-Innovation-Gesellschaft"</strong> an der Paris Lodron Universität 
-            durchgeführt und dient ausschließlich wissenschaftlichen und nicht-kommerziellen Zwecken.
-          </p>
-        </section>
-        <section id="kontakt">
-          
-          </address>
-        </section>
-        <hr>
-        <section id="datenschutz">
-          <h2>Datenschutzerklärung</h2>
-          <p>Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. 
-            Wir verarbeiten personenbezogene Daten ausschließlich im Einklang mit 
-            den geltenden gesetzlichen Bestimmungen (DSGVO, TKG 2003).
-          </p>
-        </section>
-        <section>
-          <h2>Allgemeine Nutzung der Website</h2>
-          <p>Unsere Website dient ausschließlich der Information. Sie können sie nutzen, ohne personenbezogene Daten anzugeben. 
-            Wir setzen keine Webanalyse-Tools wie Google Analytics ein und verzichten auf Tracking.
-          </p>
-        </section>
-        <section>
-          <h2>Ihre Rechte</h2>
-          <p>Sie haben folgende Rechte bezüglich Ihrer bei uns gespeicherten Daten:</p>
-          <ul>
-            <li>Auskunft, Berichtigung und Löschung</li>
-            <li>Einschränkung der Verarbeitung</li>
-            <li>Datenübertragbarkeit</li>
-            <li>Widerruf und Widerspruch</li>
-          </ul>
-          <p>Beschwerden können an die österreichische Datenschutzbehörde 
-            (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a>) 
-            gerichtet werden.</p>
-        </section>
-        <section>
-          <h2>Cookies & Datenübermittlung</h2>
-          <p>Unsere Website verwendet keine Cookies, die personenbezogene Daten speichern. 
-            Es findet keine Übermittlung Ihrer Daten an Dritte statt.
-          </p>
-        </section>
-        <hr>
-        <section class="contact-form-section">
-          <h2>Sende uns eine Nachricht</h2>
-          <form action="#" method="post" class="bee-form">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Dein Name" required>
-              </div>
-              <div class="form-group">
-                <label for="email">E-Mail</label>
-                <input type="email" id="email" name="email" placeholder="beispiel@mail.com" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="subject">Betreff</label>
-              <select id="subject" name="subject">
-                <option value="feedback">Feedback zum Projekt</option>
-                <option value="frage">Fragen zum Projekt</option>
-                <option value="frage">Fragen zum Thema Bienen</option>
-                <option value="sonstiges">Sonstiges</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Deine Nachricht</label>
-              <textarea id="message" name="message" placeholder="Was möchtest du uns sagen?" required></textarea>
-            </div>
-            <button type="submit" class="btn-submit">Nachricht absenden</button>
-          </form>
-        </section>
-      </article>
+        <article>  
+            <header class="page-header">
+                <div class="badge">Rechtliches</div>
+                <h1>Schreib uns!</h1>
+                <p>Hast du Fragen, Feedback oder Anregungen? Wir freuen uns über deine Nachricht.</p>
+                <address>
+                    <ul>
+                        <li>Philip Staudacher (<a href="mailto:philip.staudacher@stud.plus.ac.at">philip.staudacher@stud.plus.ac.at</a>)</li>
+                        <li>Natalie Neumayer (<a href="mailto:natalie.neumayer@stud.plus.ac.at">natalie.neumayer@stud.plus.ac.at</a>)</li>
+                        <li>Patrizia Lacher (<a href="mailto:patrizia.lacher@stud.plus.ac.at">patrizia.lacher@stud.plus.ac.at</a>)</li>
+                    </ul>
+                </address>
+            </header>
+
+            <section>
+                <h2>Impressum</h2>
+                <p>Gemäß §25 Mediengesetz sowie Anbieteridentifizierung gemäß §5 Abs 1 ECG.</p>
+            </section>
+
+            <section>
+                <h2>Medieninhaber, Herausgeber & Redaktion</h2>
+                <p>Dieses Webprojekt wurde im Rahmen eines Studiums an der Paris Lodron Universität Salzburg von den folgenden Studierenden erstellt:</p>
+                <ul>
+                    <li>Philip Staudacher</li>
+                    <li>Natalie Neumayer</li>
+                    <li>Patrizia Lacher</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Projektbezug</h2>
+                <p>Das Projekt wurde im Studiengang <strong>"Digitalisierung-Innovation-Gesellschaft"</strong> durchgeführt und dient ausschließlich wissenschaftlichen Zwecken.</p>
+            </section>
+
+            <hr>
+
+            <section id="datenschutz">
+                <h2>Datenschutzerklärung</h2>
+                <p>Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Daten ausschließlich im Einklang mit der DSGVO.</p>
+            </section>
+
+            <section class="contact-form-section">
+                <h2>Sende uns eine Nachricht</h2>
+                <form action="#" method="post" class="bee-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Dein Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-Mail</label>
+                            <input type="email" id="email" name="email" placeholder="beispiel@mail.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Deine Nachricht</label>
+                        <textarea id="message" name="message" placeholder="Was möchtest du uns sagen?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Nachricht absenden</button>
+                </form>
+            </section>
+        </article>
     </main>
-  </div>
-<script src="../js/main.js"></script>
+
+    <script src="../js/menue.js"></script>
 </body>
 </html>
