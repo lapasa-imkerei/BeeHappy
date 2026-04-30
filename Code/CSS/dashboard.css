@@ -1,0 +1,61 @@
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ACHTUNG: Inhalt von den Boxen muas außerhalb vo da style.css formatiert werden */
+.item {
+  border-radius: 40px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* De Farben keman ned deutlich ausa;
+Evtl. a sanfter Schatten zum hervorheben;
+Hoovereffekte waren nu toll; */
+
+.item-large-left {
+  grid-row: span 2;
+  background-color: #e3c995; 
+}
+
+.item-small:nth-child(2) {
+  background-color: #ffe7c2; 
+}
+
+.item-small:nth-child(3) {
+  background-color: #d9f4cd; 
+}
+
+.item-wide {
+  grid-column: span 2;
+  background-color: #ffe7c2; 
+}
+
+.item-large-right {
+  grid-row: span 2;
+  background-color: #97c4dd; 
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+  
+  .item-large-left, .item-large-right, .item-wide {
+    grid-column: span 2;
+    grid-row: span 1;
+    height: 200px;
+  }
+}

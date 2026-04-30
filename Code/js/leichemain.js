@@ -2,6 +2,9 @@
    MAIN.JS — Interaktivität
    ============================================ */
 
+// ── HOBE AUF DEAKTIVIERT GESETZT _ WOASE GROD NED WOS DES MOCHT──────────
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ── 1. Hamburger-Menü (Mobile) ────────────────
