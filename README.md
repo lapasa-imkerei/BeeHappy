@@ -1,47 +1,44 @@
-# BeeHappy
+# Projekt: BeeHappy
 
-# Konzept befindet sich im WIKI
+## Konzept für das Projekt
+Ein detailliertes Konzept findest du in unserem Wiki unter:
+
 https://git.sbg.ac.at/s1109621/beehappy/-/wikis/Konzept
 
 
-## Projektbeschreibung: 
+### Projektbeschreibung: 
+BeeHappy ist eine interaktive Web-Plattform, die als Brücke zwischen komplexen Umweltdaten und der breiten Bevölkerung dient. Wir kombinieren Echtzeit-Wetterdaten mit imkerlichem Fachwissen, um den Lebensraum von Bienen aktiv zu schützen und zu fördern.
 
 ## Team & Aufgabenverteilung
 
-### Philip Staudacher
-- Teamleiter
-- Hauptverantwortlicher: Bereich Programmierung
-### Natalie Neumayer
-- Hauptverantwortliche: Design und Usability
-### Patrizia Lacher
-- Hauptverantwortliche: Datenhandling
+*  **Philip Staudacher**: Teamleitung & Lead Development
+*  **Natalie Neumayer**: Lead Design & Usability
+*  **Patrizia Lacher**: Data Management & Content
 
-## Ziele
+## Ziele & Zielgruppen
 
-- Bienenwebsite für Laien, ImkerInnen und jene die welche werden wollen (Persona der älteren Internetnutzenden)
-- Lebensraum der Bienen stärken bzw. deren Lebensbedingungen verbessern
-- Besseres Verständnis unserer Umwelt und den Einfluss der Bienen auf die Biodiversität
+1.  **Laien:** Bieneninteressierte ohne Vorwissen.
+2.  **ImkerInnen:** Erfahrene Nutzer mit Fokus auf Daten.
+3.  **Ältere Personen:** Fokus auf einfache Bedienung und Lesbarkeit.
 
-## Zielgruppe
+## Übersicht & Guidelines
 
-1. Laien (Bieneninteressierte)
-2. ImkerInnen
-3. Ältere Personen
+### CSS-Struktur
+- **style.css**: globales Stylesheet für Design Tokens, Reset, Basis-Typografie.
+- **fonts.css**: Lokale Einbindung der Schriftarten (DSGVO konform)
+- **sidebar.css**: Logik und Styling f. die Sidebar --> Navigationselement. 
+- **isolierung.css**: Reste aus veralteten Stylesheets, die man in Zukunft evtl. verwenden kann. 
+- **[seite].css**: Seiten spezifische Layouts (Impressum, Dashboard,...) --> Jede Registerkarte hat ihre eigene CSS-File. 
 
-## Inhalte
+### Hinweise
+1.  **Farben & Design:** Keine Hex-Werte verwenden. Nutze immer die Variablen aus der `style.css` (z.B. `var(--c-accent)`).
+2.  **HTML-Struktur:** Alle Inhaltsseiten werden vermutlich mit der Klasse `.layout-wrapper` ausgestattet werden, um die Bugs von der Sidebar zu verhindern. 
+3.  **Icons:** Derzeitige Nutzung von Material Symbols (Google). Umstellung auf lokale SVGs läuft. 
 
-1. Wetterdaten von OÖ --> Was heißt das für die Biene?
-2. Dashboard: 
-
-- Bienenflugstärke
-- Temperatur, Windstärke, Niederschlag
-- Visualisierungen
-- Empfehlungen 
-
-3. Bieneninfos 
-4. Interaktive Map 
-5. Kalender für Vereinstreffen 
-6. Pflanzen
-- Je nach Temperatur/Jahreszeit/Monat ; Bienenfreundliche Pflanzen (Infos)
-- Pollenfarben-Wiki
-7. Bienenquiz
+## Features & Inhalte
+*   **Wetterdaten OÖ:** Analyse der Bedingungen speziell für den Bienenflug.
+*   **Dashboard:** Visualisierung von Temperatur, Windstärke und Niederschlag inkl. Empfehlungen.
+*   **Bienenfreundliche Pflanzen:** Saisonales Wiki für Pflanzen und OPTIONAL: Pollenfarben.
+*   **Interaktive Map:** Standorte der Vereins- und Imkertreffen.
+*   **Kalender:** Übersicht für Vereins- und Imkertreffen.
+*   **Optional: Bienenquiz** 
