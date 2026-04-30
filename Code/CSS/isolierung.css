@@ -1,0 +1,231 @@
+/*Unklares zeig ob ma des nu brauchent oder ned*/
+
+.waben-section {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+.waben-section.rechts { flex-direction: row-reverse; }
+
+.hex-container { flex: 0 0 220px; display: flex; justify-content: center; }
+.hex-wrap { position: relative; width: 210px; height: 220px; }
+.hex {
+    position: absolute;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background-color: var(--c-surface);
+    transition: transform var(--transition);
+}
+.hex:hover { transform: scale(1.05); z-index: 10; }
+.hex img { width: 100%; height: 100%; object-fit: cover; }
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+.stat-box {
+    background-color: var(--c-surface);
+    border-radius: var(--radius-l);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+.stat-box .stat-value {
+    font-family: var(--f-headline);
+    font-size: 3rem;
+    color: var(--c-accent);
+}
+
+/* --- Reste aus der leichecomponents.css de evtl. nützlich sei kunntn  --- */
+
+/* Alerts / Info-Boxen */
+.alert {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-left: 4px solid var(--c-accent); 
+    border-radius: var(--radius-m);
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    color: var(--c-text);
+}
+
+.alert-title {
+    font-weight: 700;
+    color: var(--c-accent);
+    margin-bottom: 0.25rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* Tabellen-Styling  */
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: var(--radius-m);
+    border: 1px solid var(--c-border);
+    margin: 1.5rem 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    background: var(--c-white);
+}
+
+th, td {
+    padding: 0.8rem 1.1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--c-border);
+}
+
+th {
+    background: var(--c-surface);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--c-text);
+    font-weight: 700;
+}
+
+tbody tr:hover {
+    background: var(--c-bg);
+}
+
+/* --- Gerettet aus leichemain.css & saniert --- */
+
+/* Animation für Seitenübergänge */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Die Bienen-Liste (Thematisches Styling) */
+.bee-list {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.bee-list li {
+    padding: 0.4rem 0 0.4rem 2.2rem;
+    position: relative;
+    color: var(--c-text);
+}
+
+.bee-list li::before {
+    content: '🐝';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Badges (Kleine Markierungen wie "Rechtliches" oder "Galerie") */
+.badge {
+    display: inline-block;
+    background: var(--c-glow); 
+    color: var(--c-accent);    
+    font-family: var(--f-body); 
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 99px; 
+    border: 1px solid var(--c-surface); 
+    margin-bottom: 1rem;
+}
+
+/* Einfache Karten-Grid Logik */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.card {
+    background: var(--c-white);
+    border: 1px solid var(--c-surface);
+    border-radius: var(--radius-l);
+    padding: 1.5rem;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.card:hover { 
+    transform: translateY(-5px); 
+    border-color: var(--c-accent);
+}
+
+/* --- leichewaben.css --> nur des Wabensystem, da rest ist überflüssig gwen --- */
+
+.waben-section {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    animation: fadeIn 0.8s ease forwards; 
+}
+
+.waben-section.rechts {
+    flex-direction: row-reverse;
+}
+
+
+.hex {
+    width: 200px; 
+    aspect-ratio: 1 / 1.1;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background-color: var(--c-surface);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.hex:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: var(--shadow);
+}
+
+.hex img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.waben-text {
+    flex: 1;
+}
+
+.waben-text h2 {
+    
+    margin-bottom: 1rem;
+}
+
+.waben-text p {
+    color: var(--c-text);
+    opacity: 0.9;
+}
+
+/* Trenner */
+.waben-divider {
+    border: none;
+    border-top: 2px dashed var(--c-surface);
+    margin: 2rem 0 4rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .waben-section, .waben-section.rechts {
+        flex-direction: column;
+        text-align: center;
+    }
+}

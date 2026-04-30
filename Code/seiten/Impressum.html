@@ -6,6 +6,7 @@
     <meta name="description" content="Impressum und Datenschutzerklärung des Studienprojekts — Paris Lodron Universität Salzburg.">
     <title>Impressum & Datenschutz — BeeHappy</title>
     
+    <link rel="stylesheet" href="../css/fonts.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/impressum.css" />
     <link rel="stylesheet" href="../css/sidebar.css">
@@ -15,13 +16,15 @@
 </head>
 <body>
 
-<!-- Sidebar Beginn -->
-    <aside class="sidebar">
+<div class="layout-wrapper"> <!-- Beginn Wrapper- Probiern ma aus ob damit de Bugs gefixt werden -->
+
+    <!-- Sidebar Beginn -->
+    <aside class="sidebar" id="sidebar">
         <header class="sidebar-header">
             <a href="#" class="header-logo">
                 <img src="../Bilder/Biene1.jpg" alt="Logo BeeHappy"> <!-- Rundes Logo - Bild -->
             </a>
-            <button class="toggler sidebar-toggler">
+            <button class="toggler sidebar-toggler" id="toggle-btn">
                 <span class="material-symbols-rounded">chevron_left</span>
             </button>
             <button class="toggler menu-toggler">
@@ -76,7 +79,8 @@
             </ul>
         </nav>
     </aside>
-<!-- Sidebar Ende -->
+    <!-- Sidebar Ende -->
+
     <main class="inhalt">
         <article>  
             <header class="page-header">
@@ -141,6 +145,8 @@
             </section>
         </article>
     </main>
+
+</div> <!-- Ende layout-wrapper -->
 
     <script src="../js/menue.js"></script>
 </body>

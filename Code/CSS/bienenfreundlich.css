@@ -1,45 +1,46 @@
-/* Galerie Grid Layout */
 .galerie-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
-/* Galerie Item Styling */
 .galerie-item {
-  aspect-ratio: 1;
-  border-radius: var(--radius);
-  border: 1px solid var(--farbe-border);
-  background: var(--farbe-surface);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  cursor: pointer;
-  transition: var(--transition);
-  overflow: hidden;
-  position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-m);
+    border: 1px solid var(--c-border);
+    background: var(--c-surface);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem; 
+    cursor: pointer;
+    transition: var(--transition);
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow);
 }
 
-/* Hover-Effekt */
+
 .galerie-item:hover {
-  border-color: var(--farbe-primary);
-  transform: scale(1.03);
+    border-color: var(--c-accent);
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 30px var(--c-glow);
 }
 
-/* Label innerhalb der Items */
 .galerie-item .label {
-  font-size: 0.75rem;
-  color: var(--farbe-muted);
-  margin-top: 0.5rem;
-  font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--c-text);
+    margin-top: 0.75rem;
+    font-family: var(--f-body);
+    font-weight: 600;
 }
 
-/* Responsive Anpassung für kleine Bildschirme */
+/* Optimierung für sehr kleine Screens */
 @media (max-width: 480px) {
-  .galerie-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .galerie-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
 }

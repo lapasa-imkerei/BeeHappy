@@ -1,61 +1,76 @@
 .bento-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 200px);
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 200px); 
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* ACHTUNG: Inhalt von den Boxen muas außerhalb vo da style.css formatiert werden */
 .item {
-  border-radius: 40px; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 1.2rem;
+    border-radius: var(--radius-l); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--f-body);
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--c-text);
+    transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: var(--shadow);
+    background-color: var(--c-surface); 
+    cursor: pointer;
 }
 
-/* De Farben keman ned deutlich ausa;
-Evtl. a sanfter Schatten zum hervorheben;
-Hoovereffekte waren nu toll; */
+.item:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    border-color: var(--c-accent);
+}
+
 
 .item-large-left {
-  grid-row: span 2;
-  background-color: #e3c995; 
+    grid-row: span 2;
+    background-color: var(--c-surface);
 }
 
 .item-small:nth-child(2) {
-  background-color: #ffe7c2; 
+    background-color: var(--c-white);
 }
 
 .item-small:nth-child(3) {
-  background-color: #d9f4cd; 
+    background-color: #d9f4cd; 
 }
 
 .item-wide {
-  grid-column: span 2;
-  background-color: #ffe7c2; 
+    grid-column: span 2;
+    background-color: var(--c-white);
 }
 
 .item-large-right {
-  grid-row: span 2;
-  background-color: #97c4dd; 
+    grid-row: span 2;
+    background-color: #97c4dd; 
+    color: white;
 }
 
 /* Responsive Design */
-@media (max-width: 900px) {
-  .bento-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-  }
-  
-  .item-large-left, .item-large-right, .item-wide {
-    grid-column: span 2;
-    grid-row: span 1;
-    height: 200px;
-  }
+@media (max-width: 1024px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .item-large-left, .item-large-right, .item-wide {
+        grid-column: span 1;
+        grid-row: span 1;
+        height: 180px;
+    }
 }
