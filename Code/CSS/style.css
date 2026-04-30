@@ -1,10 +1,12 @@
 /* 
-   GLOBAL STYLES (Foundation)
-   Zuständig für: Design-Token, Reset und Basis-Typografie.
+Des is de Haupt-CSS fia OLLES. Do san unsere Variablen, Grundstile und Layouts drin. 
+Wenn z.B. a Farbe geändert werden soll donn bitte do herinnen. (Ned beim nomen);
+Bei da Sidebar bitte aufpassen de verknüpfung ist glaube ned so vorhanden mit da sidebar.css
+!!!!!Responsive Design hod do herinnen nix zum suacha!!!!!
 */
 
 :root {
-    /* Color Palette */
+    
     --c-bg: #fff3c2;
     --c-sidebar: #BFAA7c;
     --c-surface: #e3ca94;
@@ -15,12 +17,12 @@
     --c-marker: rgba(255, 235, 20, 0.4); 
     --c-glow: rgba(84, 84, 84, 0.1);
 
-    /* Typography */
+    
     --f-body: 'Nunito', sans-serif; 
     --f-headline: 'Just Another Hand', cursive; 
     --f-logo: 'Indie Flower', cursive;
 
-    /* Layout & System (Do not change) */
+    /* Layout */
     --sidebar-breite-offen: 270px;
     --sidebar-breite-zu: 85px;
     --radius-s: 8px; 
@@ -30,7 +32,7 @@
     --shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
 }
 
-/* 1. Reset & Base */
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -52,7 +54,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* 2. Global Typography */
+/* Unsere generellen Schriftarten */
 h1, h2, h3 {
     font-family: var(--f-headline);
     font-weight: 400;
@@ -60,7 +62,8 @@ h1, h2, h3 {
     width: fit-content;
     line-height: 1.1;
     margin-bottom: 1.5rem;
-    /* Marker-Highlight-Effekt */
+
+    /* Marker Effekt */
     background: linear-gradient(to top, var(--c-marker) 40%, transparent 40%);
     padding: 0 10px;
     border-radius: var(--radius-m);
@@ -72,12 +75,12 @@ h3 { font-size: 2rem; }
 
 p {
     margin-bottom: 1.2rem;
-    max-width: 75ch; /* Optimale Lesebreite */
+    max-width: 75ch; 
 }
 
-/* 3. Global Layout Helpers */
+/* Des is de Basis für de Sidebar und den Content */
 .layout-wrapper {
-    display: flex; /* Basis für Sidebar + Content */
+    display: flex; 
     width: 100%;
     min-height: 100vh;
 }

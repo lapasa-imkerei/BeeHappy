@@ -1,3 +1,11 @@
+/* 
+Do herinnen is olles für die Sidebar inkl. Responsive Design. 
+Aktuell gibt es menue.js de für sie Zuständig ist. 
+Es soitat de Variablen aus da style.css nutzen oba des is jetzt eher weniger der foi.
+Sie is relativ "unabhängig" vo anderen Seiten
+*/
+
+
 :root {
     --c-bg: #fff3c2;
     --c-sidebar: #BFAA7c;

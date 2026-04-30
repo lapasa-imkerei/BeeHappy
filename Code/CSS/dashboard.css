@@ -1,3 +1,11 @@
+/* 
+Des is de CSS fia des Dashboard.html.
+Aktuell is a Grid Layout für de Vorlage herinnen --> Wird sich vermutlich ändern. 
+Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik muas a in da HTML verfügbar sei. 
+
+!!!!!Responsive Design für diese Seite wird a do herinnen geregelt.!!!!!
+*/
+
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

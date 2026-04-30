@@ -1,3 +1,10 @@
+/* 
+Des is de CSS fia de Bienenfreundliche Natur. 
+Aktuell ist ned wirkle wos sinnvolles herinnen außer der Galerie Style. 
+Den Stil für de Galerie kunntn ma in a eigene CSS Datei doa fois ma de nu so verwenden woind. 
+!!!! Responsive Design für diese Seite wird a do herinnen geregelt. !!!!!
+*/
+
 .galerie-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -37,7 +44,7 @@
     font-weight: 600;
 }
 
-/* Optimierung für sehr kleine Screens */
+/* Responsive Design */
 @media (max-width: 480px) {
     .galerie-grid {
         grid-template-columns: repeat(2, 1fr);
