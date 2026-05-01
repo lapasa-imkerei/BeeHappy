@@ -92,3 +92,63 @@ p {
     transition: margin-left var(--transition);
 }
 
+/*WABEN-LAYOUT Startseite*/
+
+.desktop-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px; 
+  margin-bottom: 100px;
+  margin-top: 50px;
+  max-width: 1400px;
+  width: 90%;
+}
+
+.desktop-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.section-text {
+  flex: 0.5;
+}
+
+/*Waben*/
+.hexagon {
+  width: 600px;
+  height: 500px;
+  background-color: #E3C58B; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  flex-shrink: 0;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.honeycomb-link:hover .hexagon {
+  transform: scale(1.15);
+  filter: brightness(1.05);
+}
+
+.honeycomb-link {
+  text-decoration: none !important;
+  display: inline-block;
+}
+
+.honeycomb-link:hover .hexagon {
+  transform: scale(1.1);
+  filter: brightness(1.08);
+}
+
+.honey-icon {
+  font-size: 22rem !important; 
+  color: #fff3c2;
+  z-index: 2;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
