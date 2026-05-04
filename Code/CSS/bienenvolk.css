@@ -1,11 +1,9 @@
-/* 
-Des is de CSS fia des Bienenvolk.html.
-
-!!!!!Responsive Design für diese Seite wird a do herinnen geregelt.!!!!!
-*/
-
-/* Des Design vom Widget */
-.full-width-widget {
+/* CSS für des Bienenvolk.html */
+.page-header {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+.iframe-container {
   width: 100%;
   max-width: none; 
   background: white;
@@ -16,20 +14,121 @@ Des is de CSS fia des Bienenvolk.html.
   margin-bottom: 2rem;
 }
 
-
 .iframe-container {
-  position: relative;
-  width: 100%;
-  height: 700px; 
+    flex-grow: 1; 
+    width: 100%;
+    position: relative;
+    min-height: 500px; 
 }
 
 .iframe-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
-/* LUIL */
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--c-text);
+    opacity: 0.8;
+}
+
+/* Bento Grid Layout */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.bento-card {
+    background: var(--c-white);
+    border-radius: var(--radius-l);
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.widget-main {
+    grid-column: span 2;
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    padding: 0; 
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+    font-family: var(--f-body);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.info-accent {
+    background: var(--c-surface);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.status-pulse {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    margin-right: 8px;
+    box-shadow: 0 0 0 rgba(34, 197, 94, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--c-white);
+    border-radius: var(--radius-l);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+
+.modern-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.modern-table th {
+    text-align: left;
+    padding: 1rem;
+    font-family: var(--f-body);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.modern-table td {
+    background: var(--c-white);
+    padding: 1rem;
+    border-radius: var(--radius-s);
+}
+
+/* Responsive Anpassung */
+@media (max-width: 900px) {
+    .bento-grid { grid-template-columns: 1fr; }
+    .widget-main { grid-column: span 1; }
+}
