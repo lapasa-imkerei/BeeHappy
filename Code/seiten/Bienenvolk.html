@@ -85,38 +85,56 @@
 
     
     <div class="bento-grid">
-        <!-- Haupt-Widget -->
+        <!-- Wolfwaagen Widget -->
         <section class="bento-card widget-main">
-            <div class="card-header">
-                <span class="status-pulse"></span> Live-Monitoring Stock Patrizia
-            </div>
             <div class="iframe-container">
                 <iframe src="https://app.wolf-waagen.de/public/widget/scale/GW1OZ9" loading="lazy"></iframe>
             </div>
         </section>
 
-        <!-- Erklärungscard 1 -->
-        <section class="bento-card info-accent">
-            <h3>Wachstums-Check</h3>
-            <p>Ein steigender <strong>Ertrag</strong> bedeutet, die Bienen finden aktuell reichlich Nektar.</p>
-        </section>
+        
+        <div class="side-column" style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <section class="bento-card info-accent">
+                <h3>Zunahme</h3>
+                <p>Wenn die Bienen genug Nektar finden, wächst die Kolonie. Wenn das Gewicht sinkt beginnt die Trachtpause. </p>
+            </section>
 
-        <!-- Erklärungscard 2 -->
-        <section class="bento-card info-accent">
-            <h3>Klima-Fokus</h3>
-            <p>Die <strong>Bruttemperatur</strong> wird vom Volk konstant auf 35 °C geheizt.</p>
-        </section>
+            <section class="bento-card info-accent">
+                <h3>Temperatur</h3>
+                <p>Das Brutnest wird konstant auf 35°C gehalte egal wie kalt oder warm es außerhalb ist. </p>
+            </section>
+        </div>
     </div>
 
-    <!-- Info-Sektion: Architektur & Honig -->
-    <section class="detail-section">
-        <div class="glass-card">
-            <h2>Meisterhafte Architektur</h2>
-            <div class="text-columns">
-                <p>Bienen nutzen für ihre Waben reines <strong>Wachs</strong>, das sie als Plättchen ausschwitzen.</p>
-                <p>Die <strong>sechseckige Form</strong> garantiert maximale Stabilität bei minimalem Materialverbrauch.</p>
+    <!-- Erklärungen -->
+    <section class="volk-section">
+        <h2>Das Volk im Überblick</h2>
+
+        <div class="volk-cards">
+
+            <div class="bento-card volk-card">
+                <div class="volk-icon">Icon</div>
+                <h3>Das Brutnest</h3>
+                <p>Das Herz des Volkes. Hier legt die Königin in der Hochsaison bis zu <strong>2.000 Eier pro Tag</strong>. Die Arbeiterinnen halten die Temperatur konstant auf <strong>35 °C</strong> — egal wie kalt es draußen ist.</p>
+                <span class="volk-pill">Kinderstube des Volkes</span>
             </div>
+
+            <div class="bento-card volk-card">
+                <div class="volk-icon">Icon</div>
+                <h3>Die Vorratskammer</h3>
+                <p>Bienen sammeln Nektar und veredeln ihn zu Honig. Erst wenn der Wassergehalt niedrig genug ist, versiegeln sie die Zellen mit <strong>Wachs</strong>. Pollen lagern direkt neben der Brut — als lebenswichtige <strong>Proteinquelle</strong>.</p>
+                <span class="volk-pill">Energie für den Winter</span>
+            </div>
+
+            <div class="bento-card volk-card">
+                <div class="volk-icon">Icon</div>
+                <h3>Der Eingang</h3>
+                <p>Das Flugloch wird von <strong>Wachbienen</strong> bewacht. Sie erkennen Fremdlinge am Geruch — nur Bienen mit dem eigenen Stockduft dürfen eintreten. Fremde kommen nur mit einem „Gastgeschenk" (vollem Honigmagen) hinein.</p>
+                <span class="volk-pill">Kontrollierte Grenze</span>
+            </div>
+
         </div>
+    </section>
         
         <div class="glass-card">
             <h2>Honig-Guide</h2>
@@ -140,6 +158,7 @@
 
 
 
-    <script src="../js/menue.js"></script>
+    <script src="../js/menue.js"></script> 
+    <script src="../js/bienenvolk.js"></script>
 </body>
 </html>
