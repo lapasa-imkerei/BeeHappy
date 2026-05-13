@@ -1,4 +1,74 @@
-/* 
-Des is de CSS fia den Kalender.
-!!!!!Responsive Design für diese Seite wird a do herinnen geregelt.!!!!!
-*/
+.calendar-wrapper {
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#monthDisplay {
+    background-color: #fdf2d0; /* Weiches Gelb */
+    padding: 10px 40px;
+    border-radius: 20px;
+    font-family: 'Brush Script MT', cursive; /* Oder Dancing Script */
+    font-size: 2.5rem;
+    font-weight: normal;
+    margin: 0;
+}
+
+.calendar-select {
+    background-color: #fce8b3;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-weight: bold;
+    color: #4a4a4a;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Kalender Gitter */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #e9d5a3; /* Farbe der Gitterlinien */
+    border: 2px solid #e9d5a3;
+    gap: 1.5px;
+}
+
+.day-label, .day {
+    background-color: #fff;
+    min-height: 110px;
+    padding: 10px;
+}
+
+.day-label {
+    background-color: #ffecd1;
+    min-height: auto;
+    text-align: center;
+    font-weight: bold;
+    padding: 15px 0;
+}
+
+.day-number {
+    display: block;
+    text-align: center;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Event-Farben */
+.event {
+    font-size: 0.7rem;
+    padding: 4px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.event-verein { background-color: #d1f2d1; } /* Grün */
+.event-bezirk { background-color: #d1e9ff; } /* Blau */

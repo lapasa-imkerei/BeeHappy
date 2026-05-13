@@ -77,11 +77,76 @@
     </aside>
 <!-- Sidebar Ende -->
 
+<main class="inhalt">
+        <header class="page-header">
+            
+            <h1>Bienenfreundliche Natur </h1>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</p>
+        </header>
+
+<main class="inhalt">
+    <header class="page-header">
+        <div class="bee-happy-branding">
+            <span class="brand-text">BeeHappy</span>
+            <img src="../Bilder/Biene1.jpg" alt="Biene" class="brand-bee" style="width: 40px;">
+        </div>
+        <h1>Vereinskalender</h1>
+    </header>
+
+    <div class="calendar-wrapper">
+        <header class="calendar-controls">
+            <!-- Dropdown für Monat -->
+            <div class="control-group">
+                <select id="monthSelect" class="calendar-select">
+                    <option value="0">Januar</option>
+                    <option value="1">Februar</option>
+                    <option value="2">März</option>
+                    <option value="3" selected>April</option>
+                    <option value="4">Mai</option>
+                    <option value="5">Juni</option>
+                    <option value="6">Juli</option>
+                    <option value="7">August</option>
+                    <option value="8">September</option>
+                    <option value="9">Oktober</option>
+                    <option value="10">November</option>
+                    <option value="11">Dezember</option>
+                </select>
+            </div>
+            
+            <!-- Dynamische Anzeige des gewählten Zeitraums -->
+            <h2 id="monthDisplay">April 2026</h2>
+            
+            <!-- Dropdown für Jahr -->
+            <div class="control-group">
+                <select id="yearSelect" class="calendar-select">
+                    <option value="2025">2025</option>
+                    <option value="2026" selected>2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                </select>
+            </div>
+        </header>
+
+        <div class="calendar-grid" id="calendarGrid">
+            <!-- Wochentage -->
+            <div class="day-label">Mo</div>
+            <div class="day-label">Di</div>
+            <div class="day-label">Mi</div>
+            <div class="day-label">Do</div>
+            <div class="day-label">Fr</div>
+            <div class="day-label">Sa</div>
+            <div class="day-label">So</div>
+            <!-- Hier werden die Tage via JavaScript eingefügt -->
+        </div>
+    </div>
+</main>
+
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
   lucide.createIcons();
 </script>
 
+  <script src="../js/vereinskalender.js"></script>
   <script src="../js/menue.js"></script>
 </body>
 </html>
