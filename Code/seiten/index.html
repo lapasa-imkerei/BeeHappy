@@ -1,146 +1,148 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BeeHappy - Startseite</title>
-  
-  <link rel="stylesheet" href="../css/fonts.css"/>
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/startseite.css" />
-  <link rel="stylesheet" href="../CSS/sidebar.css">
-
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BeeHappy - Startseite</title>
+    
+    <!-- CSS Verknüpfungen -->
+    <link rel="stylesheet" href="../css/fonts.css"/>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/startseite.css" />
+    <link rel="stylesheet" href="../css/sidebar.css">
 </head>
 <body>
 
-  <!-- Sidebar Beginn -->
-    <aside class="sidebar">
-      <header class="sidebar-header">
-        <a href="#" class="header-logo">
-          <img src="../Bilder/Biene1.jpg" alt="Logo BeeHappy"> <!-- Rundes Logo - Bild -->
-        </a>
-          <button class="toggler sidebar-toggler">
-                <i data-lucide="chevron-left"></i>
-            </button>
-            <button class="toggler menu-toggler">
-                <i data-lucide="menu"></i>
-            </button>
-        </header>
-        <nav class="sidebar-nav">
-            <ul class="nav-list primary-nav">
-                <li class="nav-item">
-                    <a href="../seiten/index.html" class="nav-link">
-                        <i data-lucide="home" class="nav-icon"></i>
-                        <span class="nav-label">Home</span> 
-                    </a>
-                    <span class="nav-tooltip">Home</span>
-                </li>
-                <li class="nav-item">
-                    <a href="../seiten/Dashboard.html" class="nav-link">
-                        <i data-lucide="layout-dashboard" class="nav-icon"></i>
-                        <span class="nav-label">Dashboard</span> 
-                    </a>
-                    <span class="nav-tooltip">Dashboard</span>
-                </li>
-                <li class="nav-item">
-                    <a href="../seiten/Bienenvolk.html" class="nav-link">
-                       <i data-lucide="archive" class="nav-icon"></i>
-                        <span class="nav-label">Bienenvolk</span> 
-                    </a>
-                    <span class="nav-tooltip">Bienenvolk</span>
-                </li>
-                <li class="nav-item">
-                    <a href="../seiten/Bienenfreundlich.html" class="nav-link">
-                        <i data-lucide="leaf" class="nav-icon"></i>
-                        <span class="nav-label">Bienenfreundliche Natur</span> 
-                    </a>
-                    <span class="nav-tooltip">Bienenfreundliche Natur</span>
-                </li>
-                <li class="nav-item">
-                    <a href="../seiten/Vereinskalender.html" class="nav-link">
-                       <i data-lucide="calendar" class="nav-icon"></i>
-                        <span class="nav-label">Kalender</span> 
-                    </a>
-                    <span class="nav-tooltip">Kalender</span>
-                </li>
-                <li class="nav-item">
-                    <a href="../seiten/Impressum.html" class="nav-link">
-                        <i data-lucide="info" class="nav-icon"></i>
-                        <span class="nav-label">Impressum</span> 
-                    </a>
-                    <span class="nav-tooltip">Impressum</span>
-                </li>
-            </ul>
-        </nav>
-    </aside>
-<!-- Sidebar Ende -->
+    <div class="layout-wrapper">
 
-<!-- Inhalt-->
-<main class="inhalt">
+        <!-- Sidebar Beginn -->
+        <aside class="sidebar">
+            <header class="sidebar-header">
+                <a href="#" class="header-logo">
+                    <img src="../Bilder/Biene1.jpg" alt="Logo BeeHappy">
+                </a>
+                <button class="toggler sidebar-toggler">
+                    <i data-lucide="chevron-left"></i>
+                </button>
+                <button class="toggler menu-toggler">
+                    <i data-lucide="menu"></i>
+                </button>
+            </header>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-list primary-nav">
+                    <li class="nav-item">
+                        <a href="../seiten/index.html" class="nav-link active">
+                            <i data-lucide="home" class="nav-icon"></i>
+                            <span class="nav-label">Home</span> 
+                        </a>
+                        <span class="nav-tooltip">Home</span>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../seiten/Dashboard.html" class="nav-link">
+                            <i data-lucide="layout-dashboard" class="nav-icon"></i>
+                            <span class="nav-label">Dashboard</span> 
+                        </a>
+                        <span class="nav-tooltip">Dashboard</span>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../seiten/Bienenvolk.html" class="nav-link">
+                            <i data-lucide="archive" class="nav-icon"></i>
+                            <span class="nav-label">Bienenvolk</span> 
+                        </a>
+                        <span class="nav-tooltip">Bienenvolk</span>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../seiten/Bienenfreundlich.html" class="nav-link">
+                            <i data-lucide="leaf" class="nav-icon"></i>
+                            <span class="nav-label">Bienenfreundliche Natur</span> 
+                        </a>
+                        <span class="nav-tooltip">Bienenfreundliche Natur</span>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../seiten/Vereinskalender.html" class="nav-link">
+                            <i data-lucide="calendar" class="nav-icon"></i>
+                            <span class="nav-label">Kalender</span> 
+                        </a>
+                        <span class="nav-tooltip">Kalender</span>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../seiten/Impressum.html" class="nav-link">
+                            <i data-lucide="info" class="nav-icon"></i>
+                            <span class="nav-label">Impressum</span> 
+                        </a>
+                        <span class="nav-tooltip">Impressum</span>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- Sidebar Ende -->
 
-  <div class="page-header">
-    <div class="badge">Startseite</div>
-    <h1>Willkommen bei BeeHappy 🐝</h1>
-    <p>Entdecke die Welt der Bienen — Informationen über unseren Verein, aktuelle Daten aus dem Bienenstock und wie du die Natur bienenfreundlicher gestalten kannst.</p>
-  </div>
+        <!-- Hauptinhalt -->
+        <main class="inhalt">
+            <div class="page-header">
+                <div class="badge">Startseite</div>
+                <h1>Willkommen bei BeeHappy 🐝</h1>
+                <p>Entdecke die Welt der Bienen — Informationen über unseren Verein, aktuelle Daten aus dem Bienenstock und wie du die Natur bienenfreundlicher gestalten kannst.</p>
+            </div>
 
-  <hr class="divider" />
+            <hr class="divider" />
 
-<!-- Wabe links -->
-  <div class="desktop-section">
-      <a href="#" class="honeycomb-link">
-          <div class="hexagon"><i data-lucide="calendar" class="honey-icon"></i></div>
-      </a>
-      <div class="section-text">
-          <h2>Vereinskalender</h2>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-      </div>
-  </div>
+            <!-- Wabe links -->
+            <div class="desktop-section">
+                <a href="#" class="honeycomb-link">
+                    <div class="hexagon"><i data-lucide="calendar" class="honey-icon"></i></div>
+                </a>
+                <div class="section-text">
+                    <h2>Vereinskalender</h2>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                </div>
+            </div>
 
-<!-- Wabe rechts-->
-  <div class="desktop-section reverse">
-      <a href="#" class="honeycomb-link">
-          <div class="hexagon"><i data-lucide="layout-dashboard" class="honey-icon"></i></div>
-      </a>
-      <div class="section-text">
-          <h2>Dashboard</h2>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-      </div>
-  </div>
+            <!-- Wabe rechts -->
+            <div class="desktop-section reverse">
+                <a href="#" class="honeycomb-link">
+                    <div class="hexagon"><i data-lucide="layout-dashboard" class="honey-icon"></i></div>
+                </a>
+                <div class="section-text">
+                    <h2>Dashboard</h2>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                </div>
+            </div>
 
-<!-- Wabe links -->
-  <div class="desktop-section">
-      <a href="#" class="honeycomb-link">
-          <div class="hexagon"><i data-lucide="archive" class="honey-icon"></i></div>
-      </a>
-      <div class="section-text">
-          <h2>Bienenvolk</h2>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-      </div>
-  </div>
+            <!-- Wabe links -->
+            <div class="desktop-section">
+                <a href="#" class="honeycomb-link">
+                    <div class="hexagon"><i data-lucide="archive" class="honey-icon"></i></div>
+                </a>
+                <div class="section-text">
+                    <h2>Bienenvolk</h2>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                </div>
+            </div>
 
-<!-- Wabe rechts-->
-  <div class="desktop-section reverse">
-      <a href="#" class="honeycomb-link">
-          <div class="hexagon"><i data-lucide="leaf" class="honey-icon"></i></div>
-      </a>
-      <div class="section-text">
-          <h2>Bienenfreundliche Natur</h2>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-      </div>
-  </div>
-        
-      <hr class="divider" />
-    </main>
+            <!-- Wabe rechts -->
+            <div class="desktop-section reverse">
+                <a href="#" class="honeycomb-link">
+                    <div class="hexagon"><i data-lucide="leaf" class="honey-icon"></i></div>
+                </a>
+                <div class="section-text">
+                    <h2>Bienenfreundliche Natur</h2>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                </div>
+            </div>
+            
+            <hr class="divider" />
+        </main>
 
-  </div>
+    </div> <!-- Ende layout-wrapper -->
 
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
-  lucide.createIcons();
-</script>
-
-  <script src="js/menue.js"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+    <!-- Pfad zu deiner JS-Datei: Geht eine Ebene hoch aus /seiten/ und dann in /js/ -->
+    <script src="../js/menue.js"></script>
 </body>
 </html>
