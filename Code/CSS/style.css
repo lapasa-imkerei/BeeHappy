@@ -42,7 +42,7 @@ Fonts werden im fonts.css definiert, do san nur anpassungen.
 
 html {
     scroll-behavior: smooth;
-    font-size: 16px;
+    font-size: 22px;
     overflow-x: hidden; 
 }
 
@@ -62,7 +62,7 @@ h1, h2, h3 {
     display: inline-block;
     width: fit-content;
     line-height: 1.1;
-    margin-bottom: 1.5rem;
+    margin-bottom: 20px;
 
     /* Marker Effekt */
     background: linear-gradient(to top, var(--c-marker) 40%, transparent 40%);
@@ -77,6 +77,8 @@ h3 { font-size: 2rem; }
 p {
     margin-bottom: 1.2rem;
     max-width: 75ch; 
+    text-align: justify;
+    -webkit-hyphens: auto;
 }
 
 /* Des is de Basis für de Sidebar und den Content */
@@ -91,4 +93,7 @@ p {
     padding: 2rem;
     transition: margin-left var(--transition);
 }
+
+
+
 

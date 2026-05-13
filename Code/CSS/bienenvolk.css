@@ -20,6 +20,12 @@
     align-items: start;         
 }
 
+.bento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15),
+                0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
 
 .widget-main {
     grid-column: 1;
@@ -29,6 +35,10 @@
     padding: 2rem;
     padding-bottom: 1rem;
     overflow: hidden;
+}
+
+.widget-main:hover {
+    transform: scale(1.04);
 }
 
 
@@ -46,7 +56,7 @@
     border-radius: 40px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1),
                 0 5px 15px rgba(0, 0, 0, 0.05);
-    border: 2px solid var(--c-border);
+    border: 3px solid var(--c-border);
     transition: transform 0.3s ease;
 }
 
@@ -57,9 +67,9 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8.1px);
     -webkit-backdrop-filter: blur(8.1px);
-    border: 1px solid rgba(255, 255, 255, 1);
+    border: 3px solid rgba(255, 255, 255, 1);
     
-    padding: 1.5rem 2rem;
+    padding: 1rem 1rem;
     min-height: 160px;
     display: flex;
     flex-direction: column;
@@ -85,10 +95,23 @@
 }
 
 
+
 /* Galerie  */
 
 .galerie-section {
     margin: 3rem 0;
+}
+
+.galerie-grid:has(.galerie-card:hover) .galerie-card:not(:hover) {
+    filter: blur(2px);
+    opacity: 0.8;
+}
+
+.galerie-card:hover {
+    box-shadow: -7px 6px 27px -5px rgba(0,0,0,0.54);
+    -webkit-box-shadow: -7px 6px 27px -5px rgba(0,0,0,0.54);
+    -moz-box-shadow: -7px 6px 27px -5px rgba(0,0,0,0.54);
+    transition: box-shadow 0.3s ease;
 }
 
 .galerie-grid {
@@ -100,13 +123,14 @@
 .galerie-card {
     background: rgba(227, 202, 148, 0.35);
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 1);
+    border: 3px solid rgba(255, 255, 255, 1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8.1px);
     -webkit-backdrop-filter: blur(8.1px);
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
 .galerie-img-wrap {
@@ -163,7 +187,7 @@
 .volk-pill {
     display: inline-block;
     background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(84, 84, 84, 0.2);
+    border: 3px solid rgba(84, 84, 84, 0.2);
     border-radius: 999px;
     padding: 0.25rem 0.75rem;
     font-size: 0.8rem;
