@@ -10,14 +10,19 @@
     margin-bottom: 30px;
 }
 
+/* Angepasst für das Design aus dem Prototyp */
 #monthDisplay {
-    background-color: #fdf2d0; /* Weiches Gelb */
-    padding: 10px 40px;
-    border-radius: 20px;
-    font-family: 'Brush Script MT', cursive; /* Oder Dancing Script */
+    font-family: var(--f-headline); /* Nutzt die Variable aus deiner style.css */
+    background-color: transparent; /* Gelber Hintergrund wird jetzt durch Marker-Effekt ersetzt */
+    padding: 0 10px;
+    border-radius: var(--radius-m);
     font-size: 2.5rem;
-    font-weight: normal;
+    font-weight: 400;
     margin: 0;
+    /* Marker Effekt wie bei h1/h2 in style.css */
+    background: linear-gradient(to top, var(--c-marker) 40%, transparent 40%);
+    display: inline-block;
+    line-height: 1.1;
 }
 
 .calendar-select {
