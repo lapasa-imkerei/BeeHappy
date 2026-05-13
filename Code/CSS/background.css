@@ -1,20 +1,77 @@
+
 body {
+    background-color: var(--c-bg); /* Dein schönes Creme-Gelb */
+    color: var(--c-text);
+    font-family: var(--f-body);
+    line-height: 1.6;
     min-height: 100vh;
-    background: var(--c-bg); /* bleibt wie gehabt */
-    position: relative;
-    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    
+    /* WICHTIG: Position relative, damit die Hintergrund-Ebenen wissen, wo sie hingehören */
+    position: relative; 
+    z-index: 0; /* Setzt den Stacking-Context für die Pseudo-Elemente */
 }
 
-#honeycomb-bg {
+
+body::before {
+    content: "";
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: 0;
-    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2; 
+    
+    opacity: 0.3; 
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='69.282' height='120' viewBox='0 0 69.282 120'%3E%3Cpath d='M 0 20 L 34.641 0 L 69.282 20 V 60 L 34.641 80 L 0 60 M 34.641 80 V 120' fill='none' stroke='%23e3ca94' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    
+
+    background-size: 69.28px 120px; 
+    
+    /* Die sanfte Bewegung */
+    animation: wabenFloat 30s linear infinite;
 }
 
-/* Sicherstellen dass Sidebar und Inhalt über dem Canvas liegen */
-.sidebar, .inhalt {
-    position: relative;
-    z-index: 1;
+/* Ebene 2: Die sanften Lichtreflexionen */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2; 
+    
+    
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='69.282' height='120' viewBox='0 0 69.282 120'%3E%3Cpath d='M 0 20 L 34.641 0 L 69.282 20 V 60 L 34.641 80 L 0 60 M 34.641 80 V 120' fill='none' stroke='%23e3ca94' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    
+    
+    background-size: 69.28px 120px; 
+    
+  
+    animation: wabenFloat 30s linear infinite;
+}
+
+
+@keyframes wabenFloat {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        
+        background-position: 69.28px 120px; 
+    }
+}
+
+
+@keyframes lightPulse {
+    0% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
 }
