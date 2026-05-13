@@ -103,8 +103,9 @@ body {
     transform: translate(-4px, 65px);
 }
 
-.sidebar.collapsed .sidebar-header .sidebar-toggler span {
+.sidebar.collapsed .sidebar-header .sidebar-toggler svg {
     transform: rotate(180deg);
+    transition: transform 0.4s ease;
 }
 
 .sidebar-header .menu-toggler {
@@ -158,6 +159,28 @@ body {
     text-decoration: none;
     transition: 0.4s ease;
 }
+
+.nav-icon svg, .nav-icon{
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    display:block;
+}
+
+.sidebar.collapsed .nav-link {
+    justify-content: center;
+    padding: 12px 0;
+    width: 100%;
+    gap: 0;
+}
+
+.sidebar.collapsed .nav-label {
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    overflow: hidden;
+}
+
 
 .nav-link.active {
     background: var(--c-surface); 
