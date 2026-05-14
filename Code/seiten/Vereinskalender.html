@@ -81,48 +81,47 @@
         <h1>Vereinskalender</h1>
     </header>
 
-    <div class="calendar-wrapper">
-        <header class="calendar-controls">
-            <div class="control-group">
-                <select id="monthSelect" class="calendar-select">
-                    <option value="0">Januar</option>
-                    <option value="1">Februar</option>
-                    <option value="2">März</option>
-                    <option value="3" selected>April</option>
-                    <option value="4">Mai</option>
-                    <option value="5">Juni</option>
-                    <option value="6">Juli</option>
-                    <option value="7">August</option>
-                    <option value="8">September</option>
-                    <option value="9">Oktober</option>
-                    <option value="10">November</option>
-                    <option value="11">Dezember</option>
-                </select>
-            </div>
-            
-            <h2 id="monthDisplay">April 2026</h2>
-            
-            <div class="control-group">
-                <select id="yearSelect" class="calendar-select">
-                    <option value="2025">2025</option>
-                    <option value="2026" selected>2026</option>
-                    <option value="2027">2027</option>
-                    <option value="2028">2028</option>
-                </select>
-            </div>
-        </header>
+<div class="container">
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <div class="nav-buttons">
+                <button class="nav-btn" id="prev-month"><i class="fas fa-chevron left"></i></button>
+                <button class="nav-btn" id="next-month"><i class="fas fa-chevron right"></i></button>
+        </div>
+        <div class="month-year" id="month-year">Mai 2026</div>
+    </div>
 
-        <div class="calendar-grid" id="calendarGrid">
-            <div class="day-label">Mo</div>
-            <div class="day-label">Di</div>
-            <div class="day-label">Mi</div>
-            <div class="day-label">Do</div>
-            <div class="day-label">Fr</div>
-            <div class="day-label">Sa</div>
-            <div class="day-label">So</div>
+    <div class="weekdays">
+        <div class="weekday">Mo</div>
+        <div class="weekday">Di</div>
+        <div class="weekday">Mi</div>
+        <div class="weekday">Do</div>
+        <div class="weekday">Fr</div>
+        <div class="weekday">Sa</div>
+        <div class="weekday">So</div>
+    </div>
+
+    <div class="days" id="days"></div>
+
+    <div class="calendar-footer">
+        <button class="today-btn" id="today-btn"><i class="fas fa-calendar-day"></i>Heute</button>
+        <div class="event-indicator">
+            <i class="fas fa-circle" style="color: var(--accent); font-size: 0.6 rem;"></i>
+            <span>Veranstaltung</span>
         </div>
     </div>
-</main>
+
+    <div class="event-panel" id="event-panel">
+        <div class="event-holder">
+            <div class="event-date" id="event-date">Datum auswählen</div>
+            <i class="fas fa-calendar-alt event-icon"></i>
+        </div>
+        <div class="event-list" id=""event-liste">
+            <div class="no-events">Keine Veranstaltung eingetragen</div>
+        </div>
+    </div>
+</div>
+
 
 <script src="https://unpkg.com/lucide@latest"></script>
     <script>

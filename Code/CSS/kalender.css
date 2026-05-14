@@ -1,79 +1,126 @@
-.calendar-wrapper {
-    max-width: 1000px;
-    margin: 20px auto;
+/*https://www.youtube.com/watch?v=gY7TzDW60RQ*/
+
+:root {
+    --primary: #4a6bdf;
+    --secondary: #6c5ce7;
+    --accent: var(--c-accent);
+    --light: #f8f9fa;
+    --dark: #2d3436;
+    --text: #636e72;
+    --today: #fd79a8;
+    --selected: #a29bfe;
+    --event-panel-bg: #f8f9fa;
 }
 
-.calendar-controls {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+.calendar-container {
+    background: var(--c-white);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.3s ease;
+}
+
+.calendar-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px rgba(0,0,0,0.15);
+}
+
+.calendar-header {
+    background: var(--c-sidebar);
+    color:rgba(255, 255, 255, 0.8);
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.calendar-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255, 255, 255, 0) 70%);
+    transform: rotate(30deg);
+}
+
+.month-year {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.nav-buttons {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    padding: 0 1rem;
+    z-index: -1;
 }
 
-/* Angepasst für das Design aus dem Prototyp */
-#monthDisplay {
-    font-family: var(--f-headline); /* Nutzt die Variable aus deiner style.css */
-    background-color: transparent; /* Gelber Hintergrund wird jetzt durch Marker-Effekt ersetzt */
-    padding: 0 10px;
-    border-radius: var(--radius-m);
-    font-size: 2.5rem;
-    font-weight: 400;
-    margin: 0;
-    /* Marker Effekt wie bei h1/h2 in style.css */
-    background: linear-gradient(to top, var(--c-marker) 40%, transparent 40%);
-    display: inline-block;
-    line-height: 1.1;
-}
-
-.calendar-select {
-    background-color: #fce8b3;
+.nav-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 12px;
-    font-weight: bold;
-    color: #4a4a4a;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
     cursor: pointer;
-    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Kalender Gitter */
-.calendar-grid {
+.nav-btn.hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale (1.1);
+}
+
+.weekdays {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    background-color: #e9d5a3; /* Farbe der Gitterlinien */
-    border: 2px solid #e9d5a3;
-    gap: 1.5px;
+    padding: 0.5rem 1rem;
+    background: var(--c-surface);
+    font-weight: 600;
+    color: var(--c-text);
 }
 
-.day-label, .day {
-    background-color: #fff;
-    min-height: 110px;
-    padding: 10px;
-}
-
-.day-label {
-    background-color: #ffecd1;
-    min-height: auto;
+.weekday {
     text-align: center;
-    font-weight: bold;
-    padding: 15px 0;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
 }
-
-.day-number {
-    display: block;
-    text-align: center;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-/* Event-Farben */
-.event {
-    font-size: 0.7rem;
-    padding: 4px;
-    border-radius: 4px;
-    margin-bottom: 4px;
-    text-align: center;
-}
-
-.event-verein { background-color: #d1f2d1; } /* Grün */
-.event-bezirk { background-color: #d1e9ff; } /* Blau */
