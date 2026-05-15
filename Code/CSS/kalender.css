@@ -3,11 +3,12 @@
 :root {
     --primary: #4a6bdf;
     --secondary: #6c5ce7;
-    --accent: var(--c-accent);
+    --accent: #ffe3c2;
+    --indicator: #b2d8a0;
     --light: #f8f9fa;
     --dark: #2d3436;
     --text: #636e72;
-    --today: #fd79a8;
+    --today: #ffe7c2;
     --selected: #a29bfe;
     --event-panel-bg: #f8f9fa;
 }
@@ -124,3 +125,101 @@
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.8);
 }
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 5px;
+    padding: 1rem;
+}
+
+.day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    font-weight: 500;
+    color: var(--c-text)
+}
+
+.day:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.day.today {
+    background: var(--today);
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+}
+
+.day.selected {
+    background: var(--c-bg);
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.day.other-month {
+    color: var(--c-text);
+    opacity: 0.5;
+}
+
+.day.has-events::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.calendar-footer {
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.today-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+    font-size: 0.8rem;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--today) 100%);
+    color: var(--c-sidebar);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.today.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.event-indicator {
+    font-size: 0.8rem;
+    color: var(--indicator);
+    filter: brightness(0.8);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
