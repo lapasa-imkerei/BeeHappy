@@ -1,71 +1,100 @@
-let alleTermine = [];
+document.addEventListener('DOMContentLoaded', function() {
+    const monthYearE1 = document.getElementById('month-year');
+    const daysE1 = document.getElementById('days');
+    const prevMonthBtn = document.getElementById('prev-month');
+    const nextMonthBtn = document.getElementById('next-month');
+    const todayBtn = document.getElementById('today-btn');
+    const eventPanel = document.getElementById('event-panel');
+    const eventDateE1 = document.getElementById('event-date');
+    const eventListE1 = document.getElementById('event-list');
 
-async function initialisiereKalender() {
-    try {
-        const response = await fetch('../js/termine.json');
-        alleTermine = await response.json();
+    let currentDate = new Date();
+    let selectedDate = null;
+
+    //Beispiel Daten
+    const events = {}
+
+    function renderCalendar() {
+        const firstDay = new Date(
+            currentDate.getFullYear(),
+            currentDate.getMonth(),
+            1
+        );
+
+        const lastDay = new Date(
+            currentDate.getFullYear(),
+            currentDate.getMonth() +1,
+            0
+        );
+
+        const prevLastDay = new Date(
+            currentDate.getFullYear(),
+            currentDate.getMonth(),
+            0
+        );
+
+        const firstDayIndex = firstDay.getDay();
+        const lastDayIndex = lastDay.getDay();
+        const nextDays = 7 - lastDayIndex - 1;
+
+        const months = [
+            "Jänner", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"
+        ];
+
+        monthYearE1.innerHTML = `${months[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+
+        let days = "";
+
+        for (let x = firstDayIndex; x > 0; x--) {
+            const prevDate = prevLastDay.getDate() - x + 1;
+            const dateKey = `${currentDate.getFullYear()}-${currentDate.getMonth()}-${prevDate}`;
+            const hasEvent = events[dateKey] !== undefined;
+
+            days += `<div class="day other-month${hasEvent ? ' has-events' : ''}">${prevDate}</div>`;
+        }
         
-        const monthSelect = document.getElementById('monthSelect');
-        const yearSelect = document.getElementById('yearSelect');
+        for (let i = 1; i <= lastDay.getDate(); i++) {
+            const date = new Date(
+                currentDate.getFullYear(),
+                currentDate.getMonth(),
+                i
+            );
 
-        monthSelect.addEventListener('change', renderCalendar);
-        yearSelect.addEventListener('change', renderCalendar);
+            const dateKey = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${i}`;
+            const hasEvent = events[dateKey] !== undefined;
 
-        renderCalendar();
-    } catch (e) {
-        console.error("Fehler beim Laden der Termine:", e);
-    }
-}
+            let dayClass = 'day';
 
-function renderCalendar() {
-    const grid = document.getElementById('calendarGrid');
-    const display = document.getElementById('monthDisplay');
-    
-    const monatIdx = parseInt(document.getElementById('monthSelect').value);
-    const jahr = parseInt(document.getElementById('yearSelect').value);
-
-    const monate = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
-    display.textContent = `${monate[monatIdx]} ${jahr}`;
-
-    const labels = Array.from(document.querySelectorAll('.day-label'));
-    grid.innerHTML = '';
-    labels.forEach(label => grid.appendChild(label));
-
-    const ersterTag = new Date(jahr, monatIdx, 1).getDay();
-    const startOffset = (ersterTag === 0) ? 6 : ersterTag - 1; 
-    const tageAnzahl = new Date(jahr, monatIdx + 1, 0).getDate();
-
-    for (let i = 0; i < startOffset; i++) {
-        const empty = document.createElement('div');
-        empty.className = 'day empty';
-        grid.appendChild(empty);
-    }
-
-    for (let tag = 1; tag <= tageAnzahl; tag++) {
-        const dayBox = document.createElement('div');
-        dayBox.className = 'day';
-        dayBox.innerHTML = `<span class="day-number">${tag}</span>`;
-
-        const datumKey = `${jahr}-${(monatIdx + 1).toString().padStart(2, '0')}-${tag.toString().padStart(2, '0')}`;
-        
-        const treffer = alleTermine.filter(t => {
-            let formatted = t.datum;
-            if (formatted.includes('-2026') && formatted.indexOf('-') === 2) {
-                const parts = formatted.split('-');
-                formatted = `${parts[2]}-${parts[1]}-${parts[0]}`;
+            if (
+                date.getDate() === new Date().getDate() &&
+                date.getMonth() === new Date().getMonth() &&
+                date.getFullYear() === new Date().getFullYear()
+            ) {
+                dayClass += 'today';
             }
-            return formatted === datumKey;
-        });
 
-        treffer.forEach(t => {
-            const ev = document.createElement('div');
-            ev.className = `event ${t.typ.toLowerCase().includes('bezirk') ? 'event-bezirk' : 'event-verein'}`;
-            ev.innerHTML = `<strong>${t.uhrzeit}</strong><br>${t.verein}`;
-            dayBox.appendChild(ev);
-        });
+            if (
+                selectedDate &&
+                date.getDate() === selectedDate.getDate() &&
+                date.getMonth() === selectedDate.getMonth() &&
+                date.getFullYear() === selectedDate.getFullYear()
+            ) {
+                dayClass += ' selected';
+            }
 
-        grid.appendChild(dayBox);
+            if (hasEvent) {
+                dayClass += ' has-events';
+            }
+
+            days += `<div class="${dayClass}" data-date="${dateKey}">${i}</div>`;
+        }
+
+        for (let j = 1; j <= nextDays; j++) {
+            const dateKey = `${currentDate.getFullYear()}-${currentDate.getMonth() + 2}-${j}`;
+            const hasEvent = events[dateKey] !== undefined;
+
+            days += `<div class="day other-month${hasEvent ? 'has-events' : ''}">${j}</div>`;
+        }
     }
-}
-
-document.addEventListener('DOMContentLoaded', initialisiereKalender);
+});
+// 13:28
