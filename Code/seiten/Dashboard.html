@@ -93,8 +93,11 @@
             <div class="item item-small">
                 <span>Hallo wie gehts?</span>
             </div>
-            <div class="item item-small">
-                <span>Hier könnte deine Werbung stehen</span>
+            <div class="item item-small" id="wetter-widget">
+                <select id="city-select">
+                    <option value="" disabled selected>Stadt wählen…</option>
+                </select>
+                <div id="forecast-grid"></div>
             </div>
             <div class="item item-wide">
                 <span>Eig is des a hässliches Layout</span>
@@ -113,5 +116,6 @@
 
 </main>
   <script src="../js/menue.js"></script>
+  <script src="../js/wetter.js"></script>
 </body>
 </html>

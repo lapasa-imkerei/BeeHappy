@@ -9,7 +9,7 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 200px); 
+    grid-template-rows: repeat(2, 300px); 
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
@@ -23,7 +23,7 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
     justify-content: center;
     font-family: var(--f-body);
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--c-text);
     transition: var(--transition);
     border: 1px solid rgba(0,0,0,0.05);
@@ -37,7 +37,6 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
     box-shadow: 0 12px 40px rgba(0,0,0,0.15);
     border-color: var(--c-accent);
 }
-
 
 .item-large-left {
     grid-row: span 2;
@@ -63,22 +62,82 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
     color: white;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .bento-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-    }
+/* ─── Wetter-Widget ─────────────────────────────────────────────────────── */
+
+#wetter-widget.item {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    flex-direction: column;
+    padding: 14px;
+    gap: 8px;
+    height: 300px;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
-@media (max-width: 600px) {
-    .bento-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .item-large-left, .item-large-right, .item-wide {
-        grid-column: span 1;
-        grid-row: span 1;
-        height: 180px;
-    }
+#wetter-widget select {
+    width: 100%;
+    padding: 6px 8px;
+    border-radius: var(--radius-l);
+    border: 1px solid rgba(0,0,0,0.1);
+    background: var(--c-white);
+    font-family: var(--f-body);
+    font-size: 14px;       /* px statt rem wegen html font-size: 22px */
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+#forecast-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;         /* kritisch für flex + overflow */
+}
+
+.day-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    padding: 5px 8px;
+    border-radius: var(--radius-l);
+    background: var(--c-surface);
+    font-size: 13px;
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.day-name { 
+    font-weight: bold; 
+    color: var(--c-text); 
+    min-width: 32px;
+    font-size: 13px;
+}
+.day-icon { 
+    font-size: 15px; 
+    flex-shrink: 0;
+}
+.day-desc { 
+    color: var(--c-text); 
+    font-size: 11px; 
+    flex: 1;                    /* nimmt den restlichen Platz */
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+}
+.day-max  { 
+    font-weight: bold; 
+    color: var(--c-text); 
+    font-size: 13px;
+    white-space: nowrap; 
+}
+.day-min  { 
+    color: gray; 
+    font-size: 11px; 
+    white-space: nowrap; 
 }
