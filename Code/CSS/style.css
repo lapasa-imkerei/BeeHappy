@@ -46,6 +46,8 @@ html {
     overflow-x: hidden; 
 }
 
+
+
 body {
     background-color: var(--c-bg);
     color: var(--c-text);
@@ -53,7 +55,21 @@ body {
     line-height: 1.6;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
+    position: relative;
+    background-image: url('../Bilder/bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
+
+
+.sidebar, .inhalt {
+    position: relative;
+    z-index: 1;
+}
+
+
 
 /* Unsere generellen Schriftarten */
 h1, h2, h3 {
@@ -95,5 +111,77 @@ p {
 }
 
 
+/* Scrollleiste */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--c-bg);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--c-text);
+    border-radius: 10px;
+    border: 2px solid var(--c-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--c-text);
+}
+
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: var(--c-sidebar) var(--c-bg);
+}
 
 
+/* Standard Cursor verstecken */
+* {
+    cursor: none;
+}
+
+/* Custom Cursor */
+.cursor {
+    width: 16px;
+    height: 16px;
+    background: var(--c-text);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease, background 0.3s ease;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-ring {
+    width: 36px;
+    height: 36px;
+    border: 2px solid var(--c-text);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease, background 0.3s ease;
+    opacity: 0.5;
+}
+
+/* Hover Effekt auf klickbaren Elementen */
+.cursor.hovering {
+    transform: translate(-50%, -50%) scale(1.5);
+    background: var(--c-accent);
+}
+
+.cursor-ring.hovering {
+    width: 48px;
+    height: 48px;
+    border-color: var(--c-accent);
+    opacity: 0.3;
+}
