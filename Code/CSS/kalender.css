@@ -4,7 +4,7 @@
     --primary: var(--c-sidebar);
     --accent: var(--c-surface);
     --indicator: #b2d8a0;
-    --today: #ffe7c2;
+    --today: #ffd18f;
     --f-cal-head: var(--f-headline);
     --f-cal-body: var(--f-body);
 }
@@ -127,7 +127,7 @@
 
 .weekday {
     text-align: center;
-    padding: 0.5rem;
+    padding: 0.3rem;
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.8);
 }
@@ -164,7 +164,7 @@
 }
 
 .day.selected {
-    background: var(--c-bg);
+    background: var(--indicator);
     color: rgba(255, 255, 255, 0.8);
     font-weight: bold;
     animation: pop 0.3s ease;
@@ -188,7 +188,7 @@
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background: var(--accent);
+    background: var(--indicator);
 }
 
 .calendar-footer {
@@ -251,7 +251,7 @@
 
 .event-date {
     font-family: var(--f-cal-head);
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     color: var(--c-sidebar);
     background: linear-gradient(to top, var(--c-marker) 35%, transparent 35%);
     display: inline-block;
@@ -285,13 +285,13 @@
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: var(--accent);
+    background: var(--indicator);
     flex-shrink: 0;
 }
 
 .event-time {
     font-weight: 600;
-    color: var(--c-sidebar);
+    color: var(--indicator);
     min-width: 80px;
 }
 
@@ -311,7 +311,7 @@
 
 .event-icon {
     font-size: 1.2rem;
-    color: var(--accent);
+    color: var(--c-sidebar);
     margin-left: 15px;
 }
 
