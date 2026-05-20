@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const events = {};
 
-    // 1. ZUERST die Daten konvertieren
     rawEvents.forEach(item => {
         const [year, month, day] = item.datum.split('-').map(Number);
         const dateKey = `${year}-${month}-${day}`;
@@ -67,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let days = "";
 
-        // Vormonats-Tage
         for (let x = firstDayIndex; x > 0; x--) {
             const prevDate = prevLastDay.getDate() - x + 1;
             const viewYear = prevLastDay.getFullYear();
@@ -78,7 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
             days += `<div class="day other-month${hasEvent ? ' has-events' : ''}" data-date="${dateKey}">${prevDate}</div>`;
         }
         
-        // Aktueller Monat
         for (let i = 1; i <= lastDay.getDate(); i++) {
             const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), i);
             const dateKey = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${i}`;
@@ -110,7 +107,6 @@ document.addEventListener('DOMContentLoaded', function() {
             days += `<div class="${dayClass}" data-date="${dateKey}">${i}</div>`;
         }
 
-        // Folgemonat-Tage
         const nextMonthObj = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
         for (let j = 1; j <= nextDays; j++) {
             const viewYear = nextMonthObj.getFullYear();
@@ -123,14 +119,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         daysE1.innerHTML = days;
 
-        // Klick-Event für ALLE Tage (auch Vormonat/Folgemonat) aktivieren
         document.querySelectorAll('.day').forEach(day => {
             day.addEventListener('click', () => {
                 const dateStr = day.getAttribute('data-date');
                 const [year, month, dayNum] = dateStr.split('-').map(Number);
                 selectedDate = new Date(year, month - 1, dayNum);
                 
-                // Aktualisiert die Monatsansicht, wenn ein Tag des Nachbar-Monats angeklickt wird
                 if (month - 1 !== currentDate.getMonth()) {
                     currentDate.setMonth(month - 1);
                 }
@@ -191,7 +185,6 @@ document.addEventListener('DOMContentLoaded', function() {
         eventListE1.innerHTML = '<div class="no-events">Keine Veranstaltung eingetragen</div>';
     }
 
-    // Initialisierung: Kalender rendern und heutigen Tag direkt laden
     renderCalendar();
     const initialDateStr = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()}`;
     showEvents(initialDateStr);
