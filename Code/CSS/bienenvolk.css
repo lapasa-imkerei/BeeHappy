@@ -11,6 +11,24 @@
     opacity: 0.8;
 }
 
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--c-text);
+    opacity: 0.8;
+    max-width: 100%;
+}
+
+.page-header.info-accent {
+    padding: 2.5rem 3rem; /
+    border-radius: 40px; 
+    border: 3px solid var(--c-border);
+    background: var(--c-white); 
+}
+
+.page-header h1 {
+    margin-bottom: 1.5rem;
+}
+
 
 .bento-grid {
     display: grid;
@@ -197,27 +215,107 @@
     width: fit-content;
 }
 
+/*CSS für des Pop UP Fenster*/
 
-/* Tabelle  */
-.modern-table {
+.bento-modal-overlay {
+    position: fixed;
+    inset: 0; 
+    background: rgba(84, 84, 84, 0.4); 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 999999; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
+    
+    opacity: 0;
+    pointer-events: none; 
+    transition: opacity var(--transition, 0.3s ease);
+}
+
+
+.bento-modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.bento-modal-content {
+    background: var(--c-white); 
+    border: 3px solid var(--c-border);
+    border-radius: 40px; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 10px;
+    max-width: 750px;
+    position: relative;
+    overflow: hidden; 
+    padding: 3rem 0.5rem 3rem 2.5rem; 
+    transform: translateY(30px) scale(0.95);
+    transition: transform var(--transition, 0.3s ease);
 }
 
-.modern-table th {
-    text-align: left;
-    padding: 1rem;
-    font-family: var(--f-body);
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
+.bento-modal-scroll-area {
+    max-height: calc(90vh - 6rem); 
+    overflow-y: auto; 
+    padding-right: 2rem; 
 }
 
-.modern-table td {
-    background: var(--c-white);
-    padding: 1rem;
-    border-radius: var(--radius-s);
+.bento-modal-scroll-area::-webkit-scrollbar {
+    width: 6px;
+}
+.bento-modal-scroll-area::-webkit-scrollbar-track {
+    background: transparent;
+}
+.bento-modal-scroll-area::-webkit-scrollbar-thumb {
+    background: var(--c-surface);
+    border-radius: 10px;
+}
+.bento-modal-scroll-area::-webkit-scrollbar-thumb:hover {
+    background: var(--c-text);
+}
+
+.bento-modal-overlay.active .bento-modal-content {
+    transform: translateY(0) scale(1);
+}
+
+
+.bento-modal-close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: var(--c-surface);
+    color: var(--c-text);
+    border: 2px solid var(--c-border);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.bento-modal-close:hover {
+    background: var(--c-accent);
+    transform: scale(1.1);
+}
+
+
+.bento-modal-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 3px solid var(--c-border);
+    margin-bottom: 2rem;
+}
+
+
+.bento-modal-content h2 {
+    margin-bottom: 1rem;
 }
 
 /* Responsive */

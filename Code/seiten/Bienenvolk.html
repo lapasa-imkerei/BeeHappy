@@ -128,7 +128,7 @@
                 <div class="galerie-body">
                     <span class="galerie-card-title">Die Königin</span>
                     <p>Die Königin ist einzigartig im Bienenvolk. Während der Hochsaison legt sie bis zu 2.000 Eier pro Tag.</p>
-                    <span class="volk-pill">Mehr zur Königin</span>
+                    <span class="volk-pill" data-topic="koenigin">Mehr zur Königin</span>
                 </div>
                 
             </div>
@@ -140,7 +140,7 @@
                 <div class="galerie-body">
                     <span class="galerie-card-title">Die Drohnen</span>
                     <p>Das sind die männlichen Bienen. Sie schlüpfen nur während der Trachtzeit. Ihre einzige Aufgabe ist die Begattung einer Jungkönigin.</p>
-                    <span class="volk-pill">Mehr Informationen zum Drohn</span>
+                    <span class="volk-pill" data-topic="drohn">Mehr Informationen zum Drohn</span>
                 </div>
             </div>
 
@@ -151,7 +151,7 @@
                 <div class="galerie-body">
                     <span class="galerie-card-title">Die Brut</span>
                     <p>In die Wachszellen legt die Königin ihre Eier. Je nach Wesen (Drohn, Arbeiterin oder Königin) dauert das Heranwachsen unterschiedlich lang.</p>
-                    <span class="volk-pill">Mehr Informationen zur Brut</span>
+                    <span class="volk-pill" data-topic="brut">Mehr Informationen zur Brut</span>
                 </div>
             </div>
 
@@ -162,7 +162,7 @@
                 <div class="galerie-body">
                     <span class="galerie-card-title">Futtervorrat</span>
                     <p>Der gesammelte Nektar wird zu Honig veredelt. Eingelagerter Honig versorgt das Volk über das ganze Jahr hinweg.</p>
-                    <span class="volk-pill">Mehr Informationen zum Futter/Honig</span>
+                    <span class="volk-pill" data-topic="futter">Mehr Informationen zum Futter/Honig</span>
                 </div>
             </div>
 
@@ -173,43 +173,40 @@
                 <div class="galerie-body">
                     <span class="galerie-card-title">Der Pollen</span>
                     <p>Pollen ist die wichtigste Proteinquelle im Stock. Sammlerinnen transportieren ihn in den „Pollenhöschen“ an ihren Hinterbeinen.</p>
-                    <span class="volk-pill">Mehr Informationen zum Pollen</span>
+                    <span class="volk-pill" data-topic="pollen">Mehr Informationen zum Pollen</span>
                 </div>
             </div>
 
             <div class="galerie-card">
                 <div class="galerie-img-wrap">
-                    <img src="../Bilder/rähmchen.jpg" alt="Bienenstock" loading="lazy">
+                    <img src="../Bilder/rähmchen.jpg" alt="Die Arbeiterinnen auf einer Bienenwabe" loading="lazy">
                 </div>
                 <div class="galerie-body">
-                    <span class="galerie-card-title">Der Stock</span>
-                    <p>Ein Bienenvolk kann bis zu 60.000 Individuen zählen. Jede einzelne Biene hat ihre eigenen, festen Aufgaben.</p>
-                    <span class="volk-pill">Mehr Informationen zum Bienenstock</span>
+                    <span class="galerie-card-title">Die Arbeiterin</span>
+                    <p>Die Arbeiterin ist das am häufigsten vorkommende Mitglied im Bienenvolk. Sie übernehmen die meisten Aufgaben und je nach alter gibt es unterschiedliche Tätigkeiten.</p>
+                    <span class="volk-pill" data-topic="arbeiterin">Mehr Informationen zur Arbeiterin</span>
                 </div>
             </div>
 
         </div>
-    </section>
-     
-        <div class="glass-card">
-            <h2>Honig-Guide</h2>
-            <table class="modern-table">
-                <thead>
-                    <tr>
-                        <th>Sorte</th>
-                        <th>Merkmal</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Rapshonig</td><td>Schneeweiß & cremig</td></tr>
-                    <tr><td>Waldhonig</td><td>Dunkel & mineralreich</td></tr>
-                    <tr><td>Akazienhonig</td><td>Klar & flüssig</td></tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
+    </section>  
     
 </main>
+
+
+<div id="bento-modal" class="bento-modal-overlay">
+    <div class="bento-modal-content">
+        <button id="close-bento-modal" class="bento-modal-close">
+            <i data-lucide="x"></i>
+        </button>
+        <div class="bento-modal-scroll-area">
+            <img id="modal-img" class="bento-modal-img" src="" alt="">
+            <h2 id="modal-title">Titel</h2>
+            <div id="modal-desc">
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="https://unpkg.com/lucide@latest"></script>
     <script>
@@ -218,6 +215,7 @@
 
     
     <script src="../js/menue.js"></script> 
+    <script src="../js/bienenvolk.js"></script>
     
 </body>
 </html>
