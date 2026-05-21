@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  
-  <title>Galerie — Mein Projekt</title>
+  <title>Bienen-Oase — Mein Projekt</title>
 
     <link rel="stylesheet" href="../css/fonts.css" />
     <link rel="stylesheet" href="../css/style.css" />
@@ -47,16 +47,16 @@
                 <li class="nav-item">
                     <a href="../seiten/Bienenvolk.html" class="nav-link">
                        <i data-lucide="archive" class="nav-icon"></i>
-                        <span class="nav-label">Bienenvolk</span> 
+                        <span class="nav-label">Im Bienenstock</span> 
                     </a>
-                    <span class="nav-tooltip">Bienenvolk</span>
+                    <span class="nav-tooltip">Im Bienenstock</span>
                 </li>
                 <li class="nav-item">
                     <a href="../seiten/Bienenfreundlich.html" class="nav-link">
                         <i data-lucide="leaf" class="nav-icon"></i>
-                        <span class="nav-label">Bienenfreundliche Natur</span> 
+                        <span class="nav-label">Bienen-Oase</span> 
                     </a>
-                    <span class="nav-tooltip">Bienenfreundliche Natur</span>
+                    <span class="nav-tooltip">Bienen-Oase</span>
                 </li>
                 <li class="nav-item">
                     <a href="../seiten/Vereinskalender.html" class="nav-link">
@@ -78,25 +78,64 @@
 <!-- Sidebar Ende -->
 
 <main class="inhalt">
-        <header class="page-header">
-            
-            <h1>Bienenfreundliche Natur </h1>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</p>
-        </header>
+    
+    <header class="page-header info-accent">
+        <h1>Die Bienen-Oase</h1>
+        <p class="subtitle">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+    </header>
 
-        <section class="gallery-section">
-            <h2>Pflanzen-Galerie</h2>
-
-<!-- I hob a Idee fia a bessere Galerie oba lossn ma sunst so / CSS is auf des angepasst --> 
-            <div class="galerie-grid">
-                <div class="galerie-item">🌻<div class="label">Sonnenblume</div></div>
-                <div class="galerie-item">🌿<div class="label">Lavendel</div></div>
-                <div class="galerie-item">🍎<div class="label">Apfelblüte</div></div>
-                <div class="galerie-item">🌼<div class="label">Margerite</div></div>
+    <section class="filter-section bento-card">
+        <div class="filter-row">
+            <span class="filter-label">Wann?</span>
+            <div class="filter-buttons" id="filter-season">
+                <button class="filter-btn active" data-filter="all">Alle</button>
+                <button class="filter-btn" data-filter="Frühling">Frühling</button>
+                <button class="filter-btn" data-filter="Sommer">Sommer</button>
+                <button class="filter-btn" data-filter="Herbst">Herbst</button>
             </div>
-        </section>
-    </main>
-</div>
+        </div>
+
+        <hr class="filter-divider">
+
+        <div class="filter-row">
+            <span class="filter-label">Was?</span>
+            <div class="filter-buttons" id="filter-type">
+                <button class="filter-btn active" data-filter="all">Alle</button>
+                <button class="filter-btn" data-filter="Baum">Bäume</button>
+                <button class="filter-btn" data-filter="Strauch">Sträucher</button>
+                <button class="filter-btn" data-filter="Staude">Stauden</button>
+                <button class="filter-btn" data-filter="Zwiebelpflanze">Zwiebeln</button>
+                <button class="filter-btn" data-filter="Einjährige">Einjährige</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="oase-layout">
+        
+        <div class="oase-main">
+            <section class="galerie-section">
+                <div id="pflanzen-grid" class="galerie-grid">
+                </div>
+            </section>
+        </div>
+
+        <aside class="side-column">
+            <div class="bento-card info-accent einkaufszettel-card">
+                <h3>Mein Pflanzplan</h3>
+                <p style="font-size: 0.85rem; margin-bottom: 1rem;">Klicke bei einer Pflanze auf "Hinzufügen", um sie hier zu sammeln.</p>
+                
+                <ul id="notizzettel-liste" class="notizzettel-liste">
+                    <li class="empty-state">Noch keine Pflanzen ausgewählt.</li>
+                </ul>
+
+                <button id="download-btn" class="volk-pill" style="width: 100%; margin-top: 1.5rem; display: none;">
+                    Plan drucken / PDF
+                </button>
+            </div>
+        </aside>
+
+    </div>
+</main>
 
 <script src="https://unpkg.com/lucide@latest"></script>
     <script>
@@ -104,5 +143,7 @@
     </script>
 
   <script src="../js/menue.js"></script>
+  <script src="../js/bienenfreundlich.js"></script>
+
 </body>
 </html>
