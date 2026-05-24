@@ -45,6 +45,7 @@ const WMO_ICON = {
 const DAYS = ['So','Mo','Di','Mi','Do','Fr','Sa'];
 
 // Dropdown befüllen
+// Dropdown befüllen
 const select = document.getElementById('city-select');
 CITIES.forEach((c, i) => {
   const opt = document.createElement('option');
@@ -53,46 +54,58 @@ CITIES.forEach((c, i) => {
   select.appendChild(opt);
 });
 
-// Bei Auswahl Wetter laden
 select.addEventListener('change', () => {
-  loadCity(CITIES[select.value]);
+  loadCity(CITIES[Number(select.value)]);
 });
 
-select.value = 0;
+select.selectedIndex = 0;
 loadCity(CITIES[0]);
 
 async function loadCity(city) {
   const fg = document.getElementById('forecast-grid');
-  fg.innerHTML = 'Wird geladen…';
+  fg.innerHTML = '<span style="font-size:13px">Wird geladen…</span>';
 
-  const res  = await fetch(
-    `https://api.open-meteo.com/v1/forecast` +
-    `?latitude=${city.lat}&longitude=${city.lon}` +
-    `&daily=temperature_2m_max,temperature_2m_min,weathercode` +
-    `&timezone=Europe%2FVienna&forecast_days=7`
-  );
-  const data  = await res.json();
-  const daily = data.daily;
+  try {
+    const res = await fetch(
+      `https://api.open-meteo.com/v1/forecast` +
+      `?latitude=${city.lat}&longitude=${city.lon}` +
+      `&daily=temperature_2m_max,temperature_2m_min,weathercode` +
+      `&timezone=Europe%2FVienna&forecast_days=7`
+    );
 
-  fg.innerHTML = '';
-  for (let i = 0; i < 7; i++) {
-    const date = new Date(daily.time[i] + 'T12:00:00');
-    const dow  = i === 0 ? 'Heute' : (i === 1 ? 'Morgen' : DAYS[date.getDay()]);
-    const code = daily.weathercode[i];
+    // Fix: HTTP-Fehler abfangen (z.B. 429, 500)
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-    const card = document.createElement('div');
-    card.className = 'day-card';
-    card.innerHTML = `
-      <div class="day-name">${dow}</div>
-      <span class="day-icon">${WMO_ICON[code] || '?'}</span>
-      <div class="day-desc">${WMO_LABEL[code] || '—'}</div>
-      <div class="day-max">${Math.round(daily.temperature_2m_max[i])}°</div>
-      <div class="day-min">${Math.round(daily.temperature_2m_min[i])}°</div>
-    `;
-    fg.appendChild(card);
+    const data  = await res.json();
+    const daily = data.daily;
+
+    fg.innerHTML = '';
+    for (let i = 0; i < 7; i++) {
+      const date = new Date(daily.time[i] + 'T12:00:00');
+      const dow  = i === 0 ? 'He' : (i === 1 ? 'Mg' : DAYS[date.getDay()]);
+      const code = daily.weathercode[i];
+
+      const card = document.createElement('div');
+      card.className = 'day-card';
+      card.innerHTML = `
+        <div class="day-name">${dow}</div>
+        <span class="day-icon">${WMO_ICON[code] ?? '?'}</span>
+        <div class="day-desc">${WMO_LABEL[code] ?? '—'}</div>
+        <div class="day-max">${Math.round(daily.temperature_2m_max[i])}°</div>
+        <div class="day-min">${Math.round(daily.temperature_2m_min[i])}°</div>
+      `;
+      fg.appendChild(card);
+    }
+
+  } catch (err) {
+    // Fix: Fehlermeldung anzeigen statt endlosem "Wird geladen…"
+    fg.innerHTML = '<span style="font-size:13px;color:red">Fehler beim Laden ⚠️</span>';
+    console.error('Wetter-Fehler:', err);
   }
 }
-//-----------------------------------------------//////////
+
+// ─── Events-Widget ───────────────────────────────────────────────────────────
+// ─── Events-Widget ───────────────────────────────────────────────────────────
 const rawEvents = [
   { typ: "Monatsversammlung", datum: "2026-03-05", uhrzeit: "18:30", thema: "Monatsbetrachtung: Frühjahrsrevision", verein: "Schalchen/Mattighofen", adresse_vollständig: "Hauptstraße 9, 5231 Schalchen" },
   { typ: "Monatsversammlung", datum: "2026-04-09", uhrzeit: "18:30", thema: "Monatsbetrachtung: Honigraum aufsetzen", verein: "Schalchen/Mattighofen", adresse_vollständig: "Hauptstraße 9, 5231 Schalchen" },
@@ -114,17 +127,19 @@ const rawEvents = [
 ];
 
 (function () {
-  const now = new Date();
+  const widget = document.getElementById('events-widget');
+  if (!widget) return;
+
+  function getNow() { return new Date(); }
+  const now = getNow();
+
   const events = rawEvents
     .map(e => ({ ...e, _dt: new Date(e.datum + 'T' + e.uhrzeit) }))
     .filter(e => e._dt >= now)
     .sort((a, b) => a._dt - b._dt);
 
-  const widget = document.getElementById('events-widget');
-  if (!widget) return;
-
   function countdown(dt) {
-    const days = Math.ceil((dt - now) / 86400000);
+    const days = Math.ceil((dt - getNow()) / 86400000);
     if (days === 0) return 'Heute';
     if (days === 1) return 'Morgen';
     return 'In ' + days + ' Tagen';
@@ -139,13 +154,41 @@ const rawEvents = [
     return;
   }
 
+  // Popup einmalig ans body hängen
+  const popup = document.createElement('div');
+  popup.id = 'ev-popup';
+  popup.style.cssText = `
+    position: fixed;
+    z-index: 999;
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow);
+    padding: 12px 16px;
+    font-size: 12px;
+    color: var(--c-text);
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    min-width: 220px;
+    line-height: 1.8;
+    font-family: var(--f-body);
+  `;
+  document.body.appendChild(popup);
+
   const next = events[0];
   const rest = events.slice(1, 4);
 
   const restHTML = rest.map(e => `
-    <div class="ev-row">
-      <span class="ev-date">${formatShort(e._dt)}</span>
-      <span class="ev-name">${e.thema}</span>
+    <div class="ev-row"
+         data-thema="${e.thema}"
+         data-datum="${e._dt.toLocaleDateString('de-AT', { weekday: 'long', day: '2-digit', month: 'long' })}"
+         data-uhrzeit="${e.uhrzeit}"
+         data-verein="${e.verein}"
+         data-adresse="${e.adresse_vollständig}">
+        <span class="ev-date">${formatShort(e._dt)}</span>
+        <span class="ev-name">${e.thema}</span>
     </div>
   `).join('');
 
@@ -162,4 +205,35 @@ const rawEvents = [
     </div>
     ${rest.length ? '<div class="ev-divider"></div><div class="ev-upcoming">' + restHTML + '</div>' : ''}
   `;
+
+  // Hover-Logik
+  document.querySelectorAll('.ev-row').forEach(row => {
+    row.addEventListener('mouseenter', () => {
+      const rect = row.getBoundingClientRect();
+      popup.innerHTML = `
+        <div style="font-weight:bold;font-size:13px;margin-bottom:4px">${row.dataset.thema}</div>
+        <div>📅 ${row.dataset.datum}</div>
+        <div>🕐 ${row.dataset.uhrzeit} Uhr</div>
+        <div>📍 ${row.dataset.verein}</div>
+        <div style="font-size:11px;opacity:0.7">🏠 ${row.dataset.adresse}</div>
+      `;
+
+      const popupWidth = 240;
+      const left = rect.right + 10;
+      const finalLeft = left + popupWidth > window.innerWidth
+        ? rect.left - popupWidth - 10
+        : left;
+
+      popup.style.left = finalLeft + 'px';
+      popup.style.top  = (rect.top - 10) + 'px';
+      popup.style.opacity = '1';
+      popup.style.transform = 'translateY(0)';
+    });
+
+    row.addEventListener('mouseleave', () => {
+      popup.style.opacity = '0';
+      popup.style.transform = 'translateY(4px)';
+    });
+  });
+
 })();

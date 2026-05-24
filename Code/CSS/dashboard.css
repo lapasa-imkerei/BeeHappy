@@ -82,7 +82,7 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
     border: 1px solid rgba(0,0,0,0.1);
     background: var(--c-white);
     font-family: var(--f-body);
-    font-size: 14px;       /* px statt rem wegen html font-size: 22px */
+    font-size: 14px;
     cursor: pointer;
     flex-shrink: 0;
 }
@@ -94,7 +94,7 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
     width: 100%;
     flex: 1;
     overflow-y: auto;
-    min-height: 0;         /* kritisch für flex + overflow */
+    min-height: 0;
 }
 
 .day-card {
@@ -112,34 +112,156 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
     box-sizing: border-box;
 }
 
-.day-name { 
-    font-weight: bold; 
-    color: var(--c-text); 
-    min-width: 32px;
-    font-size: 13px;
-}
-.day-icon { 
-    font-size: 15px; 
-    flex-shrink: 0;
-}
-.day-desc { 
-    color: var(--c-text); 
-    font-size: 11px; 
-    flex: 1;                    /* nimmt den restlichen Platz */
-    overflow: hidden; 
-    text-overflow: ellipsis; 
-    white-space: nowrap; 
-}
-.day-max  { 
-    font-weight: bold; 
-    color: var(--c-text); 
-    font-size: 13px;
-    white-space: nowrap; 
-}
-.day-min  { 
-    color: gray; 
-    font-size: 11px; 
-    white-space: nowrap; 
+.day-name { font-weight: bold; color: var(--c-text); min-width: 32px; font-size: 13px; }
+.day-icon { font-size: 15px; flex-shrink: 0; }
+.day-desc { color: var(--c-text); font-size: 11px; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.day-max  { font-weight: bold; color: var(--c-text); font-size: 13px; white-space: nowrap; }
+.day-min  { color: gray; font-size: 11px; white-space: nowrap; }
+
+/* ─── Events-Widget ──────────────────────────────────────────────────────── */
+#events-widget {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    flex-direction: column !important;
+    padding: 14px !important;
+    gap: 6px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    height: 300px !important;
 }
 
+.ev-label {
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--c-text);
+}
 
+.ev-next { width: 100%; }
+
+.ev-next-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--c-text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.ev-next-meta {
+    font-size: 12px;
+    color: var(--c-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ← Hier die Farbe ändern */
+.ev-badge {
+    display: inline-block;
+    margin-top: 4px !important;
+    padding: 2px 8px !important;
+    border-radius: 999px !important;
+    background: var(--c-accent) !important;
+    color: #ffffff !important;
+    font-size: 11px !important;
+    font-weight: bold !important;
+    font-family: var(--f-body) !important;
+    line-height: 1.4 !important;
+    white-space: nowrap !important;
+}
+
+.ev-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(0,0,0,0.08);
+    margin: 4px 0;
+}
+
+.ev-upcoming { width: 100%; }
+
+.ev-row {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--c-text);
+    padding: 3px 0;
+    cursor: pointer;
+    width: 100%;
+    overflow: hidden;
+}
+
+.ev-date {
+    font-weight: bold;
+    white-space: nowrap;
+    min-width: 50px;
+    font-size: 12px;
+}
+
+.ev-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+    flex: 1;
+}
+
+/* ─── Tablet (≤ 1024px) ──────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: none;
+        gap: 14px;
+        padding: 14px;
+    }
+
+    .item-large-left,
+    .item-large-right { grid-row: span 1; }
+    .item-wide        { grid-column: span 2; }
+    .item             { min-height: 200px; height: auto; }
+
+    #wetter-widget.item { height: auto; min-height: 200px; }
+    #events-widget      { height: auto !important; min-height: 200px !important; }
+}
+
+/* ─── Mobile (≤ 600px) ───────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .item-wide  { grid-column: span 2; }
+    .item       { min-height: 160px; font-size: 12px; }
+
+    #wetter-widget.item { padding: 10px; height: auto; min-height: 160px; }
+    #wetter-widget select { font-size: 11px; padding: 4px 6px; }
+
+    .day-card   { padding: 4px 6px; font-size: 11px; }
+    .day-name   { font-size: 11px; min-width: 26px; }
+    .day-icon   { font-size: 13px; }
+    .day-desc   { font-size: 10px; }
+    .day-max    { font-size: 11px; }
+    .day-min    { font-size: 10px; }
+
+    #events-widget { padding: 10px !important; }
+
+    .ev-next-title,
+    .ev-name {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+        font-size: 12px;
+    }
+
+    .ev-next-meta,
+    .ev-date,
+    .ev-label,
+    .ev-badge { font-size: 10px; }
+
+    .ev-badge { padding: 2px 6px; }
+}
