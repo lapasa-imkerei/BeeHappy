@@ -1,66 +1,32 @@
-/* 
-Do herinnen is olles für die Sidebar inkl. Responsive Design. 
-Aktuell gibt es menue.js de für sie Zuständig ist. 
-Es soitat de Variablen aus da style.css nutzen oba des is jetzt eher weniger der foi.
-Sie is relativ "unabhängig" vo anderen Seiten
-*/
-
-
-:root {
-    --c-bg: #fff3c2;
-    --c-sidebar: #BFAA7c;
-    --c-surface: #e3ca94;
-    --c-text: #545454;
-    --c-accent: #f97316;
-    --c-border: rgba(84, 84, 84, 0.2);
-    --c-white: #ffffff;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-body {
-    min-height: 100vh;
-}
-
-
+/* --- SIDEBAR BASIS & GLASSMORPHISM --- */
 .sidebar {
-    width: 330px;
+    width: var(--sidebar-breite-offen, 330px);
     position: fixed;
     margin: 16px;
-    border-radius: 16px;
+    border-radius: var(--radius-l, 16px);
     height: calc(100vh - 32px);
-    transition: all 0.4s ease;
+    transition: var(--transition, all 0.4s ease);
     z-index: 100;
     display: flex;
     flex-direction: column;
 
-    /* Glass-Effekt */
-    background: rgba(255, 255, 255, 0.4); 
-    backdrop-filter: blur(12px);          
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    /* NEU: Milchigerer Glass-Effekt */
+    background: rgba(255, 255, 255, 0.65); /* Mehr Deckkraft für den "Milch"-Look */
+    backdrop-filter: blur(20px);           /* Stärkerer Weichzeichner im Hintergrund */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: var(--shadow);
 }
 
 .sidebar.collapsed {
-    width: 85px;
+    width: var(--sidebar-breite-zu, 85px);
     background: var(--c-sidebar); 
     backdrop-filter: none;        
     -webkit-backdrop-filter: none;
     border: 1px solid var(--c-surface);
 }
 
-
+/* --- HEADER & LEUCHTENDES LOGO --- */
 .sidebar-header {
     position: relative;
     display: flex;
@@ -70,26 +36,75 @@ body {
     flex-shrink: 0; 
 }
 
-.sidebar-header .header-logo img {
-    width: 70px;
-    height: 70px;
-    display: block;
-    object-fit: contain;
-    border-radius: 50%;
-    transform: scale(1.8);
-    transition: transform 0.4s ease;
+.sidebar-header .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Etwas mehr Platz zwischen Logo und Text */
+    text-decoration: none;
+    color: var(--c-text);
+    /* overflow: hidden; WURDE ENTFERNT, damit der Text Platz hat */
 }
 
-.sidebar.collapsed .sidebar-header .header-logo img {
-    width: 45px;
-    height: 45px;
-    transform: scale(1.8);
+/* Der leuchtende Kreis GANZ EXPLIZIT */
+.sidebar-header .logo-circle {
+    width: 55px !important;
+    height: 55px !important;
+    border-radius: 50% !important;
+    background-color: transparent !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    overflow: hidden !important; 
+    
+    /* NEU: Ein sanfterer, dezenterer Glow-Effekt */
+    box-shadow: 0 0 8px 2px rgba(255, 215, 0, 0.5), 
+                0 0 15px 4px rgba(255, 215, 0, 0.2) !important;
+    border: 2px solid rgba(255, 215, 0, 0.6) !important;
+    
+    transition: width 0.4s ease, height 0.4s ease;
 }
 
+/* Das Bild IM Kreis */
+.sidebar-header .logo-circle img {
+    width: 100% !important;
+    height: 100% !important;
+    
+    /* NEU: "contain" stellt sicher, dass das ganze Logo in den Kreis passt */
+    object-fit: contain !important; 
+    display: block !important;
+    
+    /* transform: scale(...) wurde komplett entfernt! */
+}
 
+/* Der Text daneben */
+.sidebar-header .logo-text {
+    font-family: var(--f-logo, 'Indie Flower', cursive) !important;
+    font-size: 26px !important; /* Feste Pixelgröße, damit es nicht riesig wird */
+    font-weight: bold !important;
+    white-space: nowrap;
+    transition: opacity 0.4s ease, width 0.4s ease;
+}
+
+/* --- Eingeklappter Zustand Logo --- */
+.sidebar.collapsed .sidebar-header .logo-circle {
+    width: 45px !important;
+    height: 45px !important;
+}
+
+.sidebar.collapsed .sidebar-header .logo-circle img {
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.sidebar.collapsed .sidebar-header .logo-text {
+    opacity: 0;
+    width: 0;
+    pointer-events: none;
+}
+
+/* --- TOGGLE BUTTONS --- */
 .sidebar-header .toggler {
-    position: absolute;
-    right: 20px;
     height: 35px;
     width: 35px;
     border: 1px solid var(--c-surface);
@@ -97,10 +112,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    border-radius: 8px;
+    border-radius: var(--radius-s, 8px);
     background: var(--c-white);
-    transition: 0.4s ease;
+    transition: var(--transition);
+    flex-shrink: 0;
 }
 
 .sidebar-header .toggler:hover {
@@ -108,20 +123,19 @@ body {
     color: var(--c-white);
 }
 
-.sidebar.collapsed .sidebar-header .sidebar-toggler {
-    transform: translate(-4px, 65px);
+.sidebar.collapsed .sidebar-header {
+    flex-direction: column; /* Setzt den Button sauber UNTER das Logo */
+    padding: 20px 0;
+    gap: 15px; /* Abstand zwischen Logo und Button */
 }
 
-.sidebar.collapsed .sidebar-header .sidebar-toggler svg {
-    transform: rotate(180deg);
-    transition: transform 0.4s ease;
-}
+.sidebar-header .menu-toggler { display: none; }
 
-.sidebar-header .menu-toggler {
-    display: none; 
-}
+.sidebar.collapsed .sidebar-toggler { transform: rotate(180deg); }
+.sidebar.collapsed .sidebar-toggler svg { transform: none; }
 
 
+/* --- NAVIGATION --- */
 .sidebar-nav {
     flex-grow: 1;
     overflow-y: auto;
@@ -129,67 +143,42 @@ body {
     padding-bottom: 20px;
 }
 
-
-.sidebar-nav::-webkit-scrollbar {
-    width: 5px;
-}
+.sidebar-nav::-webkit-scrollbar { width: 5px; }
 .sidebar-nav::-webkit-scrollbar-thumb {
     background: var(--c-surface);
     border-radius: 10px;
 }
 
-.sidebar-nav .nav-list {
+.nav-list {
     list-style: none;
     display: flex;
+    flex-direction: column;
     gap: 4px;
     padding: 0 15px;
-    flex-direction: column;
     transform: translateY(15px);
-    transition: 0.4s ease;
+    transition: var(--transition);
 }
 
-.sidebar.collapsed .sidebar-nav {
-    overflow: visible; 
-}
+.sidebar.collapsed .sidebar-nav { overflow: visible; }
+.sidebar.collapsed .primary-nav { transform: translateY(15px); }
 
-.sidebar.collapsed .sidebar-nav .primary-nav {
-    transform: translateY(65px);
-}
-
-.sidebar-nav .nav-link {
+.nav-link {
     color: var(--c-text); 
     display: flex;
     gap: 12px;
     white-space: nowrap;
-    border-radius: 8px;
+    border-radius: var(--radius-s, 8px);
     align-items: center;
     padding: 12px 15px;
-    background: transparent;
     text-decoration: none;
-    transition: 0.4s ease;
+    transition: var(--transition);
 }
 
-.nav-icon svg, .nav-icon{
+.nav-icon {
     width: 20px;
     height: 20px;
     flex-shrink: 0;
-    display:block;
 }
-
-.sidebar.collapsed .nav-link {
-    justify-content: center;
-    padding: 12px 0;
-    width: 100%;
-    gap: 0;
-}
-
-.sidebar.collapsed .nav-label {
-    opacity: 0;
-    pointer-events: none;
-    width: 0;
-    overflow: hidden;
-}
-
 
 .nav-link.active {
     background: var(--c-surface); 
@@ -197,26 +186,27 @@ body {
     font-weight: bold;
 }
 
-.nav-link.active .nav-icon {
-    color: var(--c-accent);
-}
-
-.sidebar-nav .nav-link:hover {
+.nav-link.active .nav-icon { color: var(--c-accent); }
+.nav-link:hover:not(.active) {
     color: var(--c-surface);
     background: var(--c-text);
 }
 
+/* Eingeklapptes Menü */
+.sidebar.collapsed .nav-link {
+    justify-content: center;
+    padding: 12px 0;
+    gap: 0;
+}
 .sidebar.collapsed .nav-label {
     opacity: 0;
+    width: 0;
     pointer-events: none;
 }
 
-
-.sidebar-nav .nav-item {
-    position: relative;
-}
-
-.sidebar-nav .nav-tooltip {
+/* Tooltips */
+.nav-item { position: relative; }
+.nav-tooltip {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -225,35 +215,21 @@ body {
     pointer-events: none;
     color: var(--c-text);
     padding: 6px 12px;
-    border-radius: 8px;
+    border-radius: var(--radius-s, 8px);
     background: var(--c-surface);
     white-space: nowrap;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    transition: 0.4s ease;
+    transition: var(--transition);
     visibility: hidden;
     z-index: 1000;
 }
-
 .sidebar.collapsed .nav-item:hover .nav-tooltip {
     opacity: 1;
     visibility: visible;
 }
 
 
-.inhalt {
-    margin-left: 340px; 
-    padding: 40px;
-    max-width: calc(100% - 340px);
-    box-sizing: border-box;
-    transition: margin-left 0.4s ease; 
-}
-
-.sidebar.collapsed ~ .inhalt {
-    margin-left: 120px; 
-    max-width: calc(100% - 120px);
-}
-
-/* --- RESPONSIVE BEREICH  --- */
+/* --- INHALT & RESPONSIVE --- */
 @media (max-width: 1024px) {
     .inhalt {
         margin-left: 0; 
@@ -263,11 +239,16 @@ body {
     }
 
     .sidebar {
+        position: fixed;
+        top: 0;
+        left:auto;
         margin: 0;
         width: 100%;
-        height: 70px; 
+        height: 100px; 
         border-radius: 0;
-        overflow: hidden; 
+        border: none;
+        border-bottom: 1px solid var(--c-surface);
+        overflow: hidden;
     }
 
     .sidebar.show-mobile-menu {
@@ -275,16 +256,12 @@ body {
         background: var(--c-sidebar);
     }
 
-    .sidebar-header .sidebar-toggler {
-        display: none;
-    }
-
-    .sidebar-header .menu-toggler {
-        display: flex;
-    }
-
+    .sidebar-header .sidebar-toggler { display: none; }
+    .sidebar-header .menu-toggler { display: flex; }
+    
     .sidebar-nav .nav-link .nav-label {
         opacity: 1 !important;
         display: block !important;
+        width: auto;
     }
 }

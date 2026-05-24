@@ -6,14 +6,32 @@ Fonts werden im fonts.css definiert, do san nur anpassungen.
 !!!!!Responsive Design hod do herinnen nix zum suacha!!!!!
 */
 
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: auto;
+    scrollbar-color: var(--c-sidebar) var(--c-bg);
+}
+
+/* Cursor */
+/* Cursor */
+* {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23545454' stroke='%23545454' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 2l7.07 17 2.51-7.39L20 9.07z'/%3E%3C/svg%3E") 2 2, auto !important;
+}
+
+a, button, .volk-pill, .galerie-card, .nav-link, .toggler {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23d9f4cd' stroke='%23d9f4cd' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 2l7.07 17 2.51-7.39L20 9.07z'/%3E%3C/svg%3E") 2 2, pointer !important;
+}
+
 :root {
     
     --c-bg: #fff3c2;
     --c-sidebar: #BFAA7c;
     --c-surface: #e3ca94;
     --c-text: #545454;
-    --c-accent: #d9f4cd;
-    --c-border: #545454;
+    --c-accent: #f97316;
+    --c-border: rgba(84, 84, 84, 0.2);;
     --c-white: #ffffff;
     --c-marker: rgba(255, 235, 20, 0.4); 
     --c-glow: rgba(84, 84, 84, 0.1);
@@ -33,20 +51,12 @@ Fonts werden im fonts.css definiert, do san nur anpassungen.
     --shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
 }
 
-
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 html {
     scroll-behavior: smooth;
     font-size: 22px;
     overflow-x: hidden; 
+    max-width: 100%;
 }
-
-
 
 body {
     background-color: var(--c-bg);
@@ -54,10 +64,10 @@ body {
     font-family: var(--f-body);
     line-height: 1.6;
     min-height: 100vh;
+    max-width: 100%;
     -webkit-font-smoothing: antialiased;
     position: relative;
     
-  
     background-image: 
         linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, 0.7) 45%, rgba(255, 255, 255, 0.7) 50%, transparent 75%),
         radial-gradient(circle at 90% 80%, rgba(249, 22, 215, 0.25) 0, transparent 50%),
@@ -78,7 +88,6 @@ body {
         background-position: 100% 100%, 100% 50%, 50% 100%, 100% 0%;
     }
 }
-
 
 
 /* Unsere generellen Schriftarten */
@@ -108,18 +117,17 @@ p {
 }
 
 /* Des is de Basis für de Sidebar und den Content */
-.layout-wrapper {
-    display: flex; 
-    width: 100%;
-    min-height: 100vh;
+.inhalt {
+    margin-left: 340px; 
+    padding: 40px;
+    max-width: calc(100% - 340px);
+    transition: margin-left var(--transition); 
 }
 
-.main-content {
-    flex-grow: 1;
-    padding: 2rem;
-    transition: margin-left var(--transition);
+.sidebar.collapsed ~ .inhalt {
+    margin-left: 120px; 
+    max-width: calc(100% - 120px);
 }
-
 
 /* Scrollleiste */
 ::-webkit-scrollbar {
@@ -141,41 +149,11 @@ p {
     background: var(--c-text);
 }
 
-/* Firefox */
-* {
-    scrollbar-width: auto;
-    scrollbar-color: var(--c-sidebar) var(--c-bg);
-}
-
-
-
-/* Cursor */
-* {
-    cursor: url("data:image/svg+xml,\
-        %3Csvg xmlns='http://www.w3.org/2000/svg' \
-              width='24' height='24' \
-              viewBox='0 0 24 24' \
-              fill='%23545454' \
-              stroke='%23545454' \
-              stroke-width='2' \
-              stroke-linecap='round' \
-              stroke-linejoin='round'%3E\
-            %3Cpath d='M2 2l7.07 17 2.51-7.39L20 9.07z'/%3E\
-        %3C/svg%3E\
-    ") 2 2, auto !important;
-}
-
-a, button, .volk-pill, .galerie-card, .nav-link, .toggler {
-    cursor: url("data:image/svg+xml,\
-        %3Csvg xmlns='http://www.w3.org/2000/svg' \
-              width='24' height='24' \
-              viewBox='0 0 24 24' \
-              fill='%23d9f4cd' \
-              stroke='%23d9f4cd' \
-              stroke-width='2' \
-              stroke-linecap='round' \
-              stroke-linejoin='round'%3E\
-            %3Cpath d='M2 2l7.07 17 2.51-7.39L20 9.07z'/%3E\
-        %3C/svg%3E\
-    ") 2 2, pointer !important;
+@media (max-width: 1024px) {
+    .main-content,
+    .sidebar.collapsed ~ .main-content {
+        margin-left: 0;
+        margin-top: 100px; 
+        padding: 1rem;
+    }
 }

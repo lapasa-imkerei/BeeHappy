@@ -5,28 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeeHappy Sidebar</title>
 
-    
+    <link rel="stylesheet" href="../CSS/style.css"> 
     <link rel="stylesheet" href="../CSS/sidebar.css">
-    <link rel="stylesheet" href="../CSS/background.css">
-    
-
 </head>
 <body>
     <canvas id="honeycomb-bg"></canvas>
 
-      <!-- Sidebar Beginn -->
+    <!-- Sidebar Beginn -->
     <aside class="sidebar">
-      <header class="sidebar-header">
-        <a href="#" class="header-logo">
-          <img src="../Bilder/logo.jpg" alt="Logo BeeHappy"> <!-- Rundes Logo - Bild -->
-        </a>
-          <button class="toggler sidebar-toggler">
+        <header class="sidebar-header">
+            <a href="#" class="header-logo">
+                <div class="logo-circle">
+                    <img src="../Bilder/logo_.svg" alt="Logo BeeHappy">
+                </div>
+                <span class="logo-text">BeeHappy</span>
+            </a>
+            
+            <button class="toggler sidebar-toggler" aria-label="Menü einklappen">
                 <i data-lucide="chevron-left"></i>
             </button>
-            <button class="toggler menu-toggler">
+            <button class="toggler menu-toggler" aria-label="Menü öffnen">
                 <i data-lucide="menu"></i>
             </button>
         </header>
+
         <nav class="sidebar-nav">
             <ul class="nav-list primary-nav">
                 <li class="nav-item">
@@ -55,7 +57,7 @@
                         <i data-lucide="leaf" class="nav-icon"></i>
                         <span class="nav-label">Bienen-Oase</span> 
                     </a>
-                    <span class="nav-tooltip">Bienen-Oaser</span>
+                    <span class="nav-tooltip">Bienen-Oase</span>
                 </li>
                 <li class="nav-item">
                     <a href="../seiten/Vereinskalender.html" class="nav-link">
@@ -74,13 +76,10 @@
             </ul>
         </nav>
     </aside>
-<!-- Sidebar Ende -->
+    <!-- Sidebar Ende -->
 
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
-  lucide.createIcons();
-</script>
-
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
     <script src="../js/menue.js"></script>
 </body>
 </html>
