@@ -10,9 +10,8 @@
     display: flex;
     flex-direction: column;
 
-    /* NEU: Milchigerer Glass-Effekt */
-    background: rgba(255, 255, 255, 0.65); /* Mehr Deckkraft für den "Milch"-Look */
-    backdrop-filter: blur(20px);           /* Stärkerer Weichzeichner im Hintergrund */
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px);          
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.5);
     box-shadow: var(--shadow);
@@ -26,7 +25,7 @@
     border: 1px solid var(--c-surface);
 }
 
-/* --- HEADER & LEUCHTENDES LOGO --- */
+
 .sidebar-header {
     position: relative;
     display: flex;
@@ -39,13 +38,12 @@
 .sidebar-header .header-logo {
     display: flex;
     align-items: center;
-    gap: 15px; /* Etwas mehr Platz zwischen Logo und Text */
+    gap: 15px; 
     text-decoration: none;
     color: var(--c-text);
-    /* overflow: hidden; WURDE ENTFERNT, damit der Text Platz hat */
 }
 
-/* Der leuchtende Kreis GANZ EXPLIZIT */
+/*leuchtende Kreis */
 .sidebar-header .logo-circle {
     width: 55px !important;
     height: 55px !important;
@@ -65,28 +63,24 @@
     transition: width 0.4s ease, height 0.4s ease;
 }
 
-/* Das Bild IM Kreis */
+
 .sidebar-header .logo-circle img {
     width: 100% !important;
     height: 100% !important;
-    
-    /* NEU: "contain" stellt sicher, dass das ganze Logo in den Kreis passt */
     object-fit: contain !important; 
     display: block !important;
-    
-    /* transform: scale(...) wurde komplett entfernt! */
 }
 
-/* Der Text daneben */
 .sidebar-header .logo-text {
-    font-family: var(--f-logo, 'Indie Flower', cursive) !important;
-    font-size: 26px !important; /* Feste Pixelgröße, damit es nicht riesig wird */
+    font-family: var(--f-logo, 'Just Another Hand') !important;
+    font-size: 26px !important; 
     font-weight: bold !important;
     white-space: nowrap;
     transition: opacity 0.4s ease, width 0.4s ease;
 }
 
-/* --- Eingeklappter Zustand Logo --- */
+
+
 .sidebar.collapsed .sidebar-header .logo-circle {
     width: 45px !important;
     height: 45px !important;
@@ -103,7 +97,7 @@
     pointer-events: none;
 }
 
-/* --- TOGGLE BUTTONS --- */
+
 .sidebar-header .toggler {
     height: 35px;
     width: 35px;
@@ -124,9 +118,9 @@
 }
 
 .sidebar.collapsed .sidebar-header {
-    flex-direction: column; /* Setzt den Button sauber UNTER das Logo */
+    flex-direction: column; 
     padding: 20px 0;
-    gap: 15px; /* Abstand zwischen Logo und Button */
+    gap: 15px; 
 }
 
 .sidebar-header .menu-toggler { display: none; }
@@ -135,7 +129,7 @@
 .sidebar.collapsed .sidebar-toggler svg { transform: none; }
 
 
-/* --- NAVIGATION --- */
+
 .sidebar-nav {
     flex-grow: 1;
     overflow-y: auto;
