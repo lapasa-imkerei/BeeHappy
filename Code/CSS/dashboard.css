@@ -118,6 +118,75 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 .day-max  { font-weight: bold; color: var(--c-text); font-size: 13px; white-space: nowrap; }
 .day-min  { color: gray; font-size: 11px; white-space: nowrap; }
 
+
+/* Wetter Text -----------------*/
+/* ─── Weather-Text-Box ───────────────────────────────────────────────────── */
+#weather-text-box {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;  /* ← war space-between */
+    flex-direction: column !important;
+    padding: 28px !important;
+    gap: 16px !important;                    /* ← Abstand zwischen den Blöcken */
+    box-sizing: border-box;
+    transition: background-color 0.4s ease, var(--transition);
+
+}
+
+#weather-text-box.wx-green  { background-color: #d9f4cd; }
+#weather-text-box.wx-yellow { background-color: #fef9c3; }
+#weather-text-box.wx-red    { background-color: #fde8e8; }
+
+.wx-top { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+
+.wx-label {
+    font-family: var(--f-body);
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--c-text);
+    opacity: 0.5;
+    margin: 0;
+}
+
+.wx-ueberschrift {
+    font-family: var(--f-heading);
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: var(--c-text);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.wx-icon {
+    font-size: 5rem;
+    line-height: 1;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.wx-bottom { display: flex; flex-direction: column; gap: 6px; width: 100%; }
+
+.wx-titel {
+    font-family: var(--f-body);
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--c-text);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.wx-text {
+    font-family: var(--f-body);
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: var(--c-text);
+    line-height: 1.7;
+    margin: 0;
+    opacity: 0.75;
+
+}
 /* ─── Events-Widget ──────────────────────────────────────────────────────── */
 #events-widget {
     align-items: flex-start !important;

@@ -42,6 +42,15 @@ const WMO_ICON = {
   95:'⛈', 96:'⛈', 99:'⛈',
 };
 
+const WEATHER_TEXTS = {
+  'Klar':     { Überschrift: "Klar", titel: '☀️ Perfekter Bienentag!',    text: 'Heute fliegen deine Bienen auf Hochtouren. Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, libero molestiae esse praesentium tempore obcaecati eligendi, culpa veniam laboriosam, deleniti suscipit eius? Veritatis impedit voluptatem officiis necessitatibus alias obcaecati rem!', farbe: "green"  },
+  'Bewölkt':  { Überschrift: "Bewölkt",titel: '⛅ Ruhiges Wetter',           text: 'Die Bienen sind aktiv Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, libero molestiae esse praesentium tempore obcaecati eligendi, culpa veniam laboriosam, deleniti suscipit eius? Veritatis impedit voluptatem officiis necessitatibus alias obcaecati rem!Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, libero molestiae esse praesentium tempore obcaecati eligendi, culpa veniam laboriosam, deleniti suscipit eius? Veritatis impedit voluptatem officiis necessitatibus alias obcaecati rem!' , farbe: "green"},
+  'Nebel':    { Überschrift: "Nebel",titel: '🌫 Neblige Morgenstimmung',   text: 'Joa ned so' , farbe :"yellow"},
+  'Regen':    { Überschrift: "Regen",titel: '🌧 Regentag',                 text: 'Die Bienen bleiben im Stock. ' ,farbe: "yellow"},
+  'Schnee':   { Überschrift: "Schnee",titel: '❄️ Winterruhe',               text: 'Das Volk sitzt in der Wintertraube. ' ,farbe: "red"},
+  'Gewitter': { Überschrift: "Gewitter",titel: '⛈ Gewitterwarnung',           text: 'Bienen sind reizbar ' ,farbe: "red"},
+};
+
 const DAYS = ['So','Mo','Di','Mi','Do','Fr','Sa'];
 
 // Dropdown befüllen
@@ -96,6 +105,9 @@ async function loadCity(city) {
       `;
       fg.appendChild(card);
     }
+    // direkt nach der for-Schleife in loadCity():
+    const todayLabel = WMO_LABEL[daily.weathercode[0]] ?? 'Klar';
+      updateWeatherBox(todayLabel);
 
   } catch (err) {
     // Fix: Fehlermeldung anzeigen statt endlosem "Wird geladen…"
@@ -104,7 +116,29 @@ async function loadCity(city) {
   }
 }
 
-// ─── Events-Widget ───────────────────────────────────────────────────────────
+// ─── WEtter Text
+function updateWeatherBox(conditionLabel) {
+    const box = document.getElementById('weather-text-box');
+    if (!box) return;
+
+    const content = WEATHER_TEXTS[conditionLabel] ?? {
+        Überschrift: conditionLabel,
+        titel: '—',
+        text: 'Aktuelle Wetterlage.',
+        farbe: 'green'
+    };
+
+    // Farb-Klasse tauschen
+    box.classList.remove('wx-green', 'wx-yellow', 'wx-red');
+    box.classList.add('wx-' + content.farbe);
+
+    box.innerHTML = `
+        <h2 class="wx-ueberschrift">${content.Überschrift}</h2>
+        <p  class="wx-titel">${content.titel}</p>
+        <p  class="wx-text">${content.text}</p>
+    `;
+}
+
 // ─── Events-Widget ───────────────────────────────────────────────────────────
 const rawEvents = [
   { typ: "Monatsversammlung", datum: "2026-03-05", uhrzeit: "18:30", thema: "Monatsbetrachtung: Frühjahrsrevision", verein: "Schalchen/Mattighofen", adresse_vollständig: "Hauptstraße 9, 5231 Schalchen" },
