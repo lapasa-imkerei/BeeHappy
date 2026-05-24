@@ -8,13 +8,10 @@ sidebarToggler.addEventListener('click', () => {
 
 menuToggler.addEventListener('click', () => {
     sidebar.classList.toggle('show-mobile-menu');
-
-    
-    const icon = menuToggler.querySelector('i');
     if (sidebar.classList.contains('show-mobile-menu')) {
-        icon.setAttribute('data-lucide', 'x');
+        menuToggler.innerHTML = '<i data-lucide="x"></i>';
     } else {
-        icon.setAttribute('data-lucide', 'menu');
+        menuToggler.innerHTML = '<i data-lucide="menu"></i>';
     }
     lucide.createIcons(); 
 });
