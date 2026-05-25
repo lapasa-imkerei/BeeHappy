@@ -2,7 +2,8 @@ pages:
   stage: deploy
   script:
     - mkdir .public
-    - cp -r * .public
+    - cp -r code/* .public/
+    - echo '<meta http-equiv="refresh" content="0; url=seiten/index.html" />' > .public/index.html
     - mv .public public
   artifacts:
     paths:
