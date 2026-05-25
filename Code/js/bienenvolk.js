@@ -37,12 +37,12 @@ const modalData = {
     },
     wachs: {
         title: "Das Bienenwachs",
-        img: "../Bilder/rähmchen.jpg",
+        img: "../Bilder/wachs.jpg",
         text: "<p>Bienenwachs wird von den Baubienen aus speziellen Wachsdrüsen am Hinterleib 'geschwitzt' und für den Bau der Waben genutzt. Es ist ein extrem vielseitiger Rohstoff, der weit über die klassische Bienenwachskerze hinaus Verwendung findet.</p><p><strong>Anwendungsgebiete:</strong> Es ist ein beliebter Bestandteil in der Kosmetik (Cremes, Lippenstifte, Lotionen, Pasten und Salben). Zusätzlich findet es Verwendung in der Lebensmittelindustrie (z. B. als Überzugsmittel), als natürliches Imprägniermittel, in Skiwachs oder in Wachsmalstiften für Kinder. Da es ein reines Naturprodukt ist, kann es auch unproblematisch konsumiert werden, beispielsweise wenn man ein Stück echten Wabenhonig isst.</p>"
     },
     perga: {
         title: "Perga (Bienenbrot)",
-        img: "../Bilder/rähmchen.jpg",
+        img: "../Bilder/perga.jpg",
         text: "<p>Perga, oft auch Bienenbrot genannt, ist im Grunde fermentierter Blütenpollen mit antimikrobieller Wirkung. Die Bienen mischen den gesammelten Pollen mit ihrem Speichel sowie Nektar an und stampfen ihn fest in die Wabenzellen.</p><p><strong>Haltbarkeit durch Fermentation:</strong> Die gefüllte Zelle wird abschließend mit einer hauchfeinen Schicht Propolis überzogen. Durch diese Art der Milchsäuregärung (Fermentierung) wird der frische Blütenpollen für den Winter haltbar gemacht und für die Bienen (und den Menschen) noch leichter verdaulich.</p>"
     },
     propolis: {
@@ -52,7 +52,7 @@ const modalData = {
     },
     gelee: {
         title: "Gelée Royale",
-        img: "../Bilder/rähmchen.jpg",
+        img: "../Bilder/wz.jpg",
         text: "<p>Gelée Royale ist der exklusive Futtersaft, den die Bienen für die Aufzucht einer neuen Königin produzieren. Nur Larven, die zu einer Königin heranwachsen sollen, werden ihr Leben lang ausschließlich mit diesem energiereichen Saft gefüttert.</p><p><strong>Aufwendige Ernte:</strong> Um dieses Produkt zu ernten, benötigen Imker viel Erfahrung und spezielles Werkzeug. Dem Volk muss die Königin entnommen werden, woraufhin künstliche Königinnenbrutzellen eingesetzt werden. Die Bienen füllen diese Zellen mit Gelée Royale, um neue Königinnen heranzuziehen. Nach drei Tagen wird die Larve entfernt und der Saft abgesaugt. So lassen sich bis zu 500 Gramm pro Volk gewinnen. Ein Großteil des weltweit gehandelten Gelée Royale stammt aus China und erzielt hohe Preise.</p><p><strong>Kritik & Inhaltsstoffe:</strong> Das Entfernen der Königin bedeutet enormen Stress für das Bienenvolk, weshalb die Ernte von vielen regionalen Imkern kritisch gesehen oder komplett abgelehnt wird. Der Saft (bestehend aus ca. 60-70 % Wasser, 10-23 % Zucker, Proteinen, Aminosäuren, Vitaminen und Mineralstoffen) wird beim Menschen vor allem in der Kosmetik (Anti-Aging) und als Nahrungsergänzungsmittel eingesetzt. <em>Achtung: Er kann allergische Reaktionen auslösen!</em></p>"
     }
 };

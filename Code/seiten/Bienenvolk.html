@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienenvolk — BeeHappy</title>
+    <title>Im Bienenstock — BeeHappy</title>
     
         <link rel="stylesheet" href="../css/fonts.css" />
        <link rel="stylesheet" href="../css/style.css" />
         <link rel="stylesheet" href="../css/bienenvolk.css" />
         <link rel="stylesheet" href="../css/sidebar.css">
-        <link rel="icon" type="image/jpeg" href="../Bilder/drohn.jpg">
+        <link rel="stylesheet" href="../css/facts.css">
+        <link rel="icon" type="image/jpeg" href="../Bilder/logo_.svg">
 
   
 </head>
@@ -83,8 +84,13 @@
 
 <main class="inhalt">
 
-    <header class="page-header info-accent">
+    <header class="page-header info-accent animated-box">
+        <svg class="hover-svg-border" width="100%" height="100%">
+            <rect class="base-line" x="0" y="0" width="100%" height="100%" rx="40" ry="40"></rect>
+            <rect class="anim-line" x="0" y="0" width="100%" height="100%" rx="40" ry="40"></rect>
+        </svg>
         
+        <div class="überschrift"></div>
         <h1>Das Bienenvolk</h1>
         <p class="subtitle">Die Honigbiene ist ein fleißiges Insekt, das von Blüte zu Blüte fliegt und Nektar, Pollen sowie Baumharz sammelt. 
             Auch im Innenleben des Bienenstocks sind die Bienen unermüdlich.
@@ -98,168 +104,219 @@
     
         <div class="bento-grid">
             
-            <!-- Wolfwaagen Widget -->
-            <section class="bento-card widget-main">
-                
-                <div class="iframe-container">
-                    <iframe src="https://app.wolf-waagen.de/public/widget/scale/GW1OZ9" loading="lazy"></iframe>
+            <section class="bento-card widget-main animated-box no-css-border">
+        
+                <svg class="hover-svg-border" width="100%" height="100%">
+                    <rect class="base-line" x="0" y="0" width="100%" height="100%" rx="40" ry="40"></rect>
+                    <rect class="anim-line" x="0" y="0" width="100%" height="100%" rx="40" ry="40"></rect>
+                </svg>
+
+                <div class="box-content" style="width: 100%; height: 100%;">
+                    <div class="iframe-container">
+                        <iframe src="https://app.wolf-waagen.de/public/widget/scale/GW1OZ9" loading="lazy"></iframe>
+                    </div>
                 </div>
             </section>
 
             
             <div class="side-column" style="display: flex; flex-direction: column; gap: 1.5rem;">
-                <section class="bento-card info-accent">
-                    <h3>Zunahme</h3>
-                    <p>Wenn die Bienen genug Nektar finden, wächst die Kolonie. Wenn das Gewicht sinkt beginnt die Trachtpause. </p>
+                
+                <section class="bento-card info-accent animated-box no-css-border">
+                    
+                    <svg class="hover-svg-border" width="100%" height="100%">
+                        <rect class="base-line" x="0" y="0" width="100%" height="100%" rx="16" ry="16"></rect>
+                        <rect class="anim-line" x="0" y="0" width="100%" height="100%" rx="16" ry="16"></rect>
+                    </svg>
+
+                    <div class="box-content">
+                        <h3>Zunahme</h3>
+                        <p>Wenn die Bienen genug Nektar finden, wächst die Kolonie. Wenn das Gewicht sinkt, beginnt die Trachtpause.</p>
+                    </div>
                 </section>
 
-                <section class="bento-card info-accent">
-                    <h3>Temperatur</h3>
-                    <p>Das Brutnest wird konstant auf 35°C gehalte egal wie kalt oder warm es außerhalb ist. </p>
+                <section class="bento-card info-accent animated-box no-css-border">
+                    
+                    <svg class="hover-svg-border" width="100%" height="100%">
+                        <rect class="base-line" x="0" y="0" width="100%" height="100%" rx="16" ry="16"></rect>
+                        <rect class="anim-line" x="0" y="0" width="100%" height="100%" rx="16" ry="16"></rect>
+                    </svg>
+
+                    <div class="box-content">
+                        <h3>Temperatur</h3>
+                        <p>Das Brutnest wird konstant auf 35°C gehalten, egal wie kalt oder warm es außerhalb ist.</p>
+                    </div>
                 </section>
             </div>
         </div>
     
 
-    <section class="galerie-section">
-        <h2>Einblicke in den Stock</h2>
+        <section class="galerie-section">
+            <h2>Einblicke in den Stock</h2>
 
-        <div class="galerie-grid">
+            <div class="galerie-grid">
 
-            <div class="galerie-card">
-                <div class="galerie-img-wrap">
-                    <img src="" alt="Die Königin" loading="lazy">
+                <div class="galerie-card">
+                    <div class="galerie-img-wrap">
+                        <img src="" alt="Die Königin" loading="lazy">
+                    </div>
+                    <div class="galerie-body">
+                        <span class="galerie-card-title">Die Königin</span>
+                        <p>Die Königin ist einzigartig im Bienenvolk. Während der Hochsaison legt sie bis zu 2.000 Eier pro Tag.</p>
+                        <button class="volk-pill" data-topic="koenigin">Mehr erfahren</button>
+                    </div>
+                    
                 </div>
-                <div class="galerie-body">
-                    <span class="galerie-card-title">Die Königin</span>
-                    <p>Die Königin ist einzigartig im Bienenvolk. Während der Hochsaison legt sie bis zu 2.000 Eier pro Tag.</p>
-                    <button class="volk-pill" data-topic="koenigin">Mehr erfahren</button>
+
+                <div class="galerie-card">
+                    <div class="galerie-img-wrap">
+                        <img src="../Bilder/drohn.jpg" alt="Der Drohn" loading="lazy">
+                    </div>
+                    <div class="galerie-body">
+                        <span class="galerie-card-title">Die Drohnen</span>
+                        <p>Das sind die männlichen Bienen. Sie schlüpfen nur während der Trachtzeit. Ihre einzige Aufgabe ist die Begattung einer Jungkönigin.</p>
+                        <button class="volk-pill" data-topic="drohn">Mehr erfahren</button>
+                    </div>
                 </div>
-                
+
+                <div class="galerie-card">
+                    <div class="galerie-img-wrap">
+                        <img src="../Bilder/Brutnest.jpg" alt="Das Brutnest" loading="lazy">
+                    </div>
+                    <div class="galerie-body">
+                        <span class="galerie-card-title">Die Brut</span>
+                        <p>In die Wachszellen legt die Königin ihre Eier. Je nach Wesen (Drohn, Arbeiterin oder Königin) dauert das Heranwachsen unterschiedlich lang.</p>
+                        <button class="volk-pill" data-topic="brut">Mehr erfahren</button>
+                    </div>
+                </div>
+
+                <div class="galerie-card">
+                    <div class="galerie-img-wrap">
+                        <img src="../Bilder/Honigvorrat.jpg" alt="Futtervorrat" loading="lazy">
+                    </div>
+                    <div class="galerie-body">
+                        <span class="galerie-card-title">Futtervorrat</span>
+                        <p>Der gesammelte Nektar wird zu Honig veredelt. Eingelagerter Honig versorgt das Volk über das ganze Jahr hinweg.</p>
+                        <button class="volk-pill" data-topic="futter">Mehr erfahren</button>
+                    </div>
+                </div>
+
+                <div class="galerie-card">
+                    <div class="galerie-img-wrap">
+                        <img src="../Bilder/pollen.jpg" alt="Pollen" loading="lazy">
+                    </div>
+                    <div class="galerie-body">
+                        <span class="galerie-card-title">Der Pollen</span>
+                        <p>Pollen ist die wichtigste Proteinquelle im Stock. Sammlerinnen transportieren ihn in den „Pollenhöschen“ an ihren Hinterbeinen.</p>
+                        <button class="volk-pill" data-topic="pollen">Mehr erfahren</button>
+                    
+                    </div>
+                </div>
+
+                <div class="galerie-card">
+                    <div class="galerie-img-wrap">
+                        <img src="../Bilder/rähmchen.jpg" alt="Die Arbeiterinnen auf einer Bienenwabe" loading="lazy">
+                    </div>
+                    <div class="galerie-body">
+                        <span class="galerie-card-title">Die Arbeiterin</span>
+                        <p>Die Arbeiterin ist das am häufigsten vorkommende Mitglied im Bienenvolk. Sie übernehmen die meisten Aufgaben und je nach alter gibt es unterschiedliche Tätigkeiten.</p>
+                        <button class="volk-pill" data-topic="arbeiterin">Mehr erfahren</button>
+                    </div>
+                </div>
+
             </div>
+        </section>  
 
-            <div class="galerie-card">
-                <div class="galerie-img-wrap">
-                    <img src="../Bilder/drohn.jpg" alt="Der Drohn" loading="lazy">
+        <section class="funfact-section">
+                <div class="bento-card funfact-widget layout-volk animated-box no-css-border">
+                    
+                    <svg class="hover-svg-border" width="100%" height="100%">
+                        <rect class="base-line" x="0" y="0" width="100%" height="100%" rx="40" ry="40"></rect>
+                        <rect class="anim-line" x="0" y="0" width="100%" height="100%" rx="40" ry="40"></rect>
+                    </svg>
+
+                    <div class="box-content" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                        
+                        <button class="fact-nav" id="fact-prev">
+                            <i data-lucide="chevron-left"></i>
+                        </button>
+                        
+                        <div class="fact-content">
+                            <span class="fact-label">Wusstest du schon?</span>
+                            <p id="fact-text" class="fade-text">Für ein einziges Glas Honig (500g) müssen Bienen etwa 3-mal um die ganze Erde fliegen.</p>
+                        </div>
+                        
+                        <button class="fact-nav" id="fact-next">
+                            <i data-lucide="chevron-right"></i>
+                        </button>
+                        
+                    </div>
+                    
                 </div>
-                <div class="galerie-body">
-                    <span class="galerie-card-title">Die Drohnen</span>
-                    <p>Das sind die männlichen Bienen. Sie schlüpfen nur während der Trachtzeit. Ihre einzige Aufgabe ist die Begattung einer Jungkönigin.</p>
-                    <button class="volk-pill" data-topic="drohn">Mehr erfahren</button>
+            </section>
+
+        <section class="galerie-section">
+            <h2>Die Schätze der Bienen</h2>
+            <p class="subtitle">Welche Bienenprodukte gibt es?</p>
+
+            <div class="produkte-grid">
+
+                <div class="galerie-card">
+                    <div class="galerie-img-wrap">
+                        <img src="../Bilder/honig.jpg" alt="Goldener Honig" loading="lazy">
+                    </div>
+                    <div class="galerie-body">
+                        <span class="galerie-card-title">Der Honig</span>
+                        <p>Das flüssige Gold. Nektar und Honigtau werden von den Bienen mit körpereigenen Enzymen angereichert und eingedickt.</p>
+                        <button class="volk-pill" data-topic="honig">Mehr erfahren</button>
+                    </div>
                 </div>
+
+                <div class="galerie-card">
+                    <div class="galerie-img-wrap">
+                        <img src="../Bilder/bwachs.jpg" alt="Bienenwachs" loading="lazy">
+                    </div>
+                    <div class="galerie-body">
+                        <span class="galerie-card-title">Das Bienenwachs</span>
+                        <p>Der Baustoff des Volkes. Es wird in speziellen Wachsdrüsen der Arbeiterinnen "geschwitzt" und für die Waben genutzt.</p>
+                        <button class="volk-pill" data-topic="wachs">Mehr erfahren</button>
+                    </div>
+                </div>
+
+                <div class="galerie-card">
+                    <div class="galerie-img-wrap">
+                        <img src="../Bilder/perga.jpg" alt="Geernteter Pollen" loading="lazy">
+                    </div>
+                    <div class="galerie-body">
+                        <span class="galerie-card-title">Bienenbrot</span>
+                        <p>Ein echtes Superfood voller Proteine, das von den Bienen in winzigen Höschen an den Beinen in den Stock getragen wird.</p>
+                        <button class="volk-pill" data-topic="perga">Mehr erfahren</button>
+                    </div>
+                </div>
+
+                <div class="galerie-card">
+                    <div class="galerie-img-wrap">
+                        <img src="../Bilder/propolis.jpg" alt="Propolis" loading="lazy">
+                    </div>
+                    <div class="galerie-body">
+                        <span class="galerie-card-title">Propolis</span>
+                        <p>Das Immunsystem des Bienenstocks. Ein klebriges Baumharz, das antibakteriell wirkt und den Stock vor Krankheiten schützt.</p>
+                        <button class="volk-pill" data-topic="propolis">Mehr erfahren</button>
+                    </div>
+                </div>
+
+                <div class="galerie-card">
+                    <div class="galerie-img-wrap">
+                        <img src="../Bilder/Weiselzelle.jpg" alt="Gelee Royal" loading="lazy">
+                    </div>
+                    <div class="galerie-body">
+                        <span class="galerie-card-title">Gelee Royal</span>
+                        <p>Der Königinnensaft. Nur die Larven, die zu einer neuen Königin heranwachsen sollen, werden ausschließlich damit gefüttert.</p>
+                        <button class="volk-pill" data-topic="gelee">Mehr erfahren</button>
+                    </div>
+                </div>
+
             </div>
-
-            <div class="galerie-card">
-                <div class="galerie-img-wrap">
-                    <img src="../Bilder/Brutnest.jpg" alt="Das Brutnest" loading="lazy">
-                </div>
-                <div class="galerie-body">
-                    <span class="galerie-card-title">Die Brut</span>
-                    <p>In die Wachszellen legt die Königin ihre Eier. Je nach Wesen (Drohn, Arbeiterin oder Königin) dauert das Heranwachsen unterschiedlich lang.</p>
-                    <button class="volk-pill" data-topic="brut">Mehr erfahren</button>
-                </div>
-            </div>
-
-            <div class="galerie-card">
-                <div class="galerie-img-wrap">
-                    <img src="../Bilder/Honigvorrat.jpg" alt="Futtervorrat" loading="lazy">
-                </div>
-                <div class="galerie-body">
-                    <span class="galerie-card-title">Futtervorrat</span>
-                    <p>Der gesammelte Nektar wird zu Honig veredelt. Eingelagerter Honig versorgt das Volk über das ganze Jahr hinweg.</p>
-                    <button class="volk-pill" data-topic="futter">Mehr erfahren</button>
-                </div>
-            </div>
-
-            <div class="galerie-card">
-                <div class="galerie-img-wrap">
-                    <img src="../Bilder/pollen.jpg" alt="Pollen" loading="lazy">
-                </div>
-                <div class="galerie-body">
-                    <span class="galerie-card-title">Der Pollen</span>
-                    <p>Pollen ist die wichtigste Proteinquelle im Stock. Sammlerinnen transportieren ihn in den „Pollenhöschen“ an ihren Hinterbeinen.</p>
-                    <button class="volk-pill" data-topic="pollen">Mehr erfahren</button>
-                
-                </div>
-            </div>
-
-            <div class="galerie-card">
-                <div class="galerie-img-wrap">
-                    <img src="../Bilder/rähmchen.jpg" alt="Die Arbeiterinnen auf einer Bienenwabe" loading="lazy">
-                </div>
-                <div class="galerie-body">
-                    <span class="galerie-card-title">Die Arbeiterin</span>
-                    <p>Die Arbeiterin ist das am häufigsten vorkommende Mitglied im Bienenvolk. Sie übernehmen die meisten Aufgaben und je nach alter gibt es unterschiedliche Tätigkeiten.</p>
-                    <button class="volk-pill" data-topic="arbeiterin">Mehr erfahren</button>
-                </div>
-            </div>
-
-        </div>
-    </section>  
-
-    <section class="galerie-section">
-        <h2>Die Schätze der Bienen</h2>
-        <p class="subtitle">Welche Bienenprodukte gibt es?</p>
-
-        <div class="produkte-grid">
-
-            <div class="galerie-card">
-                <div class="galerie-img-wrap">
-                    <img src="../Bilder/honig.jpg" alt="Goldener Honig" loading="lazy">
-                </div>
-                <div class="galerie-body">
-                    <span class="galerie-card-title">Der Honig</span>
-                    <p>Das flüssige Gold. Nektar und Honigtau werden von den Bienen mit körpereigenen Enzymen angereichert und eingedickt.</p>
-                    <button class="volk-pill" data-topic="honig">Mehr erfahren</button>
-                </div>
-            </div>
-
-            <div class="galerie-card">
-                <div class="galerie-img-wrap">
-                    <img src="../Bilder/wachs.jpg" alt="Bienenwachs" loading="lazy">
-                </div>
-                <div class="galerie-body">
-                    <span class="galerie-card-title">Das Bienenwachs</span>
-                    <p>Der Baustoff des Volkes. Es wird in speziellen Wachsdrüsen der Arbeiterinnen "geschwitzt" und für die Waben genutzt.</p>
-                    <button class="volk-pill" data-topic="wachs">Mehr erfahren</button>
-                </div>
-            </div>
-
-            <div class="galerie-card">
-                <div class="galerie-img-wrap">
-                    <img src="../Bilder/pollen_produkt.jpg" alt="Geernteter Pollen" loading="lazy">
-                </div>
-                <div class="galerie-body">
-                    <span class="galerie-card-title">Bienenbrot</span>
-                    <p>Ein echtes Superfood voller Proteine, das von den Bienen in winzigen Höschen an den Beinen in den Stock getragen wird.</p>
-                    <button class="volk-pill" data-topic="perga">Mehr erfahren</button>
-                </div>
-            </div>
-
-            <div class="galerie-card">
-                <div class="galerie-img-wrap">
-                    <img src="../Bilder/propolis.jpg" alt="Propolis" loading="lazy">
-                </div>
-                <div class="galerie-body">
-                    <span class="galerie-card-title">Propolis</span>
-                    <p>Das Immunsystem des Bienenstocks. Ein klebriges Baumharz, das antibakteriell wirkt und den Stock vor Krankheiten schützt.</p>
-                    <button class="volk-pill" data-topic="propolis">Mehr erfahren</button>
-                </div>
-            </div>
-
-            <div class="galerie-card">
-                <div class="galerie-img-wrap">
-                    <img src="../Bilder/geleeroyal.jpg" alt="Gelee Royal" loading="lazy">
-                </div>
-                <div class="galerie-body">
-                    <span class="galerie-card-title">Gelee Royal</span>
-                    <p>Der Königinnensaft. Nur die Larven, die zu einer neuen Königin heranwachsen sollen, werden ausschließlich damit gefüttert.</p>
-                    <button class="volk-pill" data-topic="gelee">Mehr erfahren</button>
-                </div>
-            </div>
-
-        </div>
-    </section>
+        </section>
     
 </main>
 
@@ -286,6 +343,7 @@
     
     <script src="../js/menue.js"></script> 
     <script src="../js/bienenvolk.js"></script>
+    <script src="../js/facts.js"></script>
     
 </body>
 </html>
