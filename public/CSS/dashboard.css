@@ -159,11 +159,12 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 }
 
 .wx-icon {
-    font-size: 5rem;
+    font-size: 3rem !important;   /* ← !important dazugeben */
     line-height: 1;
-    display: block;
+    display: block !important;
     text-align: center;
     width: 100%;
+    margin: 8px 0;
 }
 
 .wx-bottom { display: flex; flex-direction: column; gap: 6px; width: 100%; }

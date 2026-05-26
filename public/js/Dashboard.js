@@ -133,11 +133,19 @@ function updateWeatherBox(conditionLabel) {
     box.classList.add('wx-' + content.farbe);
 
     box.innerHTML = `
+    <div class="wx-top">
+        <p class="wx-label">So geht es den bienen heute</p>
         <h2 class="wx-ueberschrift">${content.Überschrift}</h2>
-        <p  class="wx-titel">${content.titel}</p>
-        <p  class="wx-text">${content.text}</p>
-    `;
-}
+    </div>
+
+    <div class="wx-icon">${content.titel.split(' ')[0]}</div>
+
+    <div class="wx-bottom">
+        <p class="wx-titel">${content.titel.split(' ').slice(1).join(' ')}</p>
+        <p class="wx-text">${content.text}</p>
+    </div>
+`;
+  }
 
 // ─── Events-Widget ───────────────────────────────────────────────────────────
 const rawEvents = [
