@@ -23,9 +23,9 @@ const CITIES = [
 const WMO_LABEL = {
   0:'Klar', 1:'Klar', 2:'Bewölkt', 3:'Bewölkt',
   45:'Nebel', 48:'Nebel',
-  51:'Regen', 53:'Regen', 55:'Regen',
-  61:'Regen', 63:'Regen', 65:'Regen',
-  71:'Schnee', 73:'Schnee', 75:'Schnee',
+  51:'Regen', 53:'Regen', 55:'Regen', 56:'Regen', 57:'Regen',
+  61:'Regen', 63:'Regen', 65:'Regen',66:'Regen', 67:'Regen',
+  71:'Schnee', 73:'Schnee', 75:'Schnee',77:'Schnee',
   80:'Regen', 81:'Regen', 82:'Regen',
   85:'Schnee', 86:'Schnee',
   95:'Gewitter', 96:'Gewitter', 99:'Gewitter',
