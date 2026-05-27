@@ -3,84 +3,6 @@ Des is de CSS fia des Impressum.html.
 !!!!!Responsive Design für diese Seite wird a do herinnen geregelt.!!!!!
 */
 
-.contact-form-section {
-    margin-top: 3rem;
-    padding: 2rem;
-    background: var(--c-white);
-    border-radius: var(--radius-l);
-    box-shadow: var(--shadow);
-    max-width: 800px;
-}
-
-.bee-form .form-group {
-    margin-bottom: 1.5rem;
-}
-
-.bee-form label {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--c-text);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
-}
-
-.bee-form input, 
-.bee-form textarea {
-    width: 100%;
-    background: var(--c-bg); 
-    border: 1.5px solid var(--c-surface);
-    border-radius: var(--radius-m); 
-    padding: 0.8rem 1rem;
-    color: var(--c-text);
-    font-family: var(--f-body);  
-    font-size: 1rem;
-    transition: var(--transition);
-    outline: none;
-}
-
-
-.bee-form input:focus, 
-.bee-form textarea:focus {
-    border-color: var(--c-accent);
-    background: var(--c-white); 
-    box-shadow: 0 0 0 4px var(--c-glow);
-}
-
-.bee-form textarea {
-    min-height: 120px;
-    resize: vertical; 
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-
-
-.btn-submit {
-    background-color: var(--c-accent);
-    color: var(--c-white);
-    font-family: var(--f-body);
-    font-weight: 700;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: var(--radius-m);
-    cursor: pointer;
-    transition: var(--transition);
-    font-size: 1rem;
-    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.2);
-}
-
-.btn-submit:hover {
-    background-color: var(--c-text); 
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-
 article section {
     margin-bottom: 2.5rem;
 }
@@ -102,6 +24,12 @@ address a {
 
 address a:hover {
     text-decoration: underline;
+}
+
+.team-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 /* Responsive Design */
