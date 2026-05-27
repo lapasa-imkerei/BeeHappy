@@ -11,7 +11,6 @@ const CITIES = [
   {name:'Ried i.I.',   lat:48.210, lon:13.488},
   {name:'Freistadt',   lat:48.513, lon:14.499},
   {name:'Perg',        lat:48.249, lon:14.631},
-  {name:'Amstetten',   lat:48.122, lon:14.872},
   {name:'Enns',        lat:48.209, lon:14.472},
   {name:'Ansfelden',   lat:48.208, lon:14.289},
   {name:'Marchtrenk',  lat:48.185, lon:14.111},

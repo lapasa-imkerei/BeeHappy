@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         { 
             id: 11, 
-            name: "Besenheide | cALLUNA VULGARIS", 
+            name: "Besenheide | CALLUNA VULGARIS", 
             season: ["Sommer", "Herbst"], 
             type: "Strauch", 
             desc: "Blütezeit: Juni-September. <br> In Heidegebieten bedeckt die Pflanze weite Flächen und Imker können Heidehonig ernten. Die Pflanze ist auch ein sehr guter Nektarlieferant. " 
