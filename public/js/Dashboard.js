@@ -42,8 +42,8 @@ const WMO_ICON = {
 };
 
 const WEATHER_TEXTS = {
-  'Klar':     { Überschrift: "Klar", titel: '☀️ Perfekter Bienentag!',    text: 'Heute fliegen deine Bienen auf Hochtouren. Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, libero molestiae esse praesentium tempore obcaecati eligendi, culpa veniam laboriosam, deleniti suscipit eius? Veritatis impedit voluptatem officiis necessitatibus alias obcaecati rem!', farbe: "green"  },
-  'Bewölkt':  { Überschrift: "Bewölkt",titel: '⛅ Ruhiges Wetter',           text: 'Die Bienen sind aktiv Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, libero molestiae esse praesentium tempore obcaecati eligendi, culpa veniam laboriosam, deleniti suscipit eius? Veritatis impedit voluptatem officiis necessitatibus alias obcaecati rem!Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, libero molestiae esse praesentium tempore obcaecati eligendi, culpa veniam laboriosam, deleniti suscipit eius? Veritatis impedit voluptatem officiis necessitatibus alias obcaecati rem!' , farbe: "green"},
+  'Klar':     { Überschrift: "Klar", titel: '☀️ Perfekter Bienentag!',    text: 'Heute fliegen de', farbe: "green"  },
+  'Bewölkt':  { Überschrift: "Bewölkt",titel: '⛅ Ruhiges Wetter',           text: 'Die Bienen sind aktiv Lorem ipsum dolonecessitatibus alias sit amet cg elit. A, libero molestiae esse praesentium tempore obcaecati eligendi, culpa veniam laboriosam, deleniti suscipit eius? Veritatis impedit voluptatem officiis necessitatibus alias obcaecati rem!' , farbe: "green"},
   'Nebel':    { Überschrift: "Nebel",titel: '🌫 Neblige Morgenstimmung',   text: 'Joa ned so' , farbe :"yellow"},
   'Regen':    { Überschrift: "Regen",titel: '🌧 Regentag',                 text: 'Die Bienen bleiben im Stock. ' ,farbe: "yellow"},
   'Schnee':   { Überschrift: "Schnee",titel: '❄️ Winterruhe',               text: 'Das Volk sitzt in der Wintertraube. ' ,farbe: "red"},
