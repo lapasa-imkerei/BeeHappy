@@ -335,3 +335,58 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 
     .ev-badge { padding: 2px 6px; }
 }
+
+
+/* ─── Bienenflugstärke-Widget ────────────────────────────────────────────── */
+.item-wide {
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    flex-direction: column;
+    padding: 16px;
+    gap: 12px;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: default;
+}
+
+.fg-titel { font-family: var(--f-body); font-size: 1rem; font-weight: bold; color: var(--c-text); }
+
+.fg-heute {
+    display: flex; flex-direction: row; align-items: center;
+    justify-content: space-between; gap: 16px; width: 100%;
+}
+
+.fg-heute-left { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.1; }
+.fg-heute-tag {
+    font-size: 11px; font-weight: bold; text-transform: uppercase;
+    letter-spacing: 0.05em; color: var(--c-text); opacity: 0.55;
+}
+.fg-heute-bpm { font-size: 2.4rem; font-weight: bold; line-height: 1; }
+.fg-heute-einheit { font-size: 11px; color: var(--c-text); opacity: 0.6; }
+
+.fg-heute-right {
+    display: flex; flex-direction: column; align-items: flex-end;
+    gap: 6px; flex: 1; max-width: 55%;
+}
+.fg-staerke-label { font-size: 14px; font-weight: bold; }
+.fg-balken-bg {
+    width: 100%; height: 8px; border-radius: 999px;
+    background: rgba(0,0,0,0.08); overflow: hidden;
+}
+.fg-balken-fill { height: 100%; border-radius: 999px; transition: width 0.4s ease; }
+.fg-heute-temp {
+    font-size: 11px; color: var(--c-text); opacity: 0.7;
+    font-weight: normal; text-align: right;
+}
+
+.fg-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; width: 100%; }
+.fg-day {
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+    padding: 8px 4px; border-radius: var(--radius-l);
+    background: var(--c-surface); box-sizing: border-box;
+}
+.fg-day-name { font-size: 11px; font-weight: bold; color: var(--c-text); }
+.fg-day-icon { font-size: 18px; line-height: 1; }
+.fg-day-bpm  { font-size: 1.1rem; font-weight: bold; line-height: 1; }
+.fg-day-unit { font-size: 9px; color: var(--c-text); opacity: 0.55; }
+.fg-day-label{ font-size: 10px; color: var(--c-text); opacity: 0.75; text-align: center; }
