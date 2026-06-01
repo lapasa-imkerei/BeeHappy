@@ -77,11 +77,11 @@ async function loadCity(city) {
     const res = await fetch(
       `https://api.open-meteo.com/v1/forecast` +
       `?latitude=${city.lat}&longitude=${city.lon}` +
-      `&daily=temperature_2m_max,temperature_2m_min,weathercode` +
+      `&current=weather_code` +
+      `&daily=temperature_2m_max,temperature_2m_min,weather_code` +
       `&timezone=Europe%2FVienna&forecast_days=7`
     );
 
-    // Fix: HTTP-Fehler abfangen (z.B. 429, 500)
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
     const data  = await res.json();
@@ -91,7 +91,7 @@ async function loadCity(city) {
     for (let i = 0; i < 7; i++) {
       const date = new Date(daily.time[i] + 'T12:00:00');
       const dow  = i === 0 ? 'He' : (i === 1 ? 'Mg' : DAYS[date.getDay()]);
-      const code = daily.weathercode[i];
+      const code = daily.weather_code[i];
 
       const card = document.createElement('div');
       card.className = 'day-card';
@@ -104,17 +104,16 @@ async function loadCity(city) {
       `;
       fg.appendChild(card);
     }
-    // direkt nach der for-Schleife in loadCity():
-    const todayLabel = WMO_LABEL[daily.weathercode[0]] ?? 'Klar';
-      updateWeatherBox(todayLabel);
+
+    // Heute aus aktueller Lage (nicht aus dem Tages-Aggregat)
+    const todayLabel = WMO_LABEL[data.current.weather_code] ?? 'Klar';
+    updateWeatherBox(todayLabel);
 
   } catch (err) {
-    // Fix: Fehlermeldung anzeigen statt endlosem "Wird geladen…"
     fg.innerHTML = '<span style="font-size:13px;color:red">Fehler beim Laden ⚠️</span>';
     console.error('Wetter-Fehler:', err);
   }
 }
-
 // ─── WEtter Text
 function updateWeatherBox(conditionLabel) {
     const box = document.getElementById('weather-text-box');
