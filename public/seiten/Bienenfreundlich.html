@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/bienenfreundlich.css" />
     <link rel="stylesheet" href="../css/sidebar.css">
+        <link rel="stylesheet" href="../css/guide.css">
     <link rel="icon" type="image/jpeg" href="../Bilder/logo_.svg">
     
    
@@ -83,12 +84,37 @@
     </aside>
 <!-- Sidebar Ende -->
 
+<br>
+
 <main class="inhalt">
     
     <header class="page-header info-accent">
         <h1>Die Bienen-Oase</h1>
-        <p class="subtitle">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+        <p class="subtitle">Es gibt diverse Möglichkeiten, wie man Bienen das Leben erleichtern oder gar verschönern und somit dem Bienensterben entgegenwirken kann. Untenstehend stellen wir ein Guide bereit, dass dich bei der Gestaltung deines eigenen bienenfreundlichen Gartens oder Balkons unterstützt. Gerne kannst du dir zusätzlich deinen eigenen Pflanzplan zusammenstellen und drucken, damit du ihn jederzeit bei der Hand hast. </p>
     </header>
+
+    <section class="funfact-section">
+                <div class="bento-card funfact-widget layout-volk animated-box no-css-border">
+
+                    <div class="box-content" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                        
+                        <button class="fact-nav" id="fact-prev">
+                            <i data-lucide="chevron-left"></i>
+                        </button>
+                        
+                        <div class="fact-content">
+                            <span class="fact-label" id="fact-title"></span>
+                            <p id="fact-text" class="fade-text"></p>
+                        </div>
+                        
+                        <button class="fact-nav" id="fact-next">
+                            <i data-lucide="chevron-right"></i>
+                        </button>
+                        
+                    </div>
+                    
+                </div>
+            </section>
 
     <section class="filter-section bento-card">
         <div class="filter-row">
@@ -150,6 +176,6 @@
 
   <script src="../js/menue.js"></script>
   <script src="../js/bienenfreundlich.js"></script>
-
+  <script src="../js/guide.js"></script>
 </body>
 </html>
