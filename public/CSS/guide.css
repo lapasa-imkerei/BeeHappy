@@ -1,9 +1,3 @@
-/*CSS für die Facts über Bienen - 
-HTML bleibt de gleiche; es gibt nur zusatz klassen damit de Formatierung extern 
-im Dashboard passiert. 
-Warum?
-De Logik bleibt eig. gleich, es is nur de Formatierung. */
-
 .funfact-section {
     margin: 2rem 0; 
 }

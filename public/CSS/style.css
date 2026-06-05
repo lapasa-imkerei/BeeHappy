@@ -220,3 +220,38 @@ button.volk-pill:active::before {
         padding: 1rem;
     }
 }
+
+/*Impressum Footer*/
+
+.page-footer {
+    margin-top: 4rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--c-border);
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 5px;
+    flex-wrap: wrap;
+    color: var(--c-text);
+    font-size: 0.9rem;
+    opacity: 0.8;
+    padding: 2rem;
+}
+
+.footer-nav a {
+    color: var(--c-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+    color: #b2d8a0;
+    text-decoration: underline;
+}
