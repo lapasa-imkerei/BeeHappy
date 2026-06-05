@@ -23,6 +23,46 @@
     margin-bottom: 1.5rem;
 }
 
+.bee-flight-path {
+  position: absolute;
+  top: 70px;
+  left: 5%;
+  width: 90%;
+  height: 120px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.flying-leaf-icon {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  stroke: var(--c-text);
+  fill: #b2d8a0;
+  stroke-width: 2;
+  transform: rotate(-15deg); 
+  animation: leafFlyAround 9s linear infinite;
+}
+
+/*Animation*/
+@keyframes leafFlyAround {
+  0% { 
+    left: 0%; 
+    top: 25px; 
+    transform: rotate(25deg); 
+  }
+  50% { 
+    left: 50%; 
+    top: -15px; 
+    transform: rotate(5deg) scale(1.15); 
+  }
+  100% { 
+    left: 100%; 
+    top: 25px; 
+    transform: rotate(-20deg); 
+  }
+}
+
 .bento-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -362,5 +402,12 @@
     .produkte-grid .galerie-card:nth-child(1),
     .produkte-grid .galerie-card:nth-child(2) {
         grid-column: span 6;
+    }
+
+    .bee-flight-path {
+        top: 140px;
+        left: 2%;
+        width: 96%;
+        height: 60px;
     }
 }
