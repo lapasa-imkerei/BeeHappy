@@ -213,8 +213,8 @@ button.volk-pill:active::before {
 
 
 @media (max-width: 1024px) {
-    .main-content,
-    .sidebar.collapsed ~ .main-content {
+    .inhalt,
+    .sidebar.collapsed ~ .inhalt {
         margin-left: 0;
         margin-top: 100px; 
         padding: 1rem;
