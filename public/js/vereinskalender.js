@@ -15,23 +15,23 @@ document.addEventListener('DOMContentLoaded', function() {
     let mapMarker = null;
 
     const rawEvents = [
-        { "typ": "Monatsversammlung", "datum": "2026-03-05", "uhrzeit": "18:30", "thema": "Monatsbetrachtung: Frühjahrsrevision", "verein": "Schalchen/Mattighofen", "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen", "lat": 48.1189, "lng": 13.1425 },
-        { "typ": "Monatsversammlung", "datum": "2026-04-09", "uhrzeit": "18:30", "thema": "Monatsbetrachtung: Honigraum aufsetzen", "verein": "Schalchen/Mattighofen", "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen", "lat": 48.1189, "lng": 13.1425 },
-        { "typ": "Monatsversammlung", "datum": "2026-05-07", "uhrzeit": "18:30", "thema": "Monatsbetrachtung: Schwarmmanagement", "verein": "Schalchen/Mattighofen", "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen", "lat": 48.1189, "lng": 13.1425 },
-        { "typ": "Monatsversammlung", "datum": "2026-06-04", "uhrzeit": "18:30", "thema": "Monatsbetrachtung: Honigernte (Blütenhonig)", "verein": "Schalchen/Mattighofen", "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen", "lat": 48.1189, "lng": 13.1425 },
-        { "typ": "Monatsversammlung", "datum": "2026-07-02", "uhrzeit": "18:30", "thema": "Monatsbetrachtung: Abschleudern, Auffüttern, Varroabehandlung", "verein": "Schalchen/Mattighofen", "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen", "lat": 48.1189, "lng": 13.1425 },
-        { "typ": "Monatsversammlung", "datum": "2026-08-06", "uhrzeit": "18:30", "thema": "Monatsbetrachtung: Beurteilung Volksstärke, Königin tauschen", "verein": "Schalchen/Mattighofen", "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen", "lat": 48.1189, "lng": 13.1425 },
-        { "typ": "Monatsversammlung", "datum": "2026-09-03", "uhrzeit": "18:30", "thema": "Monatsbetrachtung: Varroa Herbstbehandlung", "verein": "Schalchen/Mattighofen", "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen", "lat": 48.1189, "lng": 13.1425 },
-        { "typ": "Monatsversammlung", "datum": "2026-10-01", "uhrzeit": "18:30", "thema": "Monatsbetrachtung: Einwinterung abschliessen", "verein": "Schalchen/Mattighofen", "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen", "lat": 48.1189, "lng": 13.1425 },
-        { "typ": "Monatsversammlung", "datum": "2026-11-05", "uhrzeit": "18:30", "thema": "Monatsbetrachtung: Jahresabschluss", "verein": "Schalchen/Mattighofen", "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen", "lat": 48.1189, "lng": 13.1425 },
-        { "typ": "Monatsversammlung", "datum": "2026-03-13", "uhrzeit": "19:30", "thema": "Monatsbetrachtung", "verein": "Pischelsdorf", "adresse_vollständig": "Schmidham 4, 5233 Schmidham", "lat": 48.1251, "lng": 13.0722 },
-        { "typ": "Monatsversammlung", "datum": "2026-04-11", "uhrzeit": "19:30", "thema": "Monatsbetrachtung", "verein": "Pischelsdorf", "adresse_vollständig": "Pischelsdorf am Engelbach 32, 5233 Pischelsdorf am Engelbach", "lat": 48.1311, "lng": 13.0847 },
-        { "typ": "Monatsversammlung", "datum": "2026-08-14", "uhrzeit": "19:30", "thema": "Monatsbetrachtung", "verein": "Pischelsdorf", "adresse_vollständig": "Kaltenhausen 1, 5233 Pischelsdorf am Engelbach", "lat": 48.1472, "lng": 13.0789 },
-        { "typ": "Monatsversammlung", "datum": "2026-09-11", "uhrzeit": "19:30", "thema": "Monatsbetrachtung", "verein": "Pischelsdorf", "adresse_vollständig": "Wagenham 14, 5233 Pischelsdorf am Engelbach", "lat": 48.1136, "lng": 13.0694 },
+        { "typ": "Monatsversammlung - Schalchen/Mattighofen", "datum": "2026-03-05", "uhrzeit": "18:30", "thema": "Monatsbetrachtung: Frühjahrsrevision", "verein": "Schalchen/Mattighofen", "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen", "lat": 48.1189, "lng": 13.1425 },
+        { "typ": "Monatsversammlung - Schalchen/Mattighofen", "datum": "2026-04-09", "uhrzeit": "18:30", "thema": "Monatsbetrachtung: Honigraum aufsetzen", "verein": "Schalchen/Mattighofen", "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen", "lat": 48.1189, "lng": 13.1425 },
+        { "typ": "Monatsversammlung - Schalchen/Mattighofen", "datum": "2026-05-07", "uhrzeit": "18:30", "thema": "Monatsbetrachtung: Schwarmmanagement", "verein": "Schalchen/Mattighofen", "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen", "lat": 48.1189, "lng": 13.1425 },
+        { "typ": "Monatsversammlung - Schalchen/Mattighofen", "datum": "2026-06-04", "uhrzeit": "18:30", "thema": "Monatsbetrachtung: Honigernte (Blütenhonig)", "verein": "Schalchen/Mattighofen", "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen", "lat": 48.1189, "lng": 13.1425 },
+        { "typ": "Monatsversammlung - Schalchen/Mattighofen", "datum": "2026-07-02", "uhrzeit": "18:30", "thema": "Monatsbetrachtung: Abschleudern, Auffüttern, Varroabehandlung", "verein": "Schalchen/Mattighofen", "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen", "lat": 48.1189, "lng": 13.1425 },
+        { "typ": "Monatsversammlung - Schalchen/Mattighofen", "datum": "2026-08-06", "uhrzeit": "18:30", "thema": "Monatsbetrachtung: Beurteilung Volksstärke, Königin tauschen", "verein": "Schalchen/Mattighofen", "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen", "lat": 48.1189, "lng": 13.1425 },
+        { "typ": "Monatsversammlung - Schalchen/Mattighofen", "datum": "2026-09-03", "uhrzeit": "18:30", "thema": "Monatsbetrachtung: Varroa Herbstbehandlung", "verein": "Schalchen/Mattighofen", "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen", "lat": 48.1189, "lng": 13.1425 },
+        { "typ": "Monatsversammlung - Schalchen/Mattighofen", "datum": "2026-10-01", "uhrzeit": "18:30", "thema": "Monatsbetrachtung: Einwinterung abschliessen", "verein": "Schalchen/Mattighofen", "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen", "lat": 48.1189, "lng": 13.1425 },
+        { "typ": "Monatsversammlung - Schalchen/Mattighofen", "datum": "2026-11-05", "uhrzeit": "18:30", "thema": "Monatsbetrachtung: Jahresabschluss", "verein": "Schalchen/Mattighofen", "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen", "lat": 48.1189, "lng": 13.1425 },
+        { "typ": "Monatsversammlung - Schalchen/Mattighofen", "datum": "2026-03-13", "uhrzeit": "19:30", "thema": "Monatsbetrachtung", "verein": "Pischelsdorf", "adresse_vollständig": "Schmidham 4, 5233 Schmidham", "lat": 48.1251, "lng": 13.0722 },
+        { "typ": "Monatsversammlung - Schalchen/Mattighofen", "datum": "2026-04-11", "uhrzeit": "19:30", "thema": "Monatsbetrachtung", "verein": "Pischelsdorf", "adresse_vollständig": "Pischelsdorf am Engelbach 32, 5233 Pischelsdorf am Engelbach", "lat": 48.1311, "lng": 13.0847 },
+        { "typ": "Monatsversammlung - Schalchen/Mattighofen", "datum": "2026-08-14", "uhrzeit": "19:30", "thema": "Monatsbetrachtung", "verein": "Pischelsdorf", "adresse_vollständig": "Kaltenhausen 1, 5233 Pischelsdorf am Engelbach", "lat": 48.1472, "lng": 13.0789 },
+        { "typ": "Monatsversammlung - Schalchen/Mattighofen", "datum": "2026-09-11", "uhrzeit": "19:30", "thema": "Monatsbetrachtung", "verein": "Pischelsdorf", "adresse_vollständig": "Wagenham 14, 5233 Pischelsdorf am Engelbach", "lat": 48.1136, "lng": 13.0694 },
         { "typ": "Bezirksversammlung - Braunau", "datum": "2026-06-12", "uhrzeit": "19:30", "thema": "Schwarmmanagement und Königinnenzucht", "verein": "Bezirk Braunau", "adresse_vollständig": "Schmidham 4, 5233 Schmidham", "lat": 48.1251, "lng": 13.0722 },
         { "typ": "Bezirksversammlung - Braunau", "datum": "2026-05-08", "uhrzeit": "19:30", "thema": "Oxymel - Vortragender: DR. Puttinger", "verein": "Bezirk Braunau", "adresse_vollständig": "Schmidham 4, 5233 Schmidham", "lat": 48.1251, "lng": 13.0722 },
         { "typ": "Bezirksversammlung - Braunau", "datum": "2026-10-07", "uhrzeit": "19:30", "thema": "Abschleudern und erste Varroa", "verein": "Bezirk Braunau", "adresse_vollständig": "Schmidham 4, 5233 Schmidham", "lat": 48.1251, "lng": 13.0722 },
-        { "typ": "Monatsversammlung", "datum": "2026-02-13", "uhrzeit": "19:30", "thema": "Thema offen", "verein": "Pischelsdorf", "adresse_vollständig": "Schmidham 4, 5233 Schmidham", "lat": 48.1251, "lng": 13.0722 }
+        { "typ": "Monatsversammlung - Schalchen/Mattighofen", "datum": "2026-02-13", "uhrzeit": "19:30", "thema": "Thema offen", "verein": "Pischelsdorf", "adresse_vollständig": "Schmidham 4, 5233 Schmidham", "lat": 48.1251, "lng": 13.0722 }
     ];
 
     const events = {};
@@ -48,7 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
             time: item.uhrzeit,
             text: `<strong>${item.typ} (${item.verein})</strong><br>${item.thema}<br><small>📍 ${item.adresse_vollständig}</small>`,
             lat: item.lat,
-            lng: item.lng
+            lng: item.lng,
+            adresse: item.adresse_vollständig,
+            title: item.typ
         });
     });
 
@@ -164,9 +166,19 @@ document.addEventListener('DOMContentLoaded', function() {
             map.removeLayer(mapMarker);
         }
 
-        mapMarker = L.marker([eventData.lat, eventData.lng])
+        const stecknadelIcon = L.divIcon({
+            html: '<span style="font-size: 24px; line-height: 1;">📍</span>',
+            className: 'custom-emoji-marker',
+            iconSize: [24, 24],
+            iconAnchor: [12, 24],
+            popupAnchor: [0, -24]
+        });
+
+        mapMarker = L.marker([eventData.lat, eventData.lng], {icon: stecknadelIcon})
             .addTo(map)
-            .bindPopup(`<b>${eventData.time} Uhr</b>`)
+            .bindPopup(`<div style="font-family: sans-serif; font-size: 13px; line-height: 1.4;">
+                    <strong>${eventData.title}</strong><br>
+                    <span style="color: #666; font-size: 11px;">📍 ${eventData.text.split('📍')[1] || ''}</span></div>`)
             .openPopup();
 
         setTimeout(() => {
