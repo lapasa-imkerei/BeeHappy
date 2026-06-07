@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Apfel | MALUS DOMESTICA", 
             season: ["Frühling"], 
             type: "Baum", 
-            desc: "Blütezeit: April-Mai. <br> Kulturäpfel werden seit vielen Jahrunderten angebaut." 
+            desc: "Blütezeit: April-Mai. <br> Kulturäpfel werden seit vielen Jahrhunderten angebaut." 
         },
 
         { 
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Winterlinde | TILIA CORDATA", 
             season: ["Sommer"], 
             type: "Baum", 
-            desc: "Blütezeit: Juni-Juli. <br> Linden sind große Bäume. Dieser Baum gehört zu den wertvollsten Binenpflanzen." 
+            desc: "Blütezeit: Juni-Juli. <br> Linden sind große Bäume. Dieser Baum gehört zu den wertvollsten Bienenpflanzen." 
         },
 
         { 
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Scheinulme | EUCRYPHIA SPP.", 
             season: ["Sommer"], 
             type: "Baum", 
-            desc: "Blütezeit: Juli-August. <br> Dieser Baum stammt ursprünglich aus den Regenwäldern in Chile, wo sie den Nektar für den Ulmo-Honig produziert haben. Sie ist nur mäßig Winterhart. Eucryphia x nymansensis und Nymansay sind ein wenig kälteverträglicher." 
+            desc: "Blütezeit: Juli-August. <br> Dieser Baum stammt ursprünglich aus den Regenwäldern in Chile, wo sie den Nektar für den Ulmo-Honig produziert haben. Sie ist nur mäßig winterhart. Eucryphia x nymansensis und Nymansay sind ein wenig kälteverträglicher." 
         },
 
         { 
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Salweide | SALIX CAPREA", 
             season: ["Frühling"], 
             type: "Strauch", 
-            desc: "Blütezeit: März-April. <br> Bienen profitieren von kätzentragenden Gehölze wie Weide, Hasel und Erle, die ihre Pollen zu einer Zeit produzieren in der nach dem Winter dringend Eiweiß für die Aufzucht benötigt wird." 
+            desc: "Blütezeit: März-April. <br> Bienen profitieren von kätzchentragenden Gehölzen wie Weide, Hasel und Erle, die ihre Pollen zu einer Zeit produzieren in der nach dem Winter dringend Eiweiß für die Aufzucht benötigt wird." 
         },
 
         { 
@@ -147,91 +147,91 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         { 
-            id: 18, 
+            id: 19, 
             name: "Winterling | ERANTHIS HYEMALIS", 
             season: ["Frühling"], 
             type: "Zwiebelpflanze", 
-            desc: "Blütezeit: Februar-März. <br> fdfdfd " 
-        },
-
-        { 
-            id: 19, 
-            name: "Dalmatiner Krokus | CROCUS TOMMASINIANUS", 
-            season: ["Frühling"], 
-            type: "Zwiebelpflanze", 
-            desc: "Blütezeit: Februar-März. <br> fdfdfd " 
+            desc: "Blütezeit: Februar-März. <br> Als Bote des Frühlings ist der Winterling für Bienen und Hummeln eine wichtige Nahrungsquelle. " 
         },
 
         { 
             id: 20, 
-            name: "Kleines Schneeglöckchen | GALANTHUS NIVALIS", 
+            name: "Dalmatiner Krokus | CROCUS TOMMASINIANUS", 
             season: ["Frühling"], 
             type: "Zwiebelpflanze", 
-            desc: "Blütezeit: Februar-März. <br> fdfdfd " 
+            desc: "Blütezeit: Februar-März. <br> Mit seinen prächtigen hellvioletten Blüten lockt der Dalmatiner Krokus an den frühen sonnigen Tagen etliche Bienen an. " 
         },
 
         { 
             id: 21, 
-            name: "Blausternchen | SCILLA SIBERICA", 
+            name: "Kleines Schneeglöckchen | GALANTHUS NIVALIS", 
             season: ["Frühling"], 
             type: "Zwiebelpflanze", 
-            desc: "Blütezeit: März-April. <br> fdfdfd " 
+            desc: "Blütezeit: Februar-März. <br> Die winterharten Pflänzchen des Vorfrühlings - Schneeglöckchen - bieten den Tierchen schon früh Pollen und Nektar. " 
         },
 
         { 
             id: 22, 
-            name: "Schnittlauch | ALLIUM SCHOENOPRASUM", 
+            name: "Blausternchen | SCILLA SIBERICA", 
             season: ["Frühling"], 
             type: "Zwiebelpflanze", 
-            desc: "Blütezeit: Mai-August. <br> fdfdfd " 
+            desc: "Blütezeit: März-April. <br> Das von Bienen geliebte Blausternchen wuchert gerne selbstständig in noch kahlen Gärten. " 
         },
 
         { 
             id: 23, 
-            name: "Einjähriger Borretsch | BORAGO OFFICINALIS", 
-            season: ["Frühling", "Sommer", "Herbst"], 
-            type: "Einjährige", 
-            desc: "Blütezeit: Mai-September. <br> fdfdfd " 
+            name: "Schnittlauch | ALLIUM SCHOENOPRASUM", 
+            season: ["Frühling"], 
+            type: "Zwiebelpflanze", 
+            desc: "Blütezeit: Mai-August. <br> Nicht nur im Essen ist der Schnittlauch erwünscht, sondern auch blühend im Beet, wenn seine violetten Kugelblüten Insekten anlocken. " 
         },
 
         { 
             id: 24, 
-            name: "Büschelschön | PHACELIA TANACETIFOLIA", 
-            season: ["Sommer", "Herbst"], 
+            name: "Einjähriger Borretsch | BORAGO OFFICINALIS", 
+            season: ["Frühling", "Sommer", "Herbst"], 
             type: "Einjährige", 
-            desc: "Blütezeit: Juni-Oktober. <br> fdfdfd " 
+            desc: "Blütezeit: Mai-September. <br> Das sogenannte 'Gurkenkraut' bekommt mit seinen sternförmigen, blauen, nektarreichen Blüten gerne häufigen Besuch von Bienen." 
         },
 
         { 
             id: 25, 
-            name: "Sonnenblume | HELIANTHUS ANNUUS", 
+            name: "Büschelschön | PHACELIA TANACETIFOLIA", 
             season: ["Sommer", "Herbst"], 
             type: "Einjährige", 
-            desc: "Blütezeit: Juli-Oktober. <br> fdfdfd " 
+            desc: "Blütezeit: Juni-Oktober. <br> Das Büschelschön ist eine besonders ertragsreiche Nektar- und Pollenquelle, die zudem eine ausgezeichnete Bodenqualität schafft. " 
         },
 
         { 
             id: 26, 
-            name: "Jungfer im Grünen | NIGELLA DAMASCENA", 
-            season: ["Sommer"], 
+            name: "Sonnenblume | HELIANTHUS ANNUUS", 
+            season: ["Sommer", "Herbst"], 
             type: "Einjährige", 
-            desc: "Blütezeit: Juni-September. <br> fdfdfd " 
+            desc: "Blütezeit: Juli-Oktober. <br> Die Sonnenblume versorgt sowohl Insekten als auch Vögel, wodurch sie sowohl im Spätsommer als auch im Herbst ein Schatz der Natur ist. " 
         },
 
         { 
             id: 27, 
-            name: "Klatschmohn | PAPAVER RHOEAS", 
-            season: ["Frühling", "Sommer"], 
+            name: "Jungfer im Grünen | NIGELLA DAMASCENA", 
+            season: ["Sommer"], 
             type: "Einjährige", 
-            desc: "Blütezeit: Mai-Juli. <br> fdfdfd " 
+            desc: "Blütezeit: Juni-September. <br> Mit ihren umwebten blauen Blüten erfreut sich diese Pflanze einer großen Beliebtheit bei Bestäubern. " 
         },
 
         { 
             id: 28, 
+            name: "Klatschmohn | PAPAVER RHOEAS", 
+            season: ["Frühling", "Sommer"], 
+            type: "Einjährige", 
+            desc: "Blütezeit: Mai-Juli. <br> Der rot-leuchtende Klatschmohn bietet nicht nur schwarzen Pollen für Bienen, sondern auch Charme für den Garten. " 
+        },
+
+        { 
+            id: 29, 
             name: "Hainblume | NEMOPHILA SPP.", 
             season: ["Sommer", "Herbst"], 
             type: "Einjährige", 
-            desc: "Blütezeit: Juni-Oktober. <br> fdfdfd " 
+            desc: "Blütezeit: Juni-Oktober. <br> Als Niedriggewächs eignet sich die Hainblume bestens für Gärten und Balkonkästen. Viele Wildbienen erfreuen sich ihrer himmelblauen Blüten. " 
         },
 
     ];
