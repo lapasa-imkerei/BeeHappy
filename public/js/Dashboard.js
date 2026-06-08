@@ -78,7 +78,8 @@ async function loadCity(city) {
       `https://api.open-meteo.com/v1/forecast` +
       `?latitude=${city.lat}&longitude=${city.lon}` +
       `&current=weather_code` +
-      `&daily=temperature_2m_max,temperature_2m_min,weather_code` +
+      `&hourly=weather_code` +
+`&daily=temperature_2m_max,temperature_2m_min,weather_code,sunrise,sunset,wind_speed_10m_max` +
       `&timezone=Europe%2FVienna&forecast_days=7`
     );
 
@@ -88,10 +89,18 @@ async function loadCity(city) {
     const daily = data.daily;
 
     fg.innerHTML = '';
+    let todayCode = null;
+
     for (let i = 0; i < 7; i++) {
       const date = new Date(daily.time[i] + 'T12:00:00');
       const dow  = i === 0 ? 'He' : (i === 1 ? 'Mg' : DAYS[date.getDay()]);
-      const code = daily.weather_code[i];
+
+      // Wetter um 13:00 statt Tages-Aggregat → kein "Morgennebel den ganzen Tag"
+      const middayTime = daily.time[i] + 'T13:00';
+      const hIdx = data.hourly.time.indexOf(middayTime);
+      const code = hIdx !== -1 ? data.hourly.weather_code[hIdx] : daily.weather_code[i];
+
+      if (i === 0) todayCode = code;
 
       const card = document.createElement('div');
       card.className = 'day-card';
@@ -105,9 +114,10 @@ async function loadCity(city) {
       fg.appendChild(card);
     }
 
-    // Heute aus aktueller Lage (nicht aus dem Tages-Aggregat)
-    const todayLabel = WMO_LABEL[data.current.weather_code] ?? 'Klar';
+    // Box aus demselben Wert wie die heutige Karte (13-Uhr-Wert)
+    const todayLabel = WMO_LABEL[todayCode] ?? 'Klar';
     updateWeatherBox(todayLabel);
+    updateFlugfenster(daily);
 
   } catch (err) {
     fg.innerHTML = '<span style="font-size:13px;color:red">Fehler beim Laden ⚠️</span>';
@@ -144,6 +154,32 @@ function updateWeatherBox(conditionLabel) {
     </div>
 `;
   }
+
+
+function updateFlugfenster(daily) {
+  const box = document.getElementById('flugfenster');
+  if (!box) return;
+
+  const sunrise = daily.sunrise[0].slice(11, 16);   // "05:12"
+  const sunset  = daily.sunset[0].slice(11, 16);    // "20:48"
+  const windMax = Math.round(daily.wind_speed_10m_max[0]);
+
+  // Tageslänge aus den beiden Zeiten
+  const ms = new Date(daily.sunset[0]) - new Date(daily.sunrise[0]);
+  const h  = Math.floor(ms / 3600000);
+  const m  = Math.round((ms % 3600000) / 60000);
+
+  // kleiner Bienen-Hinweis je nach Wind (ab ~25–30 km/h wird Fliegen schwierig)
+  const windHint = windMax >= 30 ? 'böig' : windMax >= 20 ? 'mäßig' : 'ruhig';
+
+  box.innerHTML = `
+      <h3 class="ff-title">🐝 Flugfenster heute</h3>
+      <div class="ff-row"><span>🌅 Sonnenaufgang</span><strong>${sunrise} Uhr</strong></div>
+      <div class="ff-row"><span>🌇 Sonnenuntergang</span><strong>${sunset} Uhr</strong></div>
+      <div class="ff-row"><span>☀️ Tageslänge</span><strong>${h} h ${m} min</strong></div>
+      <div class="ff-row"><span>🌬 Wind (max)</span><strong>${windMax} km/h · ${windHint}</strong></div>
+    `;
+}
 
 // ─── Events-Widget ───────────────────────────────────────────────────────────
 const rawEvents = [

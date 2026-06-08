@@ -279,23 +279,54 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
     flex: 1;
 }
 
-/* ─── Tablet (≤ 1024px) ──────────────────────────────────────────────────── */
-@media (max-width: 1024px) {
-    .bento-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: none;
-        gap: 14px;
-        padding: 14px;
-    }
 
-    .item-large-left,
-    .item-large-right { grid-row: span 1; }
-    .item-wide        { grid-column: span 2; }
-    .item             { min-height: 200px; height: auto; }
 
-    #wetter-widget.item { height: auto; min-height: 200px; }
-    #events-widget      { height: auto !important; min-height: 200px !important; }
+@media (min-width: 1025px) {
+  .bento-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 300px);
+  }
+
+  #weather-text-box { grid-column: 1;          grid-row: 1 / span 2; }
+  .item-wide        { grid-column: 2 / span 2; grid-row: 1; }
+  #flugfenster      { grid-column: 4;          grid-row: 1; }
+  #events-widget    { grid-column: 2;          grid-row: 2; }
+  #wetter-widget    { grid-column: 3;          grid-row: 2; }
+  .item-large-right { grid-column: 4;          grid-row: 2; }
 }
+
+#flugfenster {
+  background-color: var(--c-white);
+  border-radius: var(--radius-l);
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: var(--transition);     /* ← für die weiche Animation */
+}
+
+#flugfenster:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  border-color: var(--c-accent);
+}
+
+.ff-title {
+  font-family: var(--f-heading);
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--c-text);
+  margin: 0 0 4px 0;
+}
+.ff-row { display: flex; justify-content: space-between; gap: 8px; font-size: 13px; }
+.ff-row span   { opacity: 0.7; }
+.ff-row strong { color: var(--c-text); }
 
 /* ─── Mobile (≤ 600px) ───────────────────────────────────────────────────── */
 @media (max-width: 600px) {
@@ -390,3 +421,4 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 .fg-day-bpm  { font-size: 1.1rem; font-weight: bold; line-height: 1; }
 .fg-day-unit { font-size: 9px; color: var(--c-text); opacity: 0.55; }
 .fg-day-label{ font-size: 10px; color: var(--c-text); opacity: 0.75; text-align: center; }
+
