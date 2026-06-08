@@ -318,53 +318,91 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 }
 
 .ff-title {
-  font-family: var(--f-heading);
+  font-family: var(--f-body);
   font-size: 1rem;
   font-weight: bold;
   color: var(--c-text);
   margin: 0 0 4px 0;
+
+  /* globale h3-Stile aus style.css ausschalten: */
+  display: block;
+  width: auto;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  line-height: 1.2;
 }
 .ff-row { display: flex; justify-content: space-between; gap: 8px; font-size: 13px; }
 .ff-row span   { opacity: 0.7; }
 .ff-row strong { color: var(--c-text); }
 
 /* ─── Mobile (≤ 600px) ───────────────────────────────────────────────────── */
-@media (max-width: 600px) {
-    .bento-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        padding: 10px;
-    }
+/* ─── Tablet (≤ 1024px): 2 Spalten ─────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: none;
+    gap: 14px;
+    padding: 14px;
+    max-width: 100%;
+  }
+.inhalt { max-width: 100% !important; }
+  /* Desktop-Spannen + feste Höhen zurücksetzen */
+  .bento-grid > .item,
+  #flugfenster {
+    grid-row: auto;
+    height: auto;
+    min-height: 200px;
+  }
 
-    .item-wide  { grid-column: span 2; }
-    .item       { min-height: 160px; font-size: 12px; }
+  /* die großen Blöcke über die volle Breite, der Rest je eine Spalte */
+  #weather-text-box,
+  .item-wide { grid-column: 1 / -1; }
+  #events-widget,
+  #wetter-widget,
+  #flugfenster,
+  .item-large-right { grid-column: auto; }
 
-    #wetter-widget.item { padding: 10px; height: auto; min-height: 160px; }
-    #wetter-widget select { font-size: 11px; padding: 4px 6px; }
+  #wetter-widget.item,
+  #events-widget { height: auto !important; min-height: 200px !important; }
+}
 
-    .day-card   { padding: 4px 6px; font-size: 11px; }
-    .day-name   { font-size: 11px; min-width: 26px; }
-    .day-icon   { font-size: 13px; }
-    .day-desc   { font-size: 10px; }
-    .day-max    { font-size: 11px; }
-    .day-min    { font-size: 10px; }
+/* ─── Handy (≤ 600px): alles in einer Spalte gestapelt ─────────────────── */
+/* ─── Handy (≤ 768px): jeder Block in eigener Zeile ────────────────────── */
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;     /* genau eine Spalte */
+    grid-template-rows: none;
+    gap: 12px;
+    padding: 12px;
+    max-width: 100%;
+  }
 
-    #events-widget { padding: 10px !important; }
+  /* jeder Block volle Breite, eigene Zeile, Höhe nach Inhalt */
+  .bento-grid > .item,
+  #flugfenster {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    font-size: 12px;
+  }
 
-    .ev-next-title,
-    .ev-name {
-        white-space: normal;
-        overflow: visible;
-        text-overflow: clip;
-        font-size: 12px;
-    }
+  #wetter-widget.item,
+  #events-widget {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 10px !important;
+  }
 
-    .ev-next-meta,
-    .ev-date,
-    .ev-label,
-    .ev-badge { font-size: 10px; }
-
-    .ev-badge { padding: 2px 6px; }
+  /* Inhalte lesbar machen */
+  #forecast-grid { overflow-y: visible; }
+  .day-desc { white-space: normal; }
+  .ev-next-title,
+  .ev-name { white-space: normal; overflow: visible; text-overflow: clip; }
+  .wx-ueberschrift { font-size: 1.4rem; }
+  .wx-icon { font-size: 2.4rem !important; }
 }
 
 
@@ -422,3 +460,38 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 .fg-day-unit { font-size: 9px; color: var(--c-text); opacity: 0.55; }
 .fg-day-label{ font-size: 10px; color: var(--c-text); opacity: 0.75; text-align: center; }
 
+#fact-widget {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;   /* Label oben statt mittig */
+  gap: 8px;
+  padding: 20px;
+  text-align: left;
+  overflow: hidden;              /* die Kachel selbst bleibt fix */
+}
+
+.fact-label {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.85;
+  margin: 0;
+  flex-shrink: 0;
+  text-align: left;        /* gegen p { text-align: justify } */
+  max-width: none;
+}
+
+.fact-text {
+  font-family: var(--f-body);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  margin: 0;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-wrap: break-word;
+  text-align: left;        /* gegen p { text-align: justify } */
+  max-width: none;         /* gegen p { max-width: 75ch } */
+  hyphens: manual;
+}
