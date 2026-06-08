@@ -372,6 +372,47 @@
     filter: sepia(0.3) hue-rotate(10deg) contrast(0.9) brightness(1.05);
 }
 
+.leaflet-routing-container {
+    display: none !important;
+}
+
+.routing-input {
+    font-family: var(--f-body);
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+    outline: none;
+    background: var(--c-white);
+    color: var(--c-text);
+    transition: border-color 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.routing-input:focus {
+    border-color: var(--indicator);
+}
+
+.routing-btn {
+    font-family: var(--f-body);
+    font-weight: 800;
+    font-size: 0.9rem;
+    background: var(--c-sidebar);
+    color: var(--c-white);
+    border: none;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.routing-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
 @media (max-width: 767px) {
     .container {
         gap: 15px;

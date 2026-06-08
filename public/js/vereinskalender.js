@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let map = null;
     let mapMarker = null;
+    let routingControl = null;
 
     const rawEvents = [
         { "typ": "Monatsversammlung - Schalchen/Mattighofen", "datum": "2026-03-05", "uhrzeit": "18:30", "thema": "Monatsbetrachtung: Frühjahrsrevision", "verein": "Schalchen/Mattighofen", "adresse_vollständig": "Hauptstraße 9, 5231 Schalchen", "lat": 48.1189, "lng": 13.1425 },
@@ -143,14 +144,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateMap(eventData) {
         const mapEl = document.getElementById('map');
+        const routingContainer = document.getElementById('routing-container');
 
         if (!eventData || !eventData.lat || !eventData.lng) {
             mapEl.style.display = 'none';
+            if (routingContainer) routingContainer.style.display = 'none';
             return;
         }
 
         mapEl.style.display = 'block';
-        mapEl.style.height = '250px';
+        mapEl.style.height = '300px'; // Etwas höher, damit Platz für die Route ist
+        if (routingContainer) routingContainer.style.display = 'block';
 
         if (!map) {
             map = L.map('map').setView([eventData.lat, eventData.lng], 14);
@@ -165,6 +169,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (mapMarker) {
             map.removeLayer(mapMarker);
         }
+        if (routingControl) {
+            map.removeControl(routingControl);
+            routingControl = null;
+        }
 
         const stecknadelIcon = L.divIcon({
             html: '<span style="font-size: 24px; line-height: 1;">📍</span>',
@@ -176,10 +184,73 @@ document.addEventListener('DOMContentLoaded', function() {
 
         mapMarker = L.marker([eventData.lat, eventData.lng], {icon: stecknadelIcon})
             .addTo(map)
-            .bindPopup(`<div style="font-family: sans-serif; font-size: 13px; line-height: 1.4;">
-                    <strong>${eventData.title}</strong><br>
-                    <span style="color: #666; font-size: 11px;">📍 ${eventData.text.split('📍')[1] || ''}</span></div>`)
+            .bindPopup(`
+                <div style="font-family: sans-serif; font-size: 13px; line-height: 1.4; min-width: 150px;">
+                    <strong style="color: #333;">${eventData.title}</strong><br>
+                    <span style="color: #666; font-size: 11px; display: inline-block; margin-top: 4px;">📍 ${eventData.adresse}</span>
+                </div>
+            `)
             .openPopup();
+
+        const routeBtn = document.getElementById('calc-route-btn');
+        const newRouteBtn = routeBtn.cloneNode(true);
+        routeBtn.parentNode.replaceChild(newRouteBtn, routeBtn);
+        
+        const resultEl = document.getElementById('route-result');
+        if (resultEl) resultEl.innerHTML = '';
+
+        newRouteBtn.addEventListener('click', function() {
+            const startAdresse = document.getElementById('user-start').value;
+            if (!startAdresse) {
+                alert('Bitte gib zuerst eine Startadresse ein!');
+                return;
+            }
+
+            fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(startAdresse)}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.length > 0) {
+                        const startLat = parseFloat(data[0].lat);
+                        const startLng = parseFloat(data[0].lon);
+
+                        if (routingControl) {
+                            map.removeControl(routingControl);
+                        }
+
+                        routingControl = L.Routing.control({
+                            waypoints: [
+                                L.latLng(startLat, startLng),
+                                L.latLng(eventData.lat, eventData.lng)
+                            ],
+                            createMarker: function() { return null; },
+                            router: L.Routing.osrmv1({
+                                serviceUrl: 'https://router.project-osrm.org/route/v1'
+                            })
+                        }).addTo(map);
+
+                        routingControl.on('routesfound', function(e) {
+                            const routes = e.routes;
+                            const summary = routes[0].summary;
+
+                            const distanceKm = (summary.totalDistance / 1000).toFixed(1);
+
+                            const durationMin = Math.ceil(summary.totalTime / 60);
+
+                            resultEl.innerHTML = `Entfernung: ${distanceKm} km | Dauer: ca. ${durationMin} Min.`;
+                        });
+
+                        map.removeLayer(mapMarker);
+                        mapMarker.addTo(map);
+
+                    } else {
+                        alert('Adresse wurde leider nicht gefunden - bitte überprüfe deine Eingabe.');
+                    }
+                })
+                .catch(err => {
+                    console.error('Fehler:', err);
+                    alert('Ups! Adresssuche schiefgelaufen.');
+                });
+        });
 
         setTimeout(() => {
             map.invalidateSize();
@@ -238,6 +309,13 @@ document.addEventListener('DOMContentLoaded', function() {
     function resetEventPanel() {
         eventDateE1.textContent = 'Datum auswählen';
         eventListE1.innerHTML = '<div class="no-events">Keine Veranstaltung eingetragen</div>';
+        
+        if (routingControl) {
+            map.removeControl(routingControl);
+            routingControl = null;
+        }
+        
+        document.getElementById('user-start').value = ''; // Textfeld leeren
         updateMap(null);
     }
 
