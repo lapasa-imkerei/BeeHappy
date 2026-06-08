@@ -1,0 +1,94 @@
+.funfact-section {
+    margin: 2rem 0; 
+}
+
+.funfact-widget {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.fact-title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+}
+
+.fact-description {
+    text-align: center;
+    line-height: 1.5;
+}
+
+.fact-content {
+    flex-grow: 1;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.fact-label {
+    font-family: var(--f-headline);
+    font-size: 1.8rem;
+    color: #b2d8a0; 
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+#fact-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--c-text);
+    margin: 0;
+    min-height: 3rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animations-Klasse für weiche Übergänge */
+.fade-text {
+    animation: fadeInOut 0.5s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Pfeil Buttons */
+.fact-nav {
+    background: rgba(227, 202, 148, 0.35);
+    border: 2px solid var(--c-surface);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--c-surface);
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.fact-nav:hover {
+    background: var(--c-white);
+    transform: scale(1.1);
+}
+
+/* Layout für bienenvolk.html */
+.layout-volk {
+    background: var(--c-white);
+    border: 3px solid var(--c-border);
+    border-radius: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .funfact-widget { padding: 1.5rem; }
+    .fact-content { padding: 0 1rem; }
+    #fact-text { font-size: 1rem; }
+}

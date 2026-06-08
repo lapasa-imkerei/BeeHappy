@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/kalender.css" />
     <link rel="stylesheet" href="../CSS/sidebar.css">
     <link rel="icon" type="image/jpeg" href="../Bilder/logo_.svg">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 
 </head>
 <body>
@@ -81,10 +82,17 @@
     </aside>
 <!-- Sidebar Ende -->
 
+<br>
 
 <main class="inhalt">
-    <header class="page-header">
-        <h1>Vereinskalender</h1>
+
+    <header class="page-header info-accent" style="position: relative;">
+
+            <div class="flight-line"></div>
+            <i data-lucide="hop" class="flying-flower-icon"></i>
+
+    <h1>Vereinskalender</h1>
+        <p class="subtitle">Unser interaktiver Kalender gibt dir einen Überblick über die Monatsversammlungen, Bezirkstreffen und Veranstaltungen des aktuellen Kalenderjahres. Die grünen Punkte unter den Tagen zeigen dir, ob an dem jeweiligen Tag eine Veranstaltung geplant ist. In der Tagesansicht findest du die Details zum Termin, inklusive einer Karte, die dir die Anfahrt erleichtert.</p>
     </header>
 
 <div class="container">
@@ -126,15 +134,29 @@
         <div class="event-list" id="event-list">
             <div class="no-events">Keine Veranstaltung eingetragen</div>
         </div>
+        <div id="map" style="margin-top: 15px; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); display: none;"></div>
     </div>
+</div>
+
+    <footer class="page-footer">
+            <div class="footer-content">
+                <p>&copy; 2026 BeeHappy — Ein Web-Projekt Studierender der Paris Lodron Universität Salzburg</p>
+                <nav class="footer-nav">
+                    <a href="../seiten/Impressum.html">Impressum & Datenschutz</a>
+                </nav>
+            </div>
+        </footer>
+</main>
 
 
-<script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        lucide.createIcons();
-    </script>
-    
-  <script src="../js/vereinskalender.js"></script>
-  <script src="../js/menue.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+        <script>
+            lucide.createIcons();
+        </script>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script src="../js/vereinskalender.js"></script>
+    <script src="../js/menue.js"></script>
 </body>
 </html>

@@ -81,72 +81,88 @@
     </aside>
 <!-- Sidebar Ende -->
 
-
+<br>
         <!-- Hauptinhalt -->
-        <main class="inhalt">
-            <div class="page-header">
-                <div class="badge">Startseite</div>
-                <h1>Willkommen bei BeeHappy 🐝</h1>
-                <p>Entdecke die Welt der Bienen — Informationen über unseren Verein, aktuelle Daten aus dem Bienenstock und wie du die Natur bienenfreundlicher gestalten kannst.</p>
-            </div>
+    <main class="inhalt">
+    
+    <div class="header-animation-wrapper">
+        <div class="bee-flight-path">
+            <div class="flight-line"></div>
+            <i data-lucide="leaf" class="flying-leaf-icon"></i>
+        </div>
 
-            <hr class="divider" />
+        <header class="page-header info-accent animated-box">
+            <div class="überschrift"></div>
+            <h1>Willkommen bei <span class="brand-highlight">BeeHappy</span> <span class="title-bee">🐝</span></h1>
+            <p class="subtitle">Entdecke zusammen mit BeeHappy die Welt der Bienen. </p>
+            <p class="subtitle">Auf unserer Website findest du viele interaktive Elemente, die dir Wissen zum Thema Bienen näherbringen, dir bei bienenfreundlichen Gartenprojekten helfen und dir den Einstieg in die Imkerei erleichtern. Für Vereinsbegeisterte bietet unser Vereinskalender zudem Anlaufstellen im Bezirk Braunau.</p>
+        </header>
+    </div>
+
 
             <!-- Wabe links -->
             <div class="desktop-section">
-                <a href="#" class="honeycomb-link">
-                    <div class="hexagon"><i data-lucide="calendar" class="honey-icon"></i></div>
-                </a>
-                <div class="section-text">
-                    <h2>Vereinskalender</h2>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                </div>
-            </div>
-
-            <!-- Wabe rechts -->
-            <div class="desktop-section reverse">
                 <a href="#" class="honeycomb-link">
                     <div class="hexagon"><i data-lucide="layout-dashboard" class="honey-icon"></i></div>
                 </a>
                 <div class="section-text">
                     <h2>Dashboard</h2>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                </div>
-            </div>
-
-            <!-- Wabe links -->
-            <div class="desktop-section">
-                <a href="#" class="honeycomb-link">
-                    <div class="hexagon"><i data-lucide="archive" class="honey-icon"></i></div>
-                </a>
-                <div class="section-text">
-                    <h2>Bienenvolk</h2>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                    <p>Wie geht es den Bienen heute? Wie wird das Wetter im Laufe der Woche? Wann ist das nächste Vereinstreffen? Unser Dashboard fasst dir die wichtigsten Infos des Tages auf einen Blick zusammen.</p>
                 </div>
             </div>
 
             <!-- Wabe rechts -->
             <div class="desktop-section reverse">
                 <a href="#" class="honeycomb-link">
+                    <div class="hexagon"><i data-lucide="archive" class="honey-icon"></i></div>
+                </a>
+                <div class="section-text">
+                    <h2>Im Bienenstock</h2>
+                    <p>Bienen sind äußerst interessante Tierchen, die ein organisiertes Leben im Bienenstock pflegen und schätzen. Patrizia gibt dir als Imkerin einen Einblick in ihren eigenen Bienenstock, wodurch du den Alltag einer Biene praxisorientiert erforschen kannst. Für Informationen zum Leben des Bienenvolkes und detailliertes Wissen zu Bienenprodukten bist du hier genau richtig.</p>
+                </div>
+            </div>
+
+            <!-- Wabe links -->
+            <div class="desktop-section">
+                <a href="#" class="honeycomb-link">
                     <div class="hexagon"><i data-lucide="leaf" class="honey-icon"></i></div>
                 </a>
                 <div class="section-text">
-                    <h2>Bienenfreundliche Natur</h2>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                    <h2>Bienen-Oase</h2>
+                    <p>Unser übersichtliches Guide gibt dir einen Überblick über die wichtigsten Kernthemen zum Bienenfreundlichen Garten. Dein eigens erstellter Pflanzplan hilft dir bei der Gestaltung deines Gartens oder Balkons. Dabei kannst du aus diversen bienentauglichen Gewächsen auswählen.</p>
                 </div>
             </div>
-            
-            <hr class="divider" />
-        </main>
 
-    </div> <!-- Ende layout-wrapper -->
+            <!-- Wabe rechts -->
+            <div class="desktop-section reverse">
+                <a href="#" class="honeycomb-link">
+                    <div class="hexagon"><i data-lucide="calendar" class="honey-icon"></i></div>
+                </a>
+                <div class="section-text">
+                    <h2>Kalender</h2>
+                    <p>Für Imker:innen und jene, die es noch werden wollen, bietet unser Vereinskalender Anlaufstellen im Bezirk Braunau. Hier findest du diverse Vereinstreffen und Versammlungen, an denen du gerne teilnehmen kannst.</p>
+                </div>
+            </div>
+
+                <footer class="page-footer">
+            <div class="footer-content">
+                <p>&copy; 2026 BeeHappy — Ein Web-Projekt Studierender der Paris Lodron Universität Salzburg</p>
+                <nav class="footer-nav">
+                    <a href="../seiten/Impressum.html">Impressum & Datenschutz</a>
+                </nav>
+            </div>
+        </footer>
+
+        </main>
+    <!-- Ende layout-wrapper -->
+
 
     <!-- Scripts -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         lucide.createIcons();
     </script>
-    <!-- Pfad zu deiner JS-Datei: Geht eine Ebene hoch aus /seiten/ und dann in /js/ -->
+    <script src="/public/js/startseite.js"></script>
     <script src="/public/js/menue.js"></script>
 </body>
 </html>

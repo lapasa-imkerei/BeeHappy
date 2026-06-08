@@ -1,29 +1,110 @@
-/*WABEN-LAYOUT Startseite*/
+.page-header-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 40px auto 20px auto;
+  padding: 0 10px;
+}
 
+.title-bee {
+  display: inline-block;
+  animation: headerBeeWobble 2.5s ease-in-out infinite alternate;
+}
+
+.bee-flight-path {
+  position: absolute;
+  top: 70px;
+  left: 5%;
+  width: 90%;
+  height: 120px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.flying-leaf-icon {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  stroke: var(--c-text);
+  fill: #b2d8a0;
+  stroke-width: 2;
+  transform: rotate(-15deg); 
+  animation: leafFlyAround 9s linear infinite;
+}
+
+/*Animationen*/
+
+@keyframes headerBeeWobble {
+  0% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-6px) rotate(5deg); }
+  100% { transform: translateY(0) rotate(-5deg); }
+}
+
+@keyframes leafFlyAround {
+  0% { 
+    left: 0%; 
+    top: 25px; 
+    transform: rotate(25deg); 
+  }
+  50% { 
+    left: 50%; 
+    top: -15px; 
+    transform: rotate(5deg) scale(1.15); 
+  }
+  100% { 
+    left: 100%; 
+    top: 25px; 
+    transform: rotate(-20deg); 
+  }
+}
+
+.page-header {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--c-text);
+    opacity: 0.8;
+    max-width: 100%;
+}
+
+.page-header.info-accent {
+    padding: 2.5rem 3rem; 
+    border-radius: 40px; 
+    border: 3px solid var(--c-border);
+    background: var(--c-white); 
+}
+
+.page-header h1 {
+    margin-bottom: 1.5rem;
+}
+
+/* WABEN-LAYOUT & ABSCHNITTE */
 .desktop-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 80px; 
-  margin-bottom: 100px;
-  margin-top: 50px;
-  max-width: 1400px;
-  width: 90%;
+  gap: 60px; 
+  margin-bottom: 60px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .desktop-section.reverse {
   flex-direction: row-reverse;
 }
 
-.section-text {
-  flex: 0.5;
+.honeycomb-link {
+  text-decoration: none !important;
+  display: inline-block;
 }
 
-/*Waben*/
 .hexagon {
-  width: 600px;
-  height: 500px;
-  background-color: #E3C58B; 
+  width: 430px;
+  height: 350px;
+  background-color: #fff3c2; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,29 +113,30 @@
   cursor: pointer;
   flex-shrink: 0;
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  filter: drop-shadow(0px 12px 20px rgba(0, 0, 0, 0.15));
 }
 
-.honeycomb-link:hover .hexagon {
-  transform: scale(1.15);
-  filter: brightness(1.05);
+.hexagon::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  background-color: #EDD493; 
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  pointer-events: none; 
+  z-index: 1;
 }
 
-.honeycomb-link {
-  text-decoration: none !important;
-  display: inline-block;
-}
-
-.honeycomb-link:hover .hexagon {
-  transform: scale(1.1);
-  filter: brightness(1.08);
-}
-
+/* Icons in den Waben */
 .honey-icon {
-  width: 15rem;
-  height: 15rem;
+  width: 10rem;
+  height: 10rem;
   stroke: #fff3c2;
   stroke-width: 1.5; 
   fill: none;
+  position: relative;
   z-index: 2;
   transition: transform 0.3s ease;
   display: flex;
@@ -62,6 +144,68 @@
   justify-content: center;
 }
 
+/* HOVER-EFFEKTE */
+.honeycomb-link:hover .hexagon {
+  transform: scale(1.1);
+  filter: brightness(1.08) drop-shadow(0px 12px 20px rgba(0, 0, 0, 0.15));
+  animation: beeWobble 1s ease-in-out infinite alternate;
+}
+
 .honeycomb-link:hover .honey-icon {
   transform: scale(1.05);
+}
+
+@keyframes beeWobble {
+  0% { transform: scale(1.1) rotate(4deg); }
+  50% { transform: scale(1.1) rotate(2deg) translateY(-3px); }
+  100% { transform: scale(1.1) rotate(4deg); }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .inhalt {
+    padding: 20px;
+  }
+
+  .bee-flight-path {
+    top: 140px;
+    left: 2%;
+    width: 96%;
+    height: 60px;
+  }
+
+  .desktop-section, 
+  .desktop-section.reverse {
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  .section-text {
+    flex: none;
+    width: 100%;
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hexagon {
+    width: 220px;
+    height: 190px;
+  }
+
+  .bee-flight-path {
+    top: 230px;
+    height: 50px;
+  }
+
+  .honey-icon {
+    width: 4rem;
+    height: 4rem;
+  }
+  
+  .section-text h2 {
+    font-size: 1.6rem;
+  }
 }

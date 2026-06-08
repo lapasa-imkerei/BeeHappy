@@ -3,6 +3,56 @@ Des is de CSS fia de Bienenfreundliche Natur.
 Responsive Design für diese Seite wird a do herinnen geregelt.
 */
 
+.page-header.info-accent {
+    position: relative;
+    padding: 2.5rem 3rem; 
+    border-radius: 40px; 
+    border: 3px solid var(--c-border);
+    background: var(--c-white); 
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.bee-flight-path {
+    position: absolute;
+    top: -15px;
+    left: 5%;
+    width: 90%;
+    height: 60px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.flying-flower-icon {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    stroke: var(--c-text);
+    fill: #f3b0c3;
+    stroke-width: 2;
+    transform: rotate(0deg); 
+    animation: flowerFlyAround 9s linear infinite;
+}
+
+/*Animation*/
+@keyframes flowerFlyAround {
+    0% { 
+        left: 0%; 
+        top: 20px; 
+        transform: rotate(0deg); 
+    }
+    50% { 
+        left: 50%; 
+        top: -10px;
+        transform: rotate(180deg) scale(1.15); 
+    }
+    100% { 
+        left: 100%; 
+        top: 20px; 
+        transform: rotate(360deg); 
+    }
+}
+
 .filter-section {
     padding: 1.5rem 2rem;
     margin-bottom: 2rem;
@@ -173,6 +223,11 @@ Responsive Design für diese Seite wird a do herinnen geregelt.
     .einkaufszettel-card { 
         position: relative; 
         top: 0; 
+    }
+
+    .bee-flight-path {
+        left: 2%;
+        width: 96%
     }
 }
 
