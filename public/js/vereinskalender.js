@@ -236,7 +236,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
                             const durationMin = Math.ceil(summary.totalTime / 60);
 
-                            resultEl.innerHTML = `Entfernung: ${distanceKm} km | Dauer: ca. ${durationMin} Min.`;
+                            resultEl.innerHTML = `
+                                <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+                                    <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                        <i data-lucide="car" style="width: 18px; color: #f4a6a6; height: 18px;"></i> Entfernung: ${distanceKm} km
+                                    </span>
+                                    <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                        <i data-lucide="clock" style="width: 18px; color: #97c4dd; height: 18px;"></i> Wegzeit: ca. ${durationMin} Min.
+                                    </span>
+                                </div>
+                            `;
+
+                            resultEl.style.display = 'block';
+                            if (typeof lucide !== 'undefined') {
+                                lucide.createIcons();
+                            }
                         });
 
                         map.removeLayer(mapMarker);
