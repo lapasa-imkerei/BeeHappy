@@ -43,14 +43,6 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
     background-color: var(--c-surface);
 }
 
-.item-small:nth-child(2) {
-    background-color: var(--c-white);
-}
-
-.item-small:nth-child(3) {
-    background-color: #d9f4cd; 
-}
-
 .item-wide {
     grid-column: span 2;
     background-color: var(--c-white);
@@ -73,6 +65,7 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
     height: 300px;
     overflow: hidden;
     box-sizing: border-box;
+    background-color:#d9f4cd;
 }
 
 #wetter-widget select {
@@ -123,13 +116,13 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 /* ─── Weather-Text-Box ───────────────────────────────────────────────────── */
 #weather-text-box {
     align-items: flex-start !important;
-    justify-content: flex-start !important;  /* ← war space-between */
+    justify-content: flex-start !important;
     flex-direction: column !important;
-    padding: 28px !important;
-    gap: 16px !important;                    /* ← Abstand zwischen den Blöcken */
+    padding: 18px !important;
+    gap: 10px !important;
+    overflow: hidden;
     box-sizing: border-box;
     transition: background-color 0.4s ease, var(--transition);
-
 }
 
 #weather-text-box.wx-green  { background-color: #d9f4cd; }
@@ -140,7 +133,7 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 
 .wx-label {
     font-family: var(--f-body);
-    font-size: 11px;
+    font-size: 10px;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -151,7 +144,7 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 
 .wx-ueberschrift {
     font-family: var(--f-heading);
-    font-size: 1.75rem;
+    font-size: 1.3rem;
     font-weight: bold;
     color: var(--c-text);
     margin: 0;
@@ -159,34 +152,37 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 }
 
 .wx-icon {
-    font-size: 3rem !important;   /* ← !important dazugeben */
+    font-size: 2.4rem !important;
     line-height: 1;
     display: block !important;
     text-align: center;
     width: 100%;
-    margin: 8px 0;
+    margin: 2px 0;
 }
 
 .wx-bottom { display: flex; flex-direction: column; gap: 6px; width: 100%; }
 
 .wx-titel {
     font-family: var(--f-body);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: bold;
     color: var(--c-text);
     margin: 0;
-    line-height: 1.4;
+    line-height: 1.3;
 }
 
 .wx-text {
     font-family: var(--f-body);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: normal;
     color: var(--c-text);
-    line-height: 1.7;
+    line-height: 1.4;
     margin: 0;
     opacity: 0.75;
-
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 /* ─── Events-Widget ──────────────────────────────────────────────────────── */
 #events-widget {
@@ -198,6 +194,7 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
     overflow: hidden !important;
     box-sizing: border-box !important;
     height: 300px !important;
+    background-color:#ffffff !important;
 }
 
 .ev-label {
@@ -282,23 +279,21 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 
 
 @media (min-width: 1025px) {
-  /* style.css (.inhalt = 340px) gezielt fürs Dashboard überschreiben.
-     Das .layout-wrapper davor erhöht die Spezifität → gewinnt sicher. */
-    .layout-wrapper .inhalt { outline: 3px solid red; }
+
   .layout-wrapper .inhalt {
-    margin-left: calc(var(--sidebar-breite-offen) + 32px);   /* 270 + 32 = 302 */
+    margin-left: calc(var(--sidebar-breite-offen) + 32px);  
     max-width: 100%;
     transition: margin-left var(--transition);
   }
 
-  /* Sidebar eingeklappt → schmalerer Versatz */
+
   .sidebar.collapsed ~ .layout-wrapper .inhalt {
-    margin-left: calc(var(--sidebar-breite-zu) + 32px);      /* 85 + 32 = 117 */
+    margin-left: calc(var(--sidebar-breite-zu) + 32px);     
   }
 
-  /* deine Grid-Platzierungen bleiben unverändert */
-  #weather-text-box { grid-column: 1;          grid-row: 1 / span 2; }
-  .item-wide        { grid-column: 2 / span 2; grid-row: 1; }
+
+#weather-text-box { grid-column: 1; grid-row: 1; }   
+#pflanzen-widget      { grid-column: 1; grid-row: 2; } 
   #flugfenster      { grid-column: 4;          grid-row: 1; }
   #events-widget    { grid-column: 2;          grid-row: 2; }
   #wetter-widget    { grid-column: 3;          grid-row: 2; }
@@ -318,9 +313,8 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
   padding: 16px;
   box-sizing: border-box;
   cursor: pointer;
-  transition: var(--transition);     /* ← für die weiche Animation */
+  transition: var(--transition);     
 }
-
 #flugfenster:hover {
   transform: translateY(-5px) scale(1.01);
   box-shadow: 0 12px 40px rgba(0,0,0,0.15);
@@ -334,7 +328,7 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
   color: var(--c-text);
   margin: 0 0 4px 0;
 
-  /* globale h3-Stile aus style.css ausschalten: */
+
   display: block;
   width: auto;
   background: none;
@@ -356,7 +350,7 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
     max-width: 100%;
   }
 .inhalt { max-width: 100% !important; }
-  /* Desktop-Spannen + feste Höhen zurücksetzen */
+ 
   .bento-grid > .item,
   #flugfenster {
     grid-row: auto;
@@ -364,7 +358,6 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
     min-height: 200px;
   }
 
-  /* die großen Blöcke über die volle Breite, der Rest je eine Spalte */
   #weather-text-box,
   .item-wide { grid-column: 1 / -1; }
   #events-widget,
@@ -376,8 +369,7 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
   #events-widget { height: auto !important; min-height: 200px !important; }
 }
 
-/* ─── Handy (≤ 600px): alles in einer Spalte gestapelt ─────────────────── */
-/* ─── Handy (≤ 768px): jeder Block in eigener Zeile ────────────────────── */
+
 @media (max-width: 768px) {
   .bento-grid {
     grid-template-columns: 1fr;     /* genau eine Spalte */
@@ -472,11 +464,11 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 #fact-widget {
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;   /* Label oben statt mittig */
+  justify-content: flex-start;  
   gap: 8px;
   padding: 20px;
   text-align: left;
-  overflow: hidden;              /* die Kachel selbst bleibt fix */
+  overflow: hidden;             
 }
 
 .fact-label {
@@ -487,7 +479,7 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
   opacity: 0.85;
   margin: 0;
   flex-shrink: 0;
-  text-align: left;        /* gegen p { text-align: justify } */
+  text-align: left;      
   max-width: none;
 }
 
@@ -500,8 +492,8 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
   min-height: 0;
   overflow-y: auto;
   overflow-wrap: break-word;
-  text-align: left;        /* gegen p { text-align: justify } */
-  max-width: none;         /* gegen p { max-width: 75ch } */
+  text-align: left;        
+  max-width: none;         
   hyphens: manual;
 }
 

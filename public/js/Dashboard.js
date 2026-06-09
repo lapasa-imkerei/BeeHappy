@@ -66,8 +66,11 @@ select.addEventListener('change', () => {
   loadCity(CITIES[Number(select.value)]);
 });
 
-select.selectedIndex = 0;
-loadCity(CITIES[0]);
+const STANDARD_STADT = 'Linz';
+const startIndex = CITIES.findIndex(c => c.name === STANDARD_STADT);
+
+select.value = String(startIndex);   // Dropdown zeigt Linz
+loadCity(CITIES[startIndex]);         // Wetter überall = Linz
 
 async function loadCity(city) {
   const fg = document.getElementById('forecast-grid');
