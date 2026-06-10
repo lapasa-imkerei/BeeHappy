@@ -16,13 +16,15 @@ address ul {
     padding: 0;
 }
 
-address a {
+.a {
     color: var(--c-text);
     text-decoration: none;
     font-weight: 600;
 }
 
-address a:hover {
+
+
+.a:hover {
     color: #b2d8a0;
     text-decoration: underline;
 }
