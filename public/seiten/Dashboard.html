@@ -98,8 +98,15 @@
             <span>Wetter wird geladen…</span>
         </div>
         <div class="item" id="pflanzen-widget">
-    <span>Neuer Pflanzenspaß</span>
-</div>
+            <div class="plant-image-container">
+                <img id="plant-img" src="">
+            </div>
+            <div class="plant-info-overlay">
+                <span class="plant-label">Pflanze der Saison</span>
+                <h3 id="plant-name">Laden...</h3>
+                <button id="open-plant-modal" class="plant-more-btn">Mehr erfahren</button>
+            </div>
+        </div>
             <div class="item item-small" id="events-widget"></div>
             <div class="item item-small" id="wetter-widget">
                 <select id="city-select">
@@ -135,9 +142,34 @@
     </script>
 
 </main>
+
+<!--Pop Up Fenster Pflanze der Saison-->
+
+<div id="plant-modal" class="modal-overlay">
+    <div class="modal-content">
+        <button id="close-plant-modal" class="close-btn">&times;</button>
+        
+        <h2 id="modal-plant-name">Pflanzenname</h2>
+        <div class="modal-body">
+            <img id="modal-plant-img" src="">
+            <div class="poem-container">
+                <p id="modal-plant-poem">Das Gedicht wird geladen...</p>
+            </div>
+        </div>
+        
+        <div class="modal-footer">
+            <a href="../seiten/Bienenfreundlich.html" class="go-to-oase-btn">
+                Zur Bienen-Oase
+            </a>
+        </div>
+    </div>
+</div>
+
+
 <script src="../js/menue.js"></script>
 <script src="../js/Dashboard.js"></script>
 <script src="../js/factofweek.js"></script>
 <script src="../js/flugstärke.js"></script> 
+<script src="../js/saisonpflanzewidget.js"></script>
 </body>
 </html>
