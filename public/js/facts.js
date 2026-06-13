@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let currentIndex = 0;
     let autoplayTimer;
-    const intervalTime = 6000; // alle 6 Sekunden wird gewechselt -- kinnan ma nu ändern fois ma wirklich nur 1x pro Woche wechseln woin (zoit se eig nur aus wenn mas wirkle online stöhn und mehr facts hobn)
+    const intervalTime = 12000; // alle 6 Sekunden wird gewechselt -- kinnan ma nu ändern fois ma wirklich nur 1x pro Woche wechseln woin (zoit se eig nur aus wenn mas wirkle online stöhn und mehr facts hobn)
 
     
     function showFact(index) {

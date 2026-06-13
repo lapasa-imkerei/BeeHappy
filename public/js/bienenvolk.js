@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalDesc = document.getElementById('modal-desc');
     const modalImg = document.getElementById('modal-img');
     const closeBtn = document.getElementById('close-bento-modal');
+    const closeTextBtn = document.getElementById('close-bento-text');
 
     document.body.appendChild(modal);
 
@@ -93,11 +94,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (event.target === modal) {
             closeModal();
         }
+    }); 
 
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && modal.classList.contains('active')) {
             closeModal();
         }
-    });
     });
 });
