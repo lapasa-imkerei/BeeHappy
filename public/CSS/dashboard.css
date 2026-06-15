@@ -65,7 +65,7 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
     height: 300px;
     overflow: hidden;
     box-sizing: border-box;
-    background-color:#d9f4cd;
+    background-color:#97c4dd;
 }
 
 #wetter-widget select {
@@ -495,5 +495,176 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
   text-align: left;        
   max-width: none;         
   hyphens: manual;
+}
+
+/*Widget Pflanze der Saison*/
+
+#pflanzen-widget {
+    position: relative;
+    overflow: hidden;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    background: #d9f4cd;
+    color: #b2d8a0;
+}
+
+.plant-image-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#plant-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+#pflanzen-widget:hover #plant-img {
+    transform: scale(1.05);
+}
+
+.plant-info-overlay {
+    position: absolute;
+    background: linear-gradient(to top, white, transparent 100%);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.plant-label {
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    opacity: 0.85;
+    color: #b2d8a0;
+    padding: 0 0.25rem;
+}
+
+#plant-name {
+    margin: 0;
+    padding: 0.25rem;
+    font-family: var(--f-headline);
+    background: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #b2d8a0;
+}
+
+.plant-more-btn {
+    font-family: var(--f-body);
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    font-weight: 800;
+    font-size: 15px;
+    background: var(--c-sidebar);
+    color: var(--c-white);
+    border: none;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.plant-more-btn:hover {
+     transform: translateY(-1px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: var(--radius-l);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    text-align: center;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #999;
+}
+
+#modal-plant-name {
+    font-family: var(--f-heading);
+    color: var(--c-text);
+    margin-bottom: 20px;
+}
+
+#modal-plant-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-l);
+    margin-bottom: 20px;
+}
+
+.poem-container {
+    font-style: italic;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 30px;
+    white-space: pre-line;
+}
+
+.go-to-oase-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background-color: var(--c-sidebar);
+    color: white !important;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.go-to-oase-btn:hover {
+    transform: scale(1.05);
+    background-color: #2d7a2d;
 }
 

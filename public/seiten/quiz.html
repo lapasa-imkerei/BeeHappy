@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welche Biene bist du? — BeeHappy</title>
+    
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/sidebar.css" />
+    <link rel="stylesheet" href="../css/quiz.css" />
+    <link rel="icon" type="image/jpeg" href="../Bilder/logo_.svg">
+</head>
+<body>
+    
+    <aside class="sidebar">
+        <header class="sidebar-header">
+            <a href="#" class="header-logo">
+                <div class="logo-circle">
+                    <img src="../Bilder/logo_.svg" alt="Logo BeeHappy">
+                </div>
+                <span class="logo-text">BeeHappy</span>
+            </a>
+            
+            <button class="toggler sidebar-toggler" aria-label="Menü einklappen">
+                <i data-lucide="chevron-left"></i>
+            </button>
+            <button class="toggler menu-toggler" aria-label="Menü öffnen">
+                <i data-lucide="menu"></i>
+            </button>
+        </header>
+
+        <nav class="sidebar-nav">
+            <ul class="nav-list primary-nav">
+                <li class="nav-item">
+                    <a href="/public/index.html" class="nav-link">
+                        <i data-lucide="home" class="nav-icon"></i>
+                        <span class="nav-label">Home</span> 
+                    </a>
+                    <span class="nav-tooltip">Home</span>
+                </li>
+                <li class="nav-item">
+                    <a href="../seiten/Dashboard.html" class="nav-link">
+                        <i data-lucide="layout-dashboard" class="nav-icon"></i>
+                        <span class="nav-label">Dashboard</span> 
+                    </a>
+                    <span class="nav-tooltip">Dashboard</span>
+                </li>
+                <li class="nav-item">
+                    <a href="../seiten/Bienenvolk.html" class="nav-link">
+                       <i data-lucide="archive" class="nav-icon"></i>
+                        <span class="nav-label">Im Bienenstock</span> 
+                    </a>
+                    <span class="nav-tooltip">Im Bienenstock</span>
+                </li>
+                <li class="nav-item">
+                    <a href="../seiten/Bienenfreundlich.html" class="nav-link">
+                        <i data-lucide="leaf" class="nav-icon"></i>
+                        <span class="nav-label">Bienen-Oase</span> 
+                    </a>
+                    <span class="nav-tooltip">Bienen-Oase</span>
+                </li>
+                <li class="nav-item">
+                    <a href="../seiten/Vereinskalender.html" class="nav-link">
+                       <i data-lucide="calendar" class="nav-icon"></i>
+                        <span class="nav-label">Kalender</span> 
+                    </a>
+                    <span class="nav-tooltip">Kalender</span>
+                </li>
+                <li class="nav-item">
+                    <a href="../seiten/quiz.html" class="nav-link">
+                       <i data-lucide="tv-minimal-play" class="nav-icon"></i>
+                        <span class="nav-label">Quiz</span> 
+                    </a>
+                    <span class="nav-tooltip">Quiz</span>
+                </li>
+                <li class="nav-item">
+                    <a href="../seiten/Impressum.html" class="nav-link">
+                        <i data-lucide="info" class="nav-icon"></i>
+                        <span class="nav-label">Impressum</span> 
+                    </a>
+                    <span class="nav-tooltip">Impressum</span>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+<!-- Sidebar Ende -->
+
+    <div id="esc-info" class="esc-info">Drücke ESC, um das Menü einzublenden</div>
+
+    <div id="augen-container" class="augen-container">
+        <div class="lid lid-oben"></div>
+        <div class="lid lid-unten"></div>
+    </div>
+
+    <main class="inhalt" id="main-content">
+        
+        <div id="quiz-landing" class="quiz-landing-section animated-box">
+            <svg class="hover-svg-border" width="100%" height="100%" fill="transparent">
+                <rect class="base-line" x="0" y="0" width="100%" height="100%" rx="40" ry="40"></rect>
+                <rect class="anim-line" x="0" y="0" width="100%" height="100%" rx="40" ry="40"></rect>
+            </svg>
+            
+            <div class="landing-content">
+                <h2>Welche Biene bist du?</h2>
+                <p>Jede Biene erfüllt eine essenzielle Aufgabe, damit das Volk überlebt. Aber wo wäre dein Platz? Schließe die Augen, tauche ein in das Summen des Stocks und triff deine Entscheidungen aus dem Bauch heraus.</p>
+                
+                <button id="start-quiz-btn" class="epic-btn">
+                    <span class="btn-text">Ins Dunkel eintauchen</span>
+                    <i data-lucide="door-open"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="quiz-terminal" class="quiz-terminal-section" style="display: none;">
+            <div class="terminal-window">
+                <p id="story-text" class="typewriter-text"></p>
+                <div id="choices-container" class="choices-grid">
+                    </div>
+            </div>
+        </div>
+
+        <div id="quiz-results" class="quiz-results-section" style="display: none;">
+            
+            <div class="personal-result animated-box info-accent">
+                <h2 id="result-title">Deine Rolle</h2>
+                <p id="result-desc">Beschreibung lädt...</p>
+            </div>
+
+            <h3 class="grid-title">Alle Bienen-Persönlichkeiten im Stock</h3>
+            <div class="archetypen-grid">
+                
+                <div class="archetyp-card" style="--card-color: #ffb7b2;">
+                    <div class="archetyp-icon"><i data-lucide="crown"></i></div>
+                    <div class="archetyp-content">
+                        <h4 class="archetyp-title">Königin</h4>
+                        <p class="archetyp-desc">Führung, Organisation, Fokus</p>
+                    </div>
+                </div>
+
+                <div class="archetyp-card" style="--card-color: #ffd8b2;">
+                    <div class="archetyp-icon"><i data-lucide="heart-handshake"></i></div>
+                    <div class="archetyp-content">
+                        <h4 class="archetyp-title">Ammenbiene</h4>
+                        <p class="archetyp-desc">Fürsorglich, Empathie, Pflege</p>
+                    </div>
+                </div>
+
+                <div class="archetyp-card" style="--card-color: #b2d8a0;">
+                    <div class="archetyp-icon"><i data-lucide="shield"></i></div>
+                    <div class="archetyp-content">
+                        <h4 class="archetyp-title">Wächterbiene</h4>
+                        <p class="archetyp-desc">Mut, Loyalität, Schutz</p>
+                    </div>
+                </div>
+
+                <div class="archetyp-card" style="--card-color: #b2c8f0;">
+                    <div class="archetyp-icon"><i data-lucide="map"></i></div>
+                    <div class="archetyp-content">
+                        <h4 class="archetyp-title">Sammelbiene</h4>
+                        <p class="archetyp-desc">Abenteuer, Energie, Entdeckergeist</p>
+                    </div>
+                </div>
+
+                <div class="archetyp-card" style="--card-color: #e0b2f0;">
+                    <div class="archetyp-icon"><i data-lucide="hammer"></i></div>
+                    <div class="archetyp-content">
+                        <h4 class="archetyp-title">Baubiene</h4>
+                        <p class="archetyp-desc">Kreativität, Struktur, Handwerk</p>
+                    </div>
+                </div>
+
+                <div class="archetyp-card" style="--card-color: #f0f0b2;">
+                    <div class="archetyp-icon"><i data-lucide="coffee"></i></div>
+                    <div class="archetyp-content">
+                        <h4 class="archetyp-title">Drohn</h4>
+                        <p class="archetyp-desc">Entspanntheit, Lebensfreude, Sanftmut</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="volk-pill" onclick="location.reload()" style="margin-top: 2rem;">Quiz neu starten</button>
+        </div>
+
+    </main>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
+    <script src="../js/menue.js"></script> 
+    <script src="../js/quiz.js"></script>
+</body>
+</html>

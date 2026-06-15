@@ -71,6 +71,13 @@
                     <span class="nav-tooltip">Kalender</span>
                 </li>
                 <li class="nav-item">
+                    <a href="../seiten/quiz.html" class="nav-link">
+                       <i data-lucide="tv-minimal-play" class="nav-icon"></i>
+                        <span class="nav-label">Quiz</span> 
+                    </a>
+                    <span class="nav-tooltip">Quiz</span>
+                </li>
+                <li class="nav-item">
                     <a href="../seiten/Impressum.html" class="nav-link">
                         <i data-lucide="info" class="nav-icon"></i>
                         <span class="nav-label">Impressum</span> 
@@ -88,18 +95,21 @@
     <!-- Sidebar bleibt hier stehen (wie in bienenfreundlich.html) -->
 
     <main class="inhalt">
-        <header class="page-header">
-            <h1>Dashboard </h1>
-            <p>Das Dashboard zeigt alle wichtigen Bieneninfos auf einen Blick: Wetter, Flugstärke und Vereinstermine. Die erste Box signalisiert per Ampel, wie gut der Tag zum Fliegen ist: <span style = "color:#3a9d3a; font-weight:bold"> Grün </span>= gut, <span style="color:#c79400; font-weight:bold">Gelb </span>= eingeschränkt, <span style="color:#d9534f; font-weight:bold">Rot</span> = die Bienen bleiben im Stock.</p>
-        </header>
 
         <section class="bento-grid">
         <div class="item item-large-left" id="weather-text-box">
             <span>Wetter wird geladen…</span>
         </div>
         <div class="item" id="pflanzen-widget">
-    <span>Neuer Pflanzenspaß</span>
-</div>
+            <div class="plant-image-container">
+                <img id="plant-img" src="">
+            </div>
+            <div class="plant-info-overlay">
+                <span class="plant-label">Pflanze der Saison</span>
+                <h3 id="plant-name">Laden...</h3>
+                <button id="open-plant-modal" class="plant-more-btn">Mehr erfahren</button>
+            </div>
+        </div>
             <div class="item item-small" id="events-widget"></div>
             <div class="item item-small" id="wetter-widget">
                 <select id="city-select">
@@ -135,9 +145,34 @@
     </script>
 
 </main>
+
+<!--Pop Up Fenster Pflanze der Saison-->
+
+<div id="plant-modal" class="modal-overlay">
+    <div class="modal-content">
+        <button id="close-plant-modal" class="close-btn">&times;</button>
+        
+        <h2 id="modal-plant-name">Pflanzenname</h2>
+        <div class="modal-body">
+            <img id="modal-plant-img" src="">
+            <div class="poem-container">
+                <p id="modal-plant-poem">Das Gedicht wird geladen...</p>
+            </div>
+        </div>
+        
+        <div class="modal-footer">
+            <a href="../seiten/Bienenfreundlich.html" class="go-to-oase-btn">
+                Zur Bienen-Oase
+            </a>
+        </div>
+    </div>
+</div>
+
+
 <script src="../js/menue.js"></script>
 <script src="../js/Dashboard.js"></script>
 <script src="../js/factofweek.js"></script>
 <script src="../js/flugstärke.js"></script> 
+<script src="../js/saisonpflanzewidget.js"></script>
 </body>
 </html>

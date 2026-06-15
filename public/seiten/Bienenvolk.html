@@ -71,6 +71,13 @@
                     <span class="nav-tooltip">Kalender</span>
                 </li>
                 <li class="nav-item">
+                    <a href="../seiten/quiz.html" class="nav-link">
+                       <i data-lucide="tv-minimal-play" class="nav-icon"></i>
+                        <span class="nav-label">Quiz</span> 
+                    </a>
+                    <span class="nav-tooltip">Quiz</span>
+                </li>
+                <li class="nav-item">
                     <a href="../seiten/Impressum.html" class="nav-link">
                         <i data-lucide="info" class="nav-icon"></i>
                         <span class="nav-label">Impressum</span> 
@@ -91,72 +98,83 @@
             <i data-lucide="leaf" class="flying-leaf-icon"></i>
         </div>
 
-    <header class="page-header info-accent animated-box">
-        <svg class="hover-svg-border" width="100%" height="100%">
-            <rect class="base-line" x="0" y="0" width="100%" height="100%" rx="40" ry="40"></rect>
-            <rect class="anim-line" x="0" y="0" width="100%" height="100%" rx="40" ry="40"></rect>
-        </svg>
-        
+    <header class="page-header info-accent">
         <div class="überschrift"></div>
         <h1>Das Bienenvolk</h1>
-        <p class="subtitle">Die Honigbiene ist ein fleißiges Insekt, das von Blüte zu Blüte fliegt und Nektar, Pollen sowie Baumharz sammelt. 
-            Auch im Innenleben des Bienenstocks sind die Bienen unermüdlich.
-            Die Königin sichert den Fortbestand, indem sie täglich bis zu 2.000 Eier legt, was beinahe ihrem eigenen Körpergewicht entspricht. 
-            Die Arbeiterinnen teilen sich die Aufgaben je nach Alter auf: Einige kümmern sich um die Brut, pflegen die Königin, veredeln den Honig oder verteidigen den Stock, 
-            während andere ausfliegen, um Vorräte zu sammeln. Dann gibt es noch die Drohnen, die im Frühling geboren werden und nur die Aufgabe haben, 
-            die Königin zu befruchten. Im Spätsommer werden sie durch die sogenannte Drohnenschlacht aus dem Bienenstock vertrieben.
+        
+        <p class="subtitle">
+            Die Honigbiene ist ein unermüdliches Insekt, das von Blüte zu Blüte fliegt, um Nektar und Pollen zu sammeln. Doch auch im Inneren des Bienenstocks herrscht strenge Arbeitsteilung:
         </p>
+        <ul style="list-style-type: none; padding-left: 0; margin-bottom: 1.5rem; line-height: 1.8;">
+            <li><strong>Die Königin:</strong> Sichert den Fortbestand. Sie legt täglich bis zu 2.000 Eier – das entspricht beinahe ihrem eigenen Körpergewicht.</li>
+            <li><strong>Die Arbeiterinnen:</strong> Teilen sich die Aufgaben nach Alter auf. Sie pflegen die Brut, veredeln den Honig, verteidigen den Stock und sammeln Vorräte.</li>
+            <li><strong>Die Drohnen:</strong> Die männlichen Bienen werden im Frühling geboren, um Jungköniginnen zu befruchten. Im Spätsommer werden sie nicht mehr gebraucht und verlassen den Stock.</li>
+        </ul>
     </header>
 
-    
-        <div class="bento-grid">
+    <div class="bento-grid">
             
-            <section class="bento-card widget-main animated-box no-css-border">
-        
-                <svg class="hover-svg-border" width="100%" height="100%">
-                    <rect class="base-line" x="0" y="0" width="100%" height="100%" rx="40" ry="40"></rect>
-                    <rect class="anim-line" x="0" y="0" width="100%" height="100%" rx="40" ry="40"></rect>
-                </svg>
+        <section class="bento-card widget-main">
+            <div class="box-content" style="width: 100%; height: 100%;">
+                <div class="iframe-container">
+                    <iframe src="https://app.wolf-waagen.de/public/widget/scale/GW1OZ9" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
 
-                <div class="box-content" style="width: 100%; height: 100%;">
-                    <div class="iframe-container">
-                        <iframe src="https://app.wolf-waagen.de/public/widget/scale/GW1OZ9" loading="lazy"></iframe>
-                    </div>
+        <section class="bento-card info-accent" style="grid-column: 1; grid-row: 2;">
+            <div class="box-content">
+                <h3 style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 1.3rem;">
+                    <i data-lucide="mouse-pointer-click"></i> Bedien-Tipp für das Diagramm
+                </h3>
+                <p style="margin-bottom: 0; font-size: 0.95rem;">
+                    Man kann mit dem Diagramm intereragieren indem man mit dem Mauszeiger oder dem Finger darauf klickt oder zum schieben </p>
+            </div>
+        </section>
+
+        <div class="side-column" style="display: flex; flex-direction: column; gap: 1.5rem; grid-column: 2; grid-row: 1 / span 2;">
+            
+            <section class="bento-card info-accent">
+                <div class="box-content">
+                    <h3 style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                        <i data-lucide="info"></i> Live-Einblick
+                    </h3>
+                    <ul style="list-style-type: none; padding: 0; margin-bottom: 15px;">
+                        <li><strong>📍 Standort:</strong> Mattighofen</li>
+                        <li><strong>🍯 Imkerei:</strong> LAPASA Imkerei</li>
+                    </ul>
+                    <p style="margin-bottom: 0; font-size: 0.95rem;">
+                        Diese Waage überträgt live das Gewicht des Bienenstocks. So können wir das Volk beobachten, völlig ohne die Bienen bei ihrer Arbeit zu stören!
+                    </p>
                 </div>
             </section>
 
-            
-            <div class="side-column" style="display: flex; flex-direction: column; gap: 1.5rem;">
-                
-                <section class="bento-card info-accent animated-box no-css-border">
-                    
-                    <svg class="hover-svg-border" width="100%" height="100%">
-                        <rect class="base-line" x="0" y="0" width="100%" height="100%" rx="16" ry="16"></rect>
-                        <rect class="anim-line" x="0" y="0" width="100%" height="100%" rx="16" ry="16"></rect>
-                    </svg>
+            <section class="bento-card info-accent">
+                <div class="box-content">
+                    <h3 style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                        <i data-lucide="scale"></i> Das Gewicht
+                    </h3>
+                    <p style="margin-bottom: 0; font-size: 0.95rem;">
+                        <strong>Steigt der Wert?</strong> <br>Es trachtet! Die Bienen finden draußen reichlich Nektar.<br> <br>
+                        <strong>Sinkt der Wert?</strong> <br>Es herrscht Trachtpause (z.B. bei Regen) und Futter wird verbraucht.
+                    </p>
+                </div>
+            </section>
 
-                    <div class="box-content">
-                        <h3>Zunahme</h3>
-                        <p>Wenn die Bienen genug Nektar finden, wächst die Kolonie. Wenn das Gewicht sinkt, beginnt die Trachtpause.</p>
-                    </div>
-                </section>
+            <section class="bento-card info-accent">
+                <div class="box-content">
+                    <h3 style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                        <i data-lucide="thermometer"></i> Temperatur
+                    </h3>
+                    <p style="margin-bottom: 0; font-size: 0.95rem;">
+                        Egal wie kalt oder warm es draußen in Mattighofen gerade ist: Die Bienen halten ihr Brutnest im Inneren konstant auf molligen <strong>35°C</strong>.
+                    </p>
+                </div>
+            </section>
 
-                <section class="bento-card info-accent animated-box no-css-border">
-                    
-                    <svg class="hover-svg-border" width="100%" height="100%">
-                        <rect class="base-line" x="0" y="0" width="100%" height="100%" rx="16" ry="16"></rect>
-                        <rect class="anim-line" x="0" y="0" width="100%" height="100%" rx="16" ry="16"></rect>
-                    </svg>
-
-                    <div class="box-content">
-                        <h3>Temperatur</h3>
-                        <p>Das Brutnest wird konstant auf 35°C gehalten, egal wie kalt oder warm es außerhalb ist.</p>
-                    </div>
-                </section>
-            </div>
         </div>
+    </div>
     
-
         <section class="galerie-section">
             <h2>Einblicke in den Stock</h2>
 
@@ -234,12 +252,7 @@
         </section>  
 
         <section class="funfact-section">
-                <div class="bento-card funfact-widget layout-volk animated-box no-css-border">
-                    
-                    <svg class="hover-svg-border" width="100%" height="100%">
-                        <rect class="base-line" x="0" y="0" width="100%" height="100%" rx="40" ry="40"></rect>
-                        <rect class="anim-line" x="0" y="0" width="100%" height="100%" rx="40" ry="40"></rect>
-                    </svg>
+                <div class="bento-card funfact-widget layout-volk">
 
                     <div class="box-content" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
                         
@@ -263,7 +276,6 @@
 
         <section class="galerie-section">
             <h2>Die Schätze der Bienen</h2>
-            <p class="subtitle">Welche Bienenprodukte gibt es?</p>
 
             <div class="produkte-grid">
 
@@ -346,6 +358,11 @@
             <h2 id="modal-title">Titel</h2>
             <div id="modal-desc">
             </div>
+            
+            <button id="close-bento-text" class="volk-pill" style="margin-top: 2rem; width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px;">
+                <i data-lucide="check"></i> Alles klar, Fenster schließen
+            </button>
+            
         </div>
     </div>
 </div>
