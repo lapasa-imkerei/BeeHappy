@@ -532,7 +532,6 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 
 .plant-info-overlay {
     position: absolute;
-    background: linear-gradient(to top, white, transparent 100%);
     bottom: 0;
     left: 0;
     right: 0;
@@ -540,9 +539,10 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
     color: #ffffff;
     display: flex;
     flex-direction: column;
-    gap: 4px;
     align-items: flex-start;
     text-align: left;
+    background-color: white;
+    opacity: 0.95;
 }
 
 .plant-label {
@@ -552,15 +552,16 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
     letter-spacing: 0.08rem;
     opacity: 0.85;
     color: #b2d8a0;
-    padding: 0 0.25rem;
+    padding: 0.25rem;
 }
 
 #plant-name {
     margin: 0;
-    padding: 0.25rem;
+    padding: 0 0.25rem;
     font-family: var(--f-headline);
+    letter-spacing: 0.05rem;
     background: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #b2d8a0;
 }
