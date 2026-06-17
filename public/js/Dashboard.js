@@ -257,7 +257,7 @@ const rawEvents = [
   document.body.appendChild(popup);
 
   const next = events[0];
-  const rest = events.slice(1, 4);
+const rest = events.slice(1, 3);
 
   const restHTML = rest.map(e => `
     <div class="ev-row"
@@ -271,7 +271,7 @@ const rawEvents = [
     </div>
   `).join('');
 
-  widget.innerHTML = `
+widget.innerHTML = `
     <div class="ev-label">Nächste Veranstaltung</div>
     <div class="ev-next">
       <div class="ev-next-title">${next.thema}</div>
@@ -283,6 +283,9 @@ const rawEvents = [
       <span class="ev-badge">${countdown(next._dt)}</span>
     </div>
     ${rest.length ? '<div class="ev-divider"></div><div class="ev-upcoming">' + restHTML + '</div>' : ''}
+    <button class="plant-more-btn ev-cal-btn" onclick="location.href='../seiten/Vereinskalender.html'">
+      Zum Kalender
+    </button>
   `;
 
   // Hover-Logik

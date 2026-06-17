@@ -750,3 +750,10 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
+
+.ev-cal-btn {
+    margin-top: auto;   /* schiebt den Button an den unteren Rand */
+    width: 100%;
+    text-align: center;
+    flex-shrink: 0;     /* verhindert, dass er zusammengedrückt wird */
+}
