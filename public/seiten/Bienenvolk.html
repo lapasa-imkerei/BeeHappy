@@ -113,26 +113,16 @@
     </header>
 
     <div class="bento-grid">
-            
-        <section class="bento-card widget-main">
-            <div class="box-content" style="width: 100%; height: 100%;">
-                <div class="iframe-container">
-                    <iframe src="https://app.wolf-waagen.de/public/widget/scale/GW1OZ9" loading="lazy"></iframe>
-                </div>
+        
+        <button class="info-toggle-btn" id="waage-info-toggle">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <i data-lucide="info"></i> 
+                <span>Aufklappen um weitere Informationen zur Waage zu erhalten</span>
             </div>
-        </section>
+            <i data-lucide="chevron-down" class="toggle-arrow"></i>
+        </button>
 
-        <section class="bento-card info-accent" style="grid-column: 1; grid-row: 2;">
-            <div class="box-content">
-                <h3 style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 1.3rem;">
-                    <i data-lucide="mouse-pointer-click"></i> Bedien-Tipp für das Diagramm
-                </h3>
-                <p style="margin-bottom: 0; font-size: 0.95rem;">
-                    Man kann mit dem Diagramm intereragieren indem man mit dem Mauszeiger oder dem Finger darauf klickt oder zum schieben </p>
-            </div>
-        </section>
-
-        <div class="side-column" style="display: flex; flex-direction: column; gap: 1.5rem; grid-column: 2; grid-row: 1 / span 2;">
+        <div class="side-column" id="waage-info-content">
             
             <section class="bento-card info-accent">
                 <div class="box-content">
@@ -172,7 +162,8 @@
                 </div>
             </section>
 
-        </div>
+        </div> 
+        
     </div>
     
         <section class="galerie-section">
@@ -337,6 +328,20 @@
             </div>
         </section>
 
+        <div id="bento-modal" class="bento-modal-overlay">
+            <div class="bento-modal-content">
+                <button id="close-bento-modal" class="bento-modal-close">
+                    <i data-lucide="x"></i>
+                </button>
+                <div class="bento-modal-scroll-area">
+                    <img id="modal-img" class="bento-modal-img" src="" alt="">
+                    <h2 id="modal-title">Titel</h2>
+                    <div id="modal-desc">
+                    </div>
+                </div>
+            </div>
+        </div>
+
      <footer class="page-footer">
             <div class="footer-content">
                 <p>&copy; 2026 BeeHappy — Ein Web-Projekt Studierender der Paris Lodron Universität Salzburg</p>
@@ -348,24 +353,7 @@
     
 </main>
 
-<div id="bento-modal" class="bento-modal-overlay">
-    <div class="bento-modal-content">
-        <button id="close-bento-modal" class="bento-modal-close">
-            <i data-lucide="x"></i>
-        </button>
-        <div class="bento-modal-scroll-area">
-            <img id="modal-img" class="bento-modal-img" src="" alt="">
-            <h2 id="modal-title">Titel</h2>
-            <div id="modal-desc">
-            </div>
-            
-            <button id="close-bento-text" class="volk-pill" style="margin-top: 2rem; width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px;">
-                <i data-lucide="check"></i> Alles klar, Fenster schließen
-            </button>
-            
-        </div>
-    </div>
-</div>
+
 
 <script src="https://unpkg.com/lucide@latest"></script>
     <script>

@@ -373,3 +373,102 @@
         height: 60px;
     }
 }
+
+/* --- BASIS STYLES FÜR SIDE-COLUMN --- */
+.side-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+
+/* --- NEUER MOBILE TOGGLE BUTTON --- */
+.info-toggle-btn {
+    display: none; /* Auf dem Desktop unsichtbar */
+    width: 100%;
+    background: var(--c-white);
+    border: 3px solid var(--c-border);
+    border-radius: 20px;
+    padding: 1rem 1.5rem;
+    color: var(--c-text);
+    font-family: var(--f-body);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: left;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.info-toggle-btn:hover {
+    background: var(--c-surface);
+    transform: translateY(-2px);
+}
+
+.info-toggle-btn .toggle-arrow {
+    transition: transform 0.3s ease;
+}
+
+/* Wenn ausgeklappt, Pfeil drehen */
+.info-toggle-btn.active .toggle-arrow {
+    transform: rotate(180deg);
+}
+
+/* --- UPDATE FÜR RESPONSIVE --- */
+@media (max-width: 900px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .widget-main {
+        grid-column: 1;
+        grid-row: auto;
+        /* Etwas weniger Padding auf dem Handy, damit es nicht so gequetscht wirkt */
+        padding: 1rem; 
+    }
+
+    /* Den Button auf dem Handy anzeigen */
+    .info-toggle-btn {
+        display: flex;
+        grid-column: 1;
+    }
+
+    /* Die Info-Boxen auf dem Handy standardmäßig ausblenden */
+    .side-column {
+        display: none; 
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    /* Die Klasse, die per JavaScript hinzugefügt wird, um die Boxen anzuzeigen */
+    .side-column.open {
+        display: flex; 
+        animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .galerie-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .produkte-grid .galerie-card,
+    .produkte-grid .galerie-card:nth-child(1),
+    .produkte-grid .galerie-card:nth-child(2) {
+        grid-column: span 6;
+    }
+
+    .bee-flight-path {
+        top: 140px;
+        left: 2%;
+        width: 96%;
+        height: 60px;
+    }
+}
+
+/* Kleine Animation für geschmeidiges Einblenden */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
