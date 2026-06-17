@@ -366,8 +366,7 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
     min-height: 200px;
   }
 
-  #weather-text-box,
-  .item-wide { grid-column: 1 / -1; }
+#weather-text-box { justify-content: space-between !important; }
 
   #events-widget,
   #wetter-widget,
