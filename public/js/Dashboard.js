@@ -166,6 +166,8 @@ function updateFlugfenster(daily) {
   const sunrise = daily.sunrise[0].slice(11, 16);   // "05:12"
   const sunset  = daily.sunset[0].slice(11, 16);    // "20:48"
   const windMax = Math.round(daily.wind_speed_10m_max[0]);
+  const tMin = Math.round(daily.temperature_2m_min[0]);
+const tMax = Math.round(daily.temperature_2m_max[0]);
 
   // Tageslänge aus den beiden Zeiten
   const ms = new Date(daily.sunset[0]) - new Date(daily.sunrise[0]);
@@ -181,6 +183,7 @@ function updateFlugfenster(daily) {
       <div class="ff-row"><span>🌇 Sonnenuntergang</span><strong>${sunset} Uhr</strong></div>
       <div class="ff-row"><span>☀️ Tageslänge</span><strong>${h} h ${m} min</strong></div>
       <div class="ff-row"><span>🌬 Wind (max)</span><strong>${windMax} km/h · ${windHint}</strong></div>
+      <div class="ff-row"><span>🌡 Temperatur</span><strong>${tMin}° / ${tMax}°</strong></div>
     `;
 }
 
@@ -257,7 +260,7 @@ const rawEvents = [
   document.body.appendChild(popup);
 
   const next = events[0];
-const rest = events.slice(1, 3);
+const rest = events.slice(1, 6);  
 
   const restHTML = rest.map(e => `
     <div class="ev-row"
