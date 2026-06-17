@@ -42,12 +42,12 @@ const WMO_ICON = {
 };
 
 const WEATHER_TEXTS = {
-  'Klar':     { Überschrift: "Klar", titel: '☀️ Perfekter Bienentag!',    text: 'Heute fliegen die Bienen den ganzen Tag über und besuchen die Blumen in Ihrer Umgebung.', farbe: "green"  },
+  'Klar':     { Überschrift: "Klar", titel: '☀️ Perfekter Bienentag!',    text: 'Heute fliegen die Bienen den ganzen Tag über und besuchen die Blumen in ihrer Umgebung.', farbe: "green"  },
   'Bewölkt':  { Überschrift: "Bewölkt",titel: '⛅ Ruhiges Wetter',           text: 'Die Bienen sind aktiv, aber dennoch etwas zurückgehalten.' , farbe: "green"},
   'Nebel':    { Überschrift: "Nebel",titel: '🌫 Neblige Morgenstimmung',   text: 'Die Bienen fliegen wahrscheinlich nicht aus, da es ihnen zu neblig ist.' , farbe :"yellow"},
-  'Regen':    { Überschrift: "Regen",titel: '🌧 Regentag',                 text: 'Die Bienen bleiben bei Regen im Stock und warten auf besseres Wetter. ' ,farbe: "yellow"},
+  'Regen':    { Überschrift: "Regen",titel: '🌧 Regentag',                 text: 'Die Bienen bleiben bei Regen im Stock und warten auf besseres Wetter. ' ,farbe: "red"},
   'Schnee':   { Überschrift: "Schnee",titel: '❄️ Winterruhe',               text: 'Das Volk sitzt in der Wintertraube. Erst im Frühling werden sie wieder aktiv. ' ,farbe: "red"},
-  'Gewitter': { Überschrift: "Gewitter",titel: '⛈ Gewitterwarnung',           text: 'Bienen sind reizbar und bleiben im Stock.' ,farbe: "red"},
+  'Gewitter': { Überschrift: "Gewitter",titel: '⛈ Gewitterwarnung',           text: 'Die Bienen sind reizbar und bleiben im Stock.' ,farbe: "red"},
 };
 
 const DAYS = ['So','Mo','Di','Mi','Do','Fr','Sa'];
