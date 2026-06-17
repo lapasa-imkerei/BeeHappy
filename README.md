@@ -1,5 +1,11 @@
 # Projekt: BeeHappy
 
+## Endbericht zum Projekt
+Eine Reflexion und einen kurzen Endbericht zum Projekt findest du in unserem Wiki unter:
+
+https://git.sbg.ac.at/s1109621/beehappy/-/wikis/Endbericht
+
+
 ## Konzept für das Projekt
 Ein detailliertes Konzept findest du in unserem Wiki unter:
 
