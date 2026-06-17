@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
             isDark: true,
             text: "Ah... du bist endlich da. Ich bin deine Mutter, die Königin. Schön, dich zu spüren. Noch liegst du verborgen im Wachs. Sag mir, mein Kind: Was fühlst du in dir?",
             choices: [
-                { text: "Einen tiefen Drang, mich um andere zu kümmern.", points: { amme: 2 } },
-                { text: "Unruhige Beine. Ich will etwas erschaffen!", points: { baubiene: 2 } },
-                { text: "Noch gar nichts. Ich ruhe in mir selbst.", points: { drohn: 2 } }
+                { icon: "heart-plus", text: "Einen tiefen Drang, mich um andere zu kümmern.", points: { amme: 2 } },
+                { icon: "sprout", text: "Unruhige Beine. Ich will etwas erschaffen!", points: { baubiene: 2 } },
+                { icon: "bed", text: "Noch gar nichts. Ich ruhe in mir selbst.", points: { drohn: 2 } }
             ]
         },
         {
@@ -35,9 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
             isDark: false, 
             text: "Zeit aufzuwachen. Du durchbeißt den Wachsdeckel. Das strahlende Licht des Stocks trifft dich! Das Gewusel ist ohrenbetäubend. Eine Schwester rempelt dich an. Was tust du?",
             choices: [
-                { text: "Ich reiche ihr einen Tropfen Nektar, sie sieht erschöpft aus.", points: { amme: 2 } },
-                { text: "Ich baue schnell die Wabe hinter mir zu, Ordnung muss sein.", points: { baubiene: 2 } },
-                { text: "Ich dränge mich an ihr vorbei Richtung Ausgang!", points: { sammlerin: 2 } }
+                { icon: "droplets", text: "Ich reiche ihr einen Tropfen Nektar, sie sieht erschöpft aus.", points: { amme: 2 } },
+                { icon: "blocks", text: "Ich baue schnell die Wabe hinter mir zu, Ordnung muss sein.", points: { baubiene: 2 } },
+                { icon: "door-open", text: "Ich dränge mich an ihr vorbei Richtung Ausgang!", points: { sammlerin: 2 } }
             ]
         },
 
@@ -63,9 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
             isDark: false,
             text: "ALARM! Die Wächterinnen sondern Pheromone ab. Fremde Wespen sind am Flugloch gelandet!",
             choices: [
-                { text: "Nichts wie hin! Ich verteidige unsere Familie mit meinem Stachel!", points: { waechterin: 5 } },
-                { text: "Ich bleibe bei der Brut und wärme die Zellen, komme was wolle.", points: { amme: 3 } },
-                { text: "Panik! Ich verstecke mich beim Honig...", points: { drohn: 3 } }
+                { icon: "biceps-flexed", text: "Nichts wie hin! Ich verteidige unsere Familie mit meinem Stachel!", points: { waechterin: 5 } },
+                { icon: "waves-vertical", text: "Ich bleibe bei der Brut und wärme die Zellen, komme was wolle.", points: { amme: 3 } },
+                { icon: "siren", text: "Panik! Ich verstecke mich beim Honig...", points: { drohn: 3 } }
             ]
         }
     ];

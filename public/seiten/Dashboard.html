@@ -149,12 +149,20 @@
 <!--Pop Up Fenster Pflanze der Saison-->
 
 <div id="plant-modal" class="modal-overlay">
-    <div class="modal-content">
+    
+    <div class="modal-card">
+        
         <button id="close-plant-modal" class="close-btn">&times;</button>
         
-        <h2 id="modal-plant-name">Pflanzenname</h2>
-        <div class="modal-body">
+        <div class="modal-img-wrap">
             <img id="modal-plant-img" src="">
+        </div>
+        
+        <div class="modal-scroll-body">
+            <div class="modal-title-container">
+                <span id="modal-plant-name" class="modal-card-title">Pflanzenname</span>
+            </div>
+            
             <div class="poem-container">
                 <p id="modal-plant-poem">Das Gedicht wird geladen...</p>
             </div>
@@ -162,12 +170,12 @@
         
         <div class="modal-footer">
             <a href="../seiten/Bienenfreundlich.html" class="go-to-oase-btn">
-                Zur Bienen-Oase
+                Zur Bienen-Oase <i data-lucide="arrow-right"></i>
             </a>
         </div>
+        
     </div>
 </div>
-
 
 <script src="../js/menue.js"></script>
 <script src="../js/Dashboard.js"></script>
