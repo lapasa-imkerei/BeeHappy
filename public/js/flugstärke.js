@@ -39,7 +39,7 @@ function staerkeInfo(bpm) {
   const container = document.querySelector('.item-wide');
   if (!container) return;
   container.innerHTML =
-    `<span class="fg-titel">🐝 Bienenflugstärke</span>` +
+`<span class="fg-titel"><i data-lucide="hexagon"></i> Bienenflugstärke</span>` +
     `<div class="fg-heute">` +
       `<div class="fg-heute-left">` +
         `<span class="fg-heute-tag">Heute</span>` +
@@ -53,6 +53,7 @@ function staerkeInfo(bpm) {
       `</div>` +
     `</div>` +
     `<div class="fg-grid"></div>`;
+    lucide.createIcons();
 })();
 
 async function ladeFlugstaerke(city) {
@@ -83,9 +84,9 @@ async function ladeFlugstaerke(city) {
     container.querySelector('.fg-balken-fill').style.width      = Math.round(idx0 * 100) + '%';
     container.querySelector('.fg-balken-fill').style.background = si0.farbe;
     container.querySelector('.fg-heute-temp').innerHTML =
-      `🌡 ${Math.round(d.temperature_2m_max[0])}° / ${Math.round(d.temperature_2m_min[0])}°` +
-      `&nbsp;💨 ${Math.round(d.windspeed_10m_max[0])} km/h` +
-      `&nbsp;🌧 ${d.precipitation_sum[0].toFixed(1)} mm`;
+      `<i data-lucide="thermometer"></i> ${Math.round(d.temperature_2m_max[0])}° / ${Math.round(d.temperature_2m_min[0])}°` +
+      `&nbsp;<i data-lucide="wind"></i> ${Math.round(d.windspeed_10m_max[0])} km/h` +
+      `&nbsp;<i data-lucide="droplets"></i> ${d.precipitation_sum[0].toFixed(1)} mm`;
 
     const grid = container.querySelector('.fg-grid');
     grid.innerHTML = '';
@@ -99,13 +100,13 @@ async function ladeFlugstaerke(city) {
       card.className = 'fg-day';
       card.innerHTML =
         `<span class="fg-day-name">${dow}</span>` +
-        `<span class="fg-day-icon">${WMO_ICON[d.weathercode[j]] ?? '?'}</span>` +
+`<span class="fg-day-icon"><i data-lucide="${WMO_ICON[d.weathercode[j]] ?? 'cloud'}"></i></span>`+
         `<span class="fg-day-bpm" style="color:${si.farbe}">${bpm}</span>` +
         `<span class="fg-day-unit">B/min</span>` +
         `<span class="fg-day-label">${si.label}</span>`;
       grid.appendChild(card);
     }
-
+lucide.createIcons();
   } catch (err) {
     container.querySelector('.fg-heute-bpm').textContent = '⚠️';
     console.error('Flugstärke-Fehler:', err);

@@ -7,12 +7,12 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 */
 
 .bento-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 300px); 
+    display: grid;                          /* ← war weg */
+    grid-template-columns: repeat(4, 1fr);  /* ← war weg → 4 Spalten */
+    grid-template-rows: repeat(2, 300px);
     gap: 24px;
     max-width: 1600px;
-    margin: 0 auto;
+    margin: 0 auto;                         /* zentriert das Raster */
     padding: 20px;
 }
 
@@ -54,62 +54,74 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
     color: white;
 }
 
-/* ─── Wetter-Widget ─────────────────────────────────────────────────────── */
-
+/* ─── Wetter-Widget ─────────────────────────────────────────────── */
 #wetter-widget.item {
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
-    flex-direction: column;
-    padding: 14px;
-    gap: 8px;
-    height: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    background-color:#97c4dd;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  flex-direction: column;
+  padding: 14px;
+  gap: 8px;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: #97c4dd;            /* solide, wie der Rest */
 }
 
 #wetter-widget select {
-    width: 100%;
-    padding: 6px 8px;
-    border-radius: var(--radius-l);
-    border: 1px solid rgba(0,0,0,0.1);
-    background: var(--c-white);
-    font-family: var(--f-body);
-    font-size: 14px;
-    cursor: pointer;
-    flex-shrink: 0;
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: var(--radius-m);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--c-white);
+  color: var(--c-text);
+  font-family: var(--f-body);
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
 #forecast-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    width: 100%;
-    flex: 1;
-    overflow-y: auto;
-    min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
 }
 
 .day-card {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center;
-    justify-content: space-between;
-    gap: 6px;
-    padding: 5px 8px;
-    border-radius: var(--radius-l);
-    background: var(--c-surface);
-    font-size: 13px;
-    flex-shrink: 0;
-    width: 100%;
-    box-sizing: border-box;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 4px 9px;
+  border-radius: var(--radius-m);
+  background: rgba(255, 255, 255, 0.6);
+  flex: 1;                 /* ← HIER wachsen die Karten */
+  min-height: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background 0.2s ease;
 }
 
-.day-name { font-weight: bold; color: var(--c-text); min-width: 32px; font-size: 13px; }
+.day-card:hover      { background: rgba(255, 255, 255, 0.8); }
+.day-card:first-child { background: rgba(255, 255, 255, 0.85); }  /* heute */
+
+.day-name { font-weight: bold; color: var(--c-text); min-width: 30px; }
 .day-icon { font-size: 15px; flex-shrink: 0; }
-.day-desc { color: var(--c-text); font-size: 11px; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.day-max  { font-weight: bold; color: var(--c-text); font-size: 13px; white-space: nowrap; }
-.day-min  { color: gray; font-size: 11px; white-space: nowrap; }
+.day-desc { color: var(--c-text); opacity: 0.75; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.day-max  { font-weight: bold; color: var(--c-text); white-space: nowrap; }
+.day-min  { color: var(--c-text); opacity: 0.5; white-space: nowrap; }
+
+/* Schrift etwas kleiner als die 14px-Standardregel (macht die Zeilen kompakter) */
+#wetter-widget .day-name,
+#wetter-widget .day-desc,
+#wetter-widget .day-max,
+#wetter-widget .day-min { font-size: 13px; }
+
 
 
 /* Wetter Text -----------------*/
@@ -326,17 +338,17 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 
 .ff-title {
   font-family: var(--f-body);
-  font-size: 1.15rem;          /* kleiner, damit es in eine Zeile passt */
+  font-size: 1.15rem;        
   font-weight: bold;
   color: var(--c-text);
   margin: 0 0 4px 0;
   display: block;
   width: auto;
   background: none;
-  padding: 0 28px 0 0;          /* rechts Platz für die Info-Box */
+  padding: 0 28px 0 0;          
   border-radius: 0;
   line-height: 1.2;
-  white-space: nowrap;         /* zwingt den Titel in eine Zeile */
+  white-space: nowrap;        
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -344,8 +356,8 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 
 @media (min-width: 1025px) {
   .bento-grid {
-    grid-template-rows: repeat(2, minmax(300px, 1fr));
-    min-height: calc(100vh - 100px);
+    grid-template-rows: repeat(2, minmax(280px, auto));  /* Höhe nach Inhalt, nicht gestreckt */
+    /* min-height-Zeile entfernen */
   }
 }
 
@@ -473,24 +485,66 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 .fg-day-label { font-size: 12px; color: var(--c-text); opacity: 0.75; text-align: center; }
 
 #fact-widget {
+  position: relative;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;  
-  gap: 8px;
-  padding: 20px;
-  text-align: left;
-  overflow: hidden;             
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 14px;
+  padding: 24px;
+  overflow-y: auto;          /* lange Fakten scrollen, statt überzulaufen */
+}
+
+/* großes Deko-Anführungszeichen im Hintergrund */
+#fact-widget::before {
+  content: "\201C";
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  font-family: Georgia, serif;
+  font-size: 8rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.18);
+  pointer-events: none;
 }
 
 .fact-label {
-  font-size: 11px;
+  position: relative;
+  z-index: 1;
+  font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  opacity: 0.85;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
   margin: 0;
-  flex-shrink: 0;
-  text-align: left;      
+}
+
+.fact-card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: rgba(0, 0, 0, 0.20);          /* dunkler → weißer Text wird lesbar */
+  border-left: 3px solid rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.fact-num {
+  font-family: var(--f-headline);   /* deine Handschrift-Font als Akzent */
+  font-size: 1.6rem;
+  line-height: 1;
+  opacity: 0.85;
+}
+
+#fact-widget .fact-text {
+  font-family: var(--f-body);
+  font-size: 16px;          /* von 15 → 16 */
+  line-height: 1.6;         /* mehr Zeilenabstand = ruhigeres Lesen */
+  color: #ffffff;
+  font-weight: 500;         /* einen Tick kräftiger */
+  text-align: left;
+  margin: 0;
   max-width: none;
 }
 
@@ -811,26 +865,30 @@ display: flex;
   position: absolute;
   top: 12px;
   right: 12px;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: 1px solid var(--c-border);
-  background: var(--c-white);
-  color: var(--c-text);
+  border: none;
+  background: var(--c-accent);      /* Orange → fällt sofort auf */
+  color: #fff;
   font-family: var(--f-body);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: bold;
   font-style: italic;
   line-height: 1;
-  opacity: 0.45;                 /* dezent im Ruhezustand */
+  opacity: 0.9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
   z-index: 5;
-  transition: opacity 0.2s ease;
-  cursor: help !important;       /* überschreibt deinen globalen *-Cursor */
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  cursor: help !important;
 }
-.info-corner:hover { opacity: 1; }
+.info-corner:hover {
+  opacity: 1;
+  transform: scale(1.1);            /* kleiner „Pop" beim Drüberfahren */
+}
 
 .info-tip {
   position: absolute;
@@ -861,3 +919,21 @@ display: flex;
   visibility: visible;
   transform: translateY(0);
 }
+
+/* Lucide-Icons  */
+.day-icon svg, .fg-day-icon svg, .ff-row svg,
+.wx-icon svg, .ff-title svg, #ev-popup svg, .fact-label svg {
+  vertical-align: middle;
+  margin-right: 4px;
+}
+.day-icon svg    { width: 16px; height: 16px; margin-right: 0; }
+.fg-day-icon svg { width: 22px; height: 22px; margin-right: 0; }
+.ff-row svg      { width: 17px; height: 17px; }
+.ff-title svg    { width: 18px; height: 18px; }
+.wx-icon svg     { width: 38px; height: 38px; margin-right: 0; }
+#ev-popup svg    { width: 13px; height: 13px; }
+.fact-label svg  { width: 13px; height: 13px; }
+.fg-titel svg      { width: 18px; height: 18px; vertical-align: middle; margin-right: 4px; }
+.fg-heute-temp svg { width: 13px; height: 13px; vertical-align: middle; }
+.lucide { width: 1em; height: 1em; }
+

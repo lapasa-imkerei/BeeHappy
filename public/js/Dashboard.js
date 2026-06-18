@@ -31,23 +31,23 @@ const WMO_LABEL = {
 };
 
 const WMO_ICON = {
-  0:'☀️', 1:'☀️', 2:'⛅', 3:'☁️',
-  45:'🌫', 48:'🌫',
-  51:'🌧', 53:'🌧', 55:'🌧',
-  61:'🌧', 63:'🌧', 65:'🌧',
-  71:'❄️', 73:'❄️', 75:'❄️',
-  80:'🌧', 81:'🌧', 82:'🌧',
-  85:'❄️', 86:'❄️',
-  95:'⛈', 96:'⛈', 99:'⛈',
+  0:'sun', 1:'sun', 2:'cloud-sun', 3:'cloud',
+  45:'cloud-fog', 48:'cloud-fog',
+  51:'cloud-rain', 53:'cloud-rain', 55:'cloud-rain',
+  61:'cloud-rain', 63:'cloud-rain', 65:'cloud-rain',
+  71:'snowflake', 73:'snowflake', 75:'snowflake',
+  80:'cloud-rain', 81:'cloud-rain', 82:'cloud-rain',
+  85:'snowflake', 86:'snowflake',
+  95:'cloud-lightning', 96:'cloud-lightning', 99:'cloud-lightning',
 };
 
 const WEATHER_TEXTS = {
-  'Klar':     { Überschrift: "Klar", titel: '☀️ Perfekter Bienentag!',    text: 'Heute fliegen die Bienen den ganzen Tag über und besuchen die Blumen in ihrer Umgebung.', farbe: "green"  },
-  'Bewölkt':  { Überschrift: "Bewölkt",titel: '⛅ Ruhiges Wetter',           text: 'Die Bienen sind aktiv, aber dennoch etwas zurückgehalten.' , farbe: "green"},
-  'Nebel':    { Überschrift: "Nebel",titel: '🌫 Neblige Morgenstimmung',   text: 'Die Bienen fliegen wahrscheinlich nicht aus, da es ihnen zu neblig ist.' , farbe :"yellow"},
-  'Regen':    { Überschrift: "Regen",titel: '🌧 Regentag',                 text: 'Die Bienen bleiben bei Regen im Stock und warten auf besseres Wetter. ' ,farbe: "red"},
-  'Schnee':   { Überschrift: "Schnee",titel: '❄️ Winterruhe',               text: 'Das Volk sitzt in der Wintertraube. Erst im Frühling werden sie wieder aktiv. ' ,farbe: "red"},
-  'Gewitter': { Überschrift: "Gewitter",titel: '⛈ Gewitterwarnung',           text: 'Die Bienen sind reizbar und bleiben im Stock.' ,farbe: "red"},
+'Klar':     { Überschrift:'Klar',     icon:'sun',             titel:'Perfekter Bienentag!',   text:'Heute fliegen die Bienen den ganzen Tag über und besuchen die Blumen in ihrer Umgebung.', farbe:'green' },
+'Bewölkt':  { Überschrift:'Bewölkt',  icon:'cloud',           titel:'Ruhiges Wetter',         text:'Die Bienen sind aktiv, aber dennoch etwas zurückgehalten. ', farbe:'green' },
+'Nebel':    { Überschrift:'Nebel',    icon:'cloud-fog',       titel:'Neblige Morgenstimmung', text:'Die Bienen fliegen wahrscheinlich nicht aus, da es ihnen zu neblig ist.', farbe:'yellow' },
+'Regen':    { Überschrift:'Regen',    icon:'cloud-rain',      titel:'Regentag',               text:'Die Bienen bleiben bei Regen im Stock und warten auf besseres Wetter.', farbe:'red' },
+'Schnee':   { Überschrift:'Schnee',   icon:'snowflake',       titel:'Winterruhe',             text:'Das Volk sitzt in der Wintertraube. Erst im Frühling werden sie wieder aktiv.', farbe:'red' },
+'Gewitter': { Überschrift:'Gewitter', icon:'cloud-lightning', titel:'Gewitterwarnung',        text:'Die Bienen sind reizbar und bleiben im Stock.', farbe:'red' },
 };
 
 const DAYS = ['So','Mo','Di','Mi','Do','Fr','Sa'];
@@ -74,7 +74,8 @@ loadCity(CITIES[startIndex]);         // Wetter überall = Linz
 
 async function loadCity(city) {
   const fg = document.getElementById('forecast-grid');
-  fg.innerHTML = '<span style="font-size:13px">Wird geladen…</span>';
+  fg.innerHTML = '<span style="font-size:13px;color:red"><i data-lucide="triangle-alert"></i> Fehler beim Laden</span>';
+  lucide.createIcons();
 
   try {
     const res = await fetch(
@@ -109,7 +110,7 @@ async function loadCity(city) {
       card.className = 'day-card';
       card.innerHTML = `
         <div class="day-name">${dow}</div>
-        <span class="day-icon">${WMO_ICON[code] ?? '?'}</span>
+    <span class="day-icon"><i data-lucide="${WMO_ICON[code] ?? 'cloud'}"></i></span>
         <div class="day-desc">${WMO_LABEL[code] ?? '—'}</div>
         <div class="day-max">${Math.round(daily.temperature_2m_max[i])}°</div>
         <div class="day-min">${Math.round(daily.temperature_2m_min[i])}°</div>
@@ -121,6 +122,7 @@ async function loadCity(city) {
     const todayLabel = WMO_LABEL[todayCode] ?? 'Klar';
     updateWeatherBox(todayLabel);
     updateFlugfenster(daily);
+    lucide.createIcons();
 
   } catch (err) {
     fg.innerHTML = '<span style="font-size:13px;color:red">Fehler beim Laden ⚠️</span>';
@@ -144,17 +146,17 @@ function updateWeatherBox(conditionLabel) {
     box.classList.add('wx-' + content.farbe);
 
     box.innerHTML = `
-    <div class="wx-top">
-        <p class="wx-label">So geht es den bienen heute</p>
-        <h2 class="wx-ueberschrift">${content.Überschrift}</h2>
-    </div>
+  <div class="wx-top">
+    <p class="wx-label">So geht es den Bienen heute</p>
+    <h2 class="wx-ueberschrift">${content.Überschrift}</h2>
+  </div>
 
-    <div class="wx-icon">${content.titel.split(' ')[0]}</div>
+  <div class="wx-icon"><i data-lucide="${content.icon ?? 'sun'}"></i></div>
 
-    <div class="wx-bottom">
-        <p class="wx-titel">${content.titel.split(' ').slice(1).join(' ')}</p>
-        <p class="wx-text">${content.text}</p>
-    </div>
+  <div class="wx-bottom">
+    <p class="wx-titel">${content.titel}</p>
+    <p class="wx-text">${content.text}</p>
+  </div>
 `;
   }
 
@@ -177,14 +179,14 @@ const tMax = Math.round(daily.temperature_2m_max[0]);
   // kleiner Bienen-Hinweis je nach Wind (ab ~25–30 km/h wird Fliegen schwierig)
   const windHint = windMax >= 30 ? 'böig' : windMax >= 20 ? 'mäßig' : 'ruhig';
 
-  box.innerHTML = `
-      <h3 class="ff-title">🐝 Flugfenster heute</h3>
-      <div class="ff-row"><span>🌅 Sonnenaufgang</span><strong>${sunrise} Uhr</strong></div>
-      <div class="ff-row"><span>🌇 Sonnenuntergang</span><strong>${sunset} Uhr</strong></div>
-      <div class="ff-row"><span>☀️ Tageslänge</span><strong>${h} h ${m} min</strong></div>
-      <div class="ff-row"><span>🌬 Wind (max)</span><strong>${windMax} km/h · ${windHint}</strong></div>
-      <div class="ff-row"><span>🌡 Temperatur</span><strong>${tMin}° / ${tMax}°</strong></div>
-    `;
+box.innerHTML = `
+  <h3 class="ff-title"><i data-lucide="hexagon"></i> Flugfenster heute</h3>
+  <div class="ff-row"><span><i data-lucide="sunrise"></i> Sonnenaufgang</span><strong>${sunrise} Uhr</strong></div>
+  <div class="ff-row"><span><i data-lucide="sunset"></i> Sonnenuntergang</span><strong>${sunset} Uhr</strong></div>
+  <div class="ff-row"><span><i data-lucide="sun"></i> Tageslänge</span><strong>${h} h ${m} min</strong></div>
+  <div class="ff-row"><span><i data-lucide="wind"></i> Wind (max)</span><strong>${windMax} km/h · ${windHint}</strong></div>
+  <div class="ff-row"><span><i data-lucide="thermometer"></i> Temperatur</span><strong>${tMin}° / ${tMax}°</strong></div>
+`;
 }
 
 // ─── Events-Widget ───────────────────────────────────────────────────────────
@@ -295,13 +297,14 @@ widget.innerHTML = `
   document.querySelectorAll('.ev-row').forEach(row => {
     row.addEventListener('mouseenter', () => {
       const rect = row.getBoundingClientRect();
-      popup.innerHTML = `
-        <div style="font-weight:bold;font-size:13px;margin-bottom:4px">${row.dataset.thema}</div>
-        <div>📅 ${row.dataset.datum}</div>
-        <div>🕐 ${row.dataset.uhrzeit} Uhr</div>
-        <div>📍 ${row.dataset.verein}</div>
-        <div style="font-size:11px;opacity:0.7">🏠 ${row.dataset.adresse}</div>
-      `;
+popup.innerHTML = `
+  <div style="font-weight:bold;font-size:13px;margin-bottom:4px">${row.dataset.thema}</div>
+  <div><i data-lucide="calendar"></i> ${row.dataset.datum}</div>
+  <div><i data-lucide="clock"></i> ${row.dataset.uhrzeit} Uhr</div>
+  <div><i data-lucide="map-pin"></i> ${row.dataset.verein}</div>
+  <div style="font-size:11px;opacity:0.7"><i data-lucide="house"></i> ${row.dataset.adresse}</div>
+`;
+lucide.createIcons();   // ← direkt nach dem innerHTML
 
       const popupWidth = 240;
       const left = rect.right + 10;
