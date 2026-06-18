@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const factText = document.getElementById("fact-text");
+const factText  = document.getElementById("fact-text");
+  const factText2 = document.getElementById("fact-text-2");
   if (!factText) return;
 
     const beeFacts = [
@@ -25,6 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Ein Fakt pro Woche – wechselt automatisch
   const MS_PER_WEEK = 7 * 24 * 60 * 60 * 1000;
-  const weekIndex = Math.floor(Date.now() / MS_PER_WEEK);
+const weekIndex = Math.floor(Date.now() / MS_PER_WEEK);
   factText.textContent = beeFacts[weekIndex % beeFacts.length];
+  if (factText2) factText2.textContent = beeFacts[(weekIndex + 1) % beeFacts.length];
 });
+
+
