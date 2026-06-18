@@ -274,7 +274,6 @@ document.addEventListener('DOMContentLoaded', () => {
     statsHtml += '</div>';
 
     const resultDescElement = document.getElementById('result-desc');
-    Element.setAttribute("style", "text-align: justify;")
     let existingStats = document.querySelector('.stats-container');
     if(existingStats) existingStats.remove(); 
     
