@@ -103,16 +103,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Aufklapp-Funktion für die Waagen-Infos auf mobilen Geräten
+// Der Aufklapp Button
 document.addEventListener('DOMContentLoaded', () => {
     const toggleBtn = document.getElementById('waage-info-toggle');
     const infoContent = document.getElementById('waage-info-content');
 
     if (toggleBtn && infoContent) {
         toggleBtn.addEventListener('click', () => {
-            // Klasse "open" hinzufügen oder entfernen
             infoContent.classList.toggle('open');
-            // Pfeil drehen (Klasse "active" auf den Button)
             toggleBtn.classList.toggle('active');
         });
     }
