@@ -72,7 +72,7 @@
 }
 
 .sidebar-header .logo-text {
-    font-family: var(--f-logo, 'Indie Flower') !important;
+    font-family: var(--f-logo, 'Just Another Hand') !important;
     font-size: 26px !important; 
     font-weight: bold !important;
     white-space: nowrap;
