@@ -50,7 +50,7 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 
 .item-large-right {
     grid-row: span 2;
-    background-color: #97c4dd; 
+    background-color: var(--c-white); 
     color: white;
 }
 
@@ -64,14 +64,14 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
   height: 100%;
   overflow: hidden;
   box-sizing: border-box;
-  background-color: #97c4dd;            /* solide, wie der Rest */
+  background-color: white;            /* solide, wie der Rest */
 }
 
 #wetter-widget select {
   width: 100%;
   padding: 6px 10px;
   border-radius: var(--radius-m);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1.2px solid rgba(0, 0, 0, 0.48);
   background: var(--c-white);
   color: var(--c-text);
   font-family: var(--f-body);
@@ -99,16 +99,16 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
   gap: 8px;
   padding: 4px 9px;
   border-radius: var(--radius-m);
-  background: rgba(255, 255, 255, 0.6);
-  flex: 1;                 /* ← HIER wachsen die Karten */
+  background: color-mix(in srgb, var(--c-surface) 70%, transparent);
+  flex: 1;               
   min-height: 30px;
   width: 100%;
   box-sizing: border-box;
   transition: background 0.2s ease;
 }
 
-.day-card:hover      { background: rgba(255, 255, 255, 0.8); }
-.day-card:first-child { background: rgba(255, 255, 255, 0.85); }  /* heute */
+.day-card:hover      {background: color-mix(in srgb, var(--c-surface) 100%, transparent); }
+.day-card:first-child {   background: color-mix(in srgb, var(--c-surface) 70%, transparent);}
 
 .day-name { font-weight: bold; color: var(--c-text); min-width: 30px; }
 .day-icon { font-size: 15px; flex-shrink: 0; }
@@ -324,7 +324,7 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
-  gap: 14px;
+  gap: 3px;
   padding: 16px;
   box-sizing: border-box;
   cursor: pointer;
@@ -338,22 +338,27 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 
 .ff-title {
   font-family: var(--f-body);
-  font-size: 1.15rem;        
-  font-weight: bold;
-  color: var(--c-text);
-  margin: 0 0 4px 0;
-  display: block;
-  width: auto;
-  background: none;
-  padding: 0 28px 0 0;          
-  border-radius: 0;
-  line-height: 1.2;
-  white-space: nowrap;        
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.ff-row { display: flex; justify-content: space-between; gap: 8px; font-size: 17px; }
+  font-size: 1rem;
 
+  color: black;
+  margin: 0 0 8px 0;
+  align-self: flex-start;         
+  background: color-mix(in srgb, var(--c-surface) 80%, transparent);         
+  border-left: 3px solid color-mix(in srgb, var(--c-text) 20%, transparent); 
+  padding: 4px 12px;
+  border-radius: var(--radius-m);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.ff-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 17px;
+  padding: 7px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--c-text) 12%, transparent);
+}
+.ff-row:last-child { border-bottom: none; }   /* unter der letzten Zeile kein Strich */
 @media (min-width: 1025px) {
   .bento-grid {
     grid-template-rows: repeat(2, minmax(280px, auto));  /* Höhe nach Inhalt, nicht gestreckt */
@@ -438,7 +443,7 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
     padding: 16px;
     gap: 12px;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: visible;
     cursor: default;
 }
 
@@ -498,17 +503,18 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 #fact-widget::before {
   content: "\201C";
   position: absolute;
-  top: -10px;
+  top: -2px;
   right: 16px;
   font-family: Georgia, serif;
-  font-size: 8rem;
+  font-size: 5rem;
   line-height: 1;
-  color: rgba(255, 255, 255, 0.18);
+color: color-mix(in srgb, var(--c-accent) 40%, transparent);
   pointer-events: none;
 }
 
 .fact-label {
   position: relative;
+  color: var(--c-text);
   z-index: 1;
   font-size: 12px;
   font-weight: bold;
@@ -524,14 +530,14 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
   display: flex;
   flex-direction: column;
   gap: 4px;
-  background: rgba(0, 0, 0, 0.20);          /* dunkler → weißer Text wird lesbar */
-  border-left: 3px solid rgba(255, 255, 255, 0.8);
+  background: color-mix(in srgb, var(--c-surface) 70%, transparent);
+  border-left: 3px solid color-mix(in srgb, var(--c-text) 20%, transparent);
   border-radius: 12px;
   padding: 14px 16px;
 }
 
 .fact-num {
-  font-family: var(--f-headline);   /* deine Handschrift-Font als Akzent */
+  font-family: var(--f-headline);   /*Handschrift-Font als Akzent */
   font-size: 1.6rem;
   line-height: 1;
   opacity: 0.85;
@@ -539,10 +545,10 @@ Die JS Logik für des Dashboard wird donn a fia do herinnen verknüpft --> Logik
 
 #fact-widget .fact-text {
   font-family: var(--f-body);
-  font-size: 16px;          /* von 15 → 16 */
-  line-height: 1.6;         /* mehr Zeilenabstand = ruhigeres Lesen */
-  color: #ffffff;
-  font-weight: 500;         /* einen Tick kräftiger */
+  font-size: 16px;         
+  line-height: 1.6;         
+  color: var(--c-text);
+  font-weight: 500;        
   text-align: left;
   margin: 0;
   max-width: none;
@@ -564,22 +570,9 @@ display: flex;
   flex-direction: column;
   justify-content: center
 }
-/* Zweiter Fact + Trennstrich: standardmäßig aus */
-.fact-divider { display: none; }
+
 #fact-text-2  { display: flex; }
 
-/* nur Desktop ab 1025px */
-@media (min-width: 1025px) {
-  .fact-divider {
-    display: block;
-    width: 100%;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.4);  /* hell, weil der Block blau ist */
-    margin: 6px 0;
-    flex-shrink: 0;
-  }
-
-}
 
 /*Widget Pflanze der Saison*/
 
@@ -838,6 +831,7 @@ display: flex;
 .ev-cal-btn {
     margin-top: auto;   /* schiebt den Button an den unteren Rand */
     width: 100%;
+    background: color-mix(in srgb, var(--c-sidebar) 90%, transparent);
     text-align: center;
     flex-shrink: 0;     /* verhindert, dass er zusammengedrückt wird */
 }
@@ -902,7 +896,7 @@ display: flex;
   border: 1px solid var(--c-border);
   border-radius: var(--radius-l);
   box-shadow: var(--shadow);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: normal;
   font-style: normal;
   line-height: 1.5;
