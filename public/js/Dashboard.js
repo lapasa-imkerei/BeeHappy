@@ -74,7 +74,7 @@ loadCity(CITIES[startIndex]);         // Wetter überall = Linz
 
 async function loadCity(city) {
   const fg = document.getElementById('forecast-grid');
-  fg.innerHTML = '<span style="font-size:13px;color:red"><i data-lucide="triangle-alert"></i> Fehler beim Laden</span>';
+  fg.innerHTML = '<span style="font-size:13px">Wird geladen…</span>';   // ← statt der Fehlermeldung
   lucide.createIcons();
 
   try {
@@ -238,18 +238,19 @@ const rawEvents = [
     return;
   }
 
-  // Popup einmalig ans body hängen
+
   const popup = document.createElement('div');
   popup.id = 'ev-popup';
   popup.style.cssText = `
     position: fixed;
+    border-left: 3px solid var(--c-accent);
     z-index: 999;
     background: var(--c-white);
     border: 1px solid var(--c-border);
     border-radius: var(--radius-l);
     box-shadow: var(--shadow);
     padding: 12px 16px;
-    font-size: 12px;
+    font-size: 14.5px;
     color: var(--c-text);
     pointer-events: none;
     opacity: 0;
@@ -278,7 +279,12 @@ const rest = events.slice(1, 6);
 
 widget.innerHTML = `
     <div class="ev-label">Nächste Veranstaltung</div>
-    <div class="ev-next">
+<div class="ev-next"
+         data-thema="${next.thema}"
+         data-datum="${next._dt.toLocaleDateString('de-AT', { weekday: 'long', day: '2-digit', month: 'long' })}"
+         data-uhrzeit="${next.uhrzeit}"
+         data-verein="${next.verein}"
+         data-adresse="${next.adresse_vollständig}">
       <div class="ev-next-title">${next.thema}</div>
       <div class="ev-next-meta">
         ${next._dt.toLocaleDateString('de-AT', { weekday: 'short', day: '2-digit', month: 'long' })},
@@ -298,13 +304,13 @@ widget.innerHTML = `
     row.addEventListener('mouseenter', () => {
       const rect = row.getBoundingClientRect();
 popup.innerHTML = `
-  <div style="font-weight:bold;font-size:13px;margin-bottom:4px">${row.dataset.thema}</div>
-  <div><i data-lucide="calendar"></i> ${row.dataset.datum}</div>
-  <div><i data-lucide="clock"></i> ${row.dataset.uhrzeit} Uhr</div>
-  <div><i data-lucide="map-pin"></i> ${row.dataset.verein}</div>
-  <div style="font-size:11px;opacity:0.7"><i data-lucide="house"></i> ${row.dataset.adresse}</div>
+  <div style="font-weight:bold;font-size:15px;margin-bottom:4px">${X.dataset.thema}</div>
+  <div><i data-lucide="calendar"></i> ${X.dataset.datum}</div>
+  <div><i data-lucide="clock"></i> ${X.dataset.uhrzeit} Uhr</div>
+  <div><i data-lucide="map-pin"></i> ${X.dataset.verein}</div>
+  <div style="opacity:0.7"><i data-lucide="house"></i> ${X.dataset.adresse}</div>
 `;
-lucide.createIcons();   // ← direkt nach dem innerHTML
+lucide.createIcons();   
 
       const popupWidth = 240;
       const left = rect.right + 10;
@@ -322,6 +328,34 @@ lucide.createIcons();   // ← direkt nach dem innerHTML
       popup.style.opacity = '0';
       popup.style.transform = 'translateY(4px)';
     });
+    // Hauptveranstaltung: Popup per Klick
+// Hauptveranstaltung: Popup bei Hover
+const nextEl = widget.querySelector('.ev-next');
+if (nextEl) {
+  nextEl.addEventListener('mouseenter', () => {
+    popup.innerHTML = `
+      <div style="font-weight:bold;font-size:15px;margin-bottom:4px">${nextEl.dataset.thema}</div>
+      <div><i data-lucide="calendar"></i> ${nextEl.dataset.datum}</div>
+      <div><i data-lucide="clock"></i> ${nextEl.dataset.uhrzeit} Uhr</div>
+      <div><i data-lucide="map-pin"></i> ${nextEl.dataset.verein}</div>
+      <div style="opacity:0.7"><i data-lucide="house"></i> ${nextEl.dataset.adresse}</div>
+    `;
+    lucide.createIcons();
+    const rect = nextEl.getBoundingClientRect();
+    const popupWidth = 240;
+    const left = rect.right + 12;
+    popup.style.left = (left + popupWidth > window.innerWidth ? rect.left - popupWidth - 12 : left) + 'px';
+    popup.style.top  = rect.top + 'px';
+    popup.style.opacity = '1';
+    popup.style.transform = 'translateY(0) scale(1)';
+  });
+  nextEl.addEventListener('mouseleave', () => {
+    popup.style.opacity = '0';
+    popup.style.transform = 'translateY(8px) scale(0.95)';
+  });
+}
+
+
   });
 
 })();
