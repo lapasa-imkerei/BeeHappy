@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         mapEl.style.display = 'block';
-        mapEl.style.height = '300px'; // Etwas höher, damit Platz für die Route ist
+        mapEl.style.height = '300px';
         if (routingContainer) routingContainer.style.display = 'block';
 
         if (!map) {
