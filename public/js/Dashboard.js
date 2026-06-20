@@ -299,18 +299,18 @@ widget.innerHTML = `
     </button>
   `;
 
-  // Hover-Logik
+ // Hover-Logik für die Listen-Einträge
   document.querySelectorAll('.ev-row').forEach(row => {
     row.addEventListener('mouseenter', () => {
       const rect = row.getBoundingClientRect();
-popup.innerHTML = `
-  <div style="font-weight:bold;font-size:15px;margin-bottom:4px">${X.dataset.thema}</div>
-  <div><i data-lucide="calendar"></i> ${X.dataset.datum}</div>
-  <div><i data-lucide="clock"></i> ${X.dataset.uhrzeit} Uhr</div>
-  <div><i data-lucide="map-pin"></i> ${X.dataset.verein}</div>
-  <div style="opacity:0.7"><i data-lucide="house"></i> ${X.dataset.adresse}</div>
-`;
-lucide.createIcons();   
+      popup.innerHTML = `
+        <div style="font-weight:bold;font-size:15px;margin-bottom:4px">${row.dataset.thema}</div>
+        <div><i data-lucide="calendar"></i> ${row.dataset.datum}</div>
+        <div><i data-lucide="clock"></i> ${row.dataset.uhrzeit} Uhr</div>
+        <div><i data-lucide="map-pin"></i> ${row.dataset.verein}</div>
+        <div style="opacity:0.7"><i data-lucide="house"></i> ${row.dataset.adresse}</div>
+      `;
+      lucide.createIcons();
 
       const popupWidth = 240;
       const left = rect.right + 10;
@@ -321,41 +321,39 @@ lucide.createIcons();
       popup.style.left = finalLeft + 'px';
       popup.style.top  = (rect.top - 10) + 'px';
       popup.style.opacity = '1';
-      popup.style.transform = 'translateY(0)';
+      popup.style.transform = 'translateY(0) scale(1)';
     });
 
     row.addEventListener('mouseleave', () => {
       popup.style.opacity = '0';
-      popup.style.transform = 'translateY(4px)';
+      popup.style.transform = 'translateY(8px) scale(0.95)';
     });
-    // Hauptveranstaltung: Popup per Klick
-// Hauptveranstaltung: Popup bei Hover
-const nextEl = widget.querySelector('.ev-next');
-if (nextEl) {
-  nextEl.addEventListener('mouseenter', () => {
-    popup.innerHTML = `
-      <div style="font-weight:bold;font-size:15px;margin-bottom:4px">${nextEl.dataset.thema}</div>
-      <div><i data-lucide="calendar"></i> ${nextEl.dataset.datum}</div>
-      <div><i data-lucide="clock"></i> ${nextEl.dataset.uhrzeit} Uhr</div>
-      <div><i data-lucide="map-pin"></i> ${nextEl.dataset.verein}</div>
-      <div style="opacity:0.7"><i data-lucide="house"></i> ${nextEl.dataset.adresse}</div>
-    `;
-    lucide.createIcons();
-    const rect = nextEl.getBoundingClientRect();
-    const popupWidth = 240;
-    const left = rect.right + 12;
-    popup.style.left = (left + popupWidth > window.innerWidth ? rect.left - popupWidth - 12 : left) + 'px';
-    popup.style.top  = rect.top + 'px';
-    popup.style.opacity = '1';
-    popup.style.transform = 'translateY(0) scale(1)';
-  });
-  nextEl.addEventListener('mouseleave', () => {
-    popup.style.opacity = '0';
-    popup.style.transform = 'translateY(8px) scale(0.95)';
-  });
-}
+  });   
 
-
-  });
+  // Hauptveranstaltung
+  const nextEl = widget.querySelector('.ev-next');
+  if (nextEl) {
+    nextEl.addEventListener('mouseenter', () => {
+      popup.innerHTML = `
+        <div style="font-weight:bold;font-size:15px;margin-bottom:4px">${nextEl.dataset.thema}</div>
+        <div><i data-lucide="calendar"></i> ${nextEl.dataset.datum}</div>
+        <div><i data-lucide="clock"></i> ${nextEl.dataset.uhrzeit} Uhr</div>
+        <div><i data-lucide="map-pin"></i> ${nextEl.dataset.verein}</div>
+        <div style="opacity:0.7"><i data-lucide="house"></i> ${nextEl.dataset.adresse}</div>
+      `;
+      lucide.createIcons();
+      const rect = nextEl.getBoundingClientRect();
+      const popupWidth = 240;
+      const left = rect.right + 12;
+      popup.style.left = (left + popupWidth > window.innerWidth ? rect.left - popupWidth - 12 : left) + 'px';
+      popup.style.top  = rect.top + 'px';
+      popup.style.opacity = '1';
+      popup.style.transform = 'translateY(0) scale(1)';
+    });
+    nextEl.addEventListener('mouseleave', () => {
+      popup.style.opacity = '0';
+      popup.style.transform = 'translateY(8px) scale(0.95)';
+    });
+  }
 
 })();
