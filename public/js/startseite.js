@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const zielSeiten = [
-        "/public/seiten/Dashboard.html",
-        "/public/seiten/Bienenvolk.html",
-        "/public/seiten/Bienenfreundlich.html",
-        "/public/seiten/Vereinskalender.html",
-        "/public/seiten/quiz.html"
+        "seiten/Dashboard.html",
+        "seiten/Bienenvolk.html",
+        "seiten/Bienenfreundlich.html",
+        "seiten/Vereinskalender.html",
+        "seiten/quiz.html"
     ];
 
     const wabenLinks = document.querySelectorAll(".honeycomb-link");
