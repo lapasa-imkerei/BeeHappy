@@ -47,7 +47,7 @@ const modalData = {
     },
     propolis: {
         title: "Kittharz (Propolis)",
-        img: "../Bilder/rähmchen.jpg",
+        img: "../Bilder/propolis.jpg",
         text: "<p>Propolis, auch Kittharz genannt, wird von den Bienen ähnlich wie der Pollen in den 'Höschen' an den Hinterbeinen gesammelt. Es besteht aus dem klebrigen Harz von Baumrinden und Knospen – vor allem von Birken, Buchen, Erlen, Fichten, Pappeln, Rosskastanien und Ulmen.</p><p><strong>Die Apotheke des Bienenstocks:</strong> Dieser Kitt wird im Bienenvolk benötigt, um die Innenwände zu überziehen, feine Ritzen abzudichten und das Flugloch vor Zugluft zu schützen. Viel wichtiger ist jedoch die stark antibakterielle und antivirale Wirkung: Die Bienen verhindern damit die Ausbreitung von Krankheiten und fäulniserzeugenden Bakterien. Sogar eingedrungene Mäuse oder Insekten, die zu schwer zum Abtransportieren sind, werden mit Propolis komplett mumifiziert.</p><p><strong>Anwendungsgebiete (Mensch):</strong> Hautpflege, Wundbehandlung, Mundwasser, Nasenspray, Tinkturen, Tabletten und Salben.</p>"
     },
     gelee: {
